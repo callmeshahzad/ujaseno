@@ -34,8 +34,6 @@ if (isset($_GET['search'])) {
     $url = "http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/GetProducts?Search=valve";
 }
 
-// echo $url;
-// exit();
 
 
 

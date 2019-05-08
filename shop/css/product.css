@@ -1,0 +1,49 @@
+.productImage{
+    height: 100px;
+    width: auto;
+}
+
+.contentHeader{
+    background-color: #CCCCCC;
+    color: #303032;
+    padding: 0.1px;
+    text-align: center;
+    /* margin-left:50px;
+    margin-right:50px; */
+
+}
+
+.float-right{
+    float: right;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    color:#303032;
+    font-weight: 550;
+    font-size: 13px;
+
+}
+.link:hover{    
+    text-decoration: none;
+}
+
+.pt-10{
+    padding-top: 8px;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.text-green{
+    color:#008000;
+}
+
+.m-10{
+    margin-top:12px;
+}

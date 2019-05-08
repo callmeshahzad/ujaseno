@@ -3,24 +3,7 @@
 
 if (isset($_GET['search'])) {
     $search = $_GET['search'];
-    if(isset($_GET['WheelDiameter'])){
-        $search .= "&WheelDiameter=".$_GET['WheelDiameter'];
-    }
-    if(isset($_GET['WheelWidth'])){
-        $search .= "&WheelWidth=".$_GET['WheelWidth'];
-    }
-    if(isset($_GET['WheelBoltCircle'])){
-        $search .= "&WheelBoltCircle=".$_GET['WheelBoltCircle'];
-    }
-    if(isset($_GET['WheelCenterBore'])){
-        $search .= "&WheelCenterBore=".$_GET['WheelCenterBore'];
-    }
-    if(isset($_GET['WheelOffsetMin'])){
-        // $offSet = $_GET['WheelOffsetMax'];
-        // $search = str_replace('+', '%20', $search);
-        $search .= "&WheelOffsetMin=".$_GET['WheelOffsetMin'];
-        // echo "offSetofwheel".$offSet;
-    }   
+       
     
     $search = str_replace(' ', '%20', $search);
     $type = substr($search,0,strpos($search,'=')+2);
@@ -299,7 +282,7 @@ curl_close($process);
                                 <div class="description-div pull-left" style="margin-top: 30px;"> 
                                     <div class="row"> 
                                         <div class="size-div pull-left"> 
-                                            <div class="first-div pull-left" title="Size">Size</div> 
+                                            <div class="first-div pull-left" title="Size">Sizee</div> 
                                             <div class="second-div pull-left"> <?=$product['size']?> </div> 
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left" title="Product ">Product </div> 

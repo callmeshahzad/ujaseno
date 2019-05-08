@@ -1,9 +1,9 @@
 <?php
 
 //database_connection.php
-// $connect = new PDO("mysql:host=localhost;dbname=wtd;charset=utf8mb4", "root", "");
-// $connect = new PDO("mysql:host=localhost;dbname=wtd;charset=utf8mb4", "root", "");
-$connect = new PDO("mysql:host=localhost;dbname=wtdusao2_wtdusa;charset=utf8mb4", "wtdusao2_wtdusa", "WWaTSeSaO]d9");
+$connect = new PDO("mysql:host=localhost;dbname=wtd;charset=utf8mb4", "root", "");
+// $connect = new PDO("mysql:host=192.168.10.7:8080;dbname=wtd;charset=utf8mb4", "root", "");
+// $connect = new PDO("mysql:host=localhost;dbname=wtdusao2_wtdusa;charset=utf8mb4", "wtdusao2_wtdusa", "WWaTSeSaO]d9");
 
 date_default_timezone_set('America/Phoenix');
 session_start();

@@ -1,0 +1,95 @@
+/*.navbar {
+  font-size: 18px;*/
+  /*background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+  border: 1px solid rgba(0, 0, 0, 0.2);*/
+/*  background: #fff;
+  padding-bottom: 10px;
+}*/
+
+.main-nav {
+  list-style-type: none;
+  display: none;
+}
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: #0015f9 !important;
+}
+
+.main-nav li {
+  text-align: center;
+  margin: 15px auto;
+  color: red;
+  text-align: left;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+}
+
+.active {
+  display: block;
+}
+
+@media screen and (min-width: 1020px) {
+  /*.navbar {
+        display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+    height: 92px;
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    width: 100%;
+  }
+*/
+  .main-nav {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .main-nav li {
+    margin: 0;
+    color: red;
+  }
+
+  .nav-links {
+        margin-left: 5px;
+    margin-right: 5px;
+    color: #0015f9 !important;
+    /*font-family: "AvantGardeGothicITC W08 Bold",monospace;*/
+    font-size: 19px;
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 0em;
+    line-height: 1em;
+    vertical-align: bottom;
+    font-weight: bold;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+} 

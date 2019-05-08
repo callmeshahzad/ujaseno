@@ -1,0 +1,171 @@
+[13-Feb-2019 09:38:02 America/New_York] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/esspknet/public_html/production/wtd/admin/index.php on line 16
+[13-Feb-2019 09:49:23 America/New_York] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/esspknet/public_html/production/wtd/admin/index.php on line 16
+[22-Feb-2019 13:21:26 America/New_York] PHP Notice:  Undefined variable: hIx in /home/esspknet/public_html/production/wtd/admin/config.php on line 12
+[22-Feb-2019 13:21:26 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'esspknet_landmaf'@'localhost' (using password: YES) in /home/esspknet/public_html/production/wtd/admin/config.php on line 14
+[22-Feb-2019 13:21:44 America/New_York] PHP Notice:  Undefined variable: hIx in /home/esspknet/public_html/production/wtd/admin/config.php on line 12
+[22-Feb-2019 13:21:44 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'esspknet_landmaf'@'localhost' (using password: YES) in /home/esspknet/public_html/production/wtd/admin/config.php on line 14
+[22-Feb-2019 13:21:44 America/New_York] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/esspknet/public_html/production/wtd/admin/index.php on line 14
+[22-Feb-2019 13:21:44 America/New_York] PHP Notice:  Trying to get property of non-object in /home/esspknet/public_html/production/wtd/admin/index.php on line 15
+[22-Feb-2019 13:26:45 America/New_York] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/esspknet/public_html/production/wtd/admin/index.php on line 16
+[22-Feb-2019 13:50:09 America/New_York] PHP Notice:  Object of class mysqli_result could not be converted to int in /home/esspknet/public_html/production/wtd/admin/index.php on line 16
+[13-Apr-2019 03:28:52 America/New_York] PHP Notice:  Trying to get property of non-object in /home/esspknet/public_html/production/wtd/admin/trim.php on line 39
+[13-Apr-2019 03:28:56 America/New_York] PHP Notice:  Trying to get property of non-object in /home/esspknet/public_html/production/wtd/admin/trim.php on line 76
+[13-Apr-2019 03:46:45 America/New_York] PHP Warning:  mysqli::__construct(): (08004/1040): Too many connections in /home/esspknet/public_html/production/wtd/admin/config.php on line 14
+[13-Apr-2019 03:46:45 America/New_York] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/esspknet/public_html/production/wtd/admin/admin_ajax.php on line 7
+[13-Apr-2019 03:46:45 America/New_York] PHP Notice:  Trying to get property of non-object in /home/esspknet/public_html/production/wtd/admin/admin_ajax.php on line 8
+[15-Apr-2019 10:59:54 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[15-Apr-2019 11:08:10 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[15-Apr-2019 11:11:03 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[15-Apr-2019 11:47:32 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[15-Apr-2019 11:49:12 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[15-Apr-2019 11:51:23 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[15-Apr-2019 23:20:00 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[16-Apr-2019 12:15:57 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[17-Apr-2019 09:22:22 America/New_York] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/esspknet/public_html/production/wtd/admin/config.php on line 14
+[17-Apr-2019 09:22:22 America/New_York] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/esspknet/public_html/production/wtd/admin/car_detail.php on line 11
+[17-Apr-2019 09:22:22 America/New_York] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/esspknet/public_html/production/wtd/admin/car_detail.php on line 21
+[17-Apr-2019 09:22:22 America/New_York] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/esspknet/public_html/production/wtd/admin/car_detail.php on line 39
+[17-Apr-2019 09:22:22 America/New_York] PHP Notice:  Trying to get property of non-object in /home/esspknet/public_html/production/wtd/admin/car_detail.php on line 40
+[17-Apr-2019 09:22:22 America/New_York] PHP Notice:  Trying to get property of non-object in /home/esspknet/public_html/production/wtd/admin/car_detail.php on line 168
+[17-Apr-2019 19:29:35 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[17-Apr-2019 19:33:29 Asia/Kolkata] PHP Notice:  Undefined index: username in /home/esspknet/public_html/production/wtd/admin/support.php on line 31
+[06-May-2019 20:15:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:15:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:21:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:21:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:21:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:24:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:24:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:24:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:24:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:24:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:28:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72
+[06-May-2019 20:28:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_object() on boolean in /home/wtdusao2/public_html/admin/admin_ajax.php:72
+Stack trace:
+#0 {main}
+  thrown in /home/wtdusao2/public_html/admin/admin_ajax.php on line 72

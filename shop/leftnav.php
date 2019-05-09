@@ -860,13 +860,13 @@
                     <option selected="true" value="Make">Make</option>
                     <?php
                     
-                    /*$qm = "SELECT * FROM tbl_make where year_id='1'";
+                    $qm = "SELECT DISTINCT `Make` FROM car_detail";
                     $rm = $db->query($qm);
                     if ($rm->num_rows > 0) {
                         while ($row = $rm->fetch_object()) {
-                            echo "<option value='".$row->id."'>".$row->make."</option>";
+                            echo "<option value='".$row->Make."'>".$row->Make."</option>";
                         }
-                    }*/
+                    }
                     ?>
                 </select>
                 <!--<label for="model"></label>-->

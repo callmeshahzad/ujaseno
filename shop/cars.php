@@ -1,39 +1,123 @@
 <?php include 'header.php'; ?>
 <?php
 
-//Some Comment
-
+$case=1;
 if (isset($_GET['search'])) {
     $search = $_GET['search'];
-       
+
+    if (strpos($search, '/')&&strpos($search, 'R')) {
+        $case=2;
+    }else{
+        if(isset($_GET['WheelDiameter'])){
+        $search .= "&WheelDiameter=".$_GET['WheelDiameter'];
+        $case=1;
+
+    }
+    if(isset($_GET['WheelWidth'])){
+        $search .= "&WheelWidth=".$_GET['WheelWidth'];
+        $case=1;
+
+    }
+    if(isset($_GET['WheelBoltCircle'])){
+        $search .= "&WheelBoltCircle=".$_GET['WheelBoltCircle'];
+        $case=1;
+
+    }
+    if(isset($_GET['WheelCenterBore'])){
+        $search .= "&WheelCenterBore=".$_GET['WheelCenterBore'];
+        $case=1;
+
+    }
+    if(isset($_GET['WheelOffsetMin'])){
+        // $offSet = $_GET['WheelOffsetMax'];
+        // $search = str_replace('+', '%20', $search);
+        $search .= "&WheelOffsetMin=".$_GET['WheelOffsetMin'];
+        $case=1;
+
+        // echo "offSetofwheel".$offSet;
+    }   
     
     $search = str_replace(' ', '%20', $search);
     $type = substr($search,0,strpos($search,'=')+2);
     
     if ($type === "Category=3" || $type === "Category=5" || $type === "Category=7") {
         $search = $type."%09".substr($search,strpos($search,"=")+1);
+        $case=1;
     }
+    // else{
+    //     $case=2;
+    // }
 
     if(isset($_GET['TireSizeB'])){
         $search .= "&TireSizeB=".$_GET['TireSizeB'];
+        $case=1;
+
     }
     if(isset($_GET['TireSizeC'])){
         $search .= "&TireSizeC=".$_GET['TireSizeC'];
+        $case=1;
+
     }
-    // $wheel_Finish = '';
+    $wheel_Finish = '';
      if(isset($_GET['WheelFinish'])){
         // $search .= "&WheelFinish=".$_GET['WheelFinish'];
         $wheel_Finish = $_GET['WheelFinish'];
+        $case=1;
+
+    }
+
     }
     
-    // echo $search;
 
-   $url = "http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/GetProducts?".$search;
+    // $size=explode("size=", $_GET['search'])[1];
+    // $tyreSizeA="";
+    // $tyreSizeB="";
+    // $tyreSizeC="";
+    // if(isset($size)){
+    //      $temp1=explode("/",$size);
+    //     $tyreSizeA=$temp1[0];
+    //         // $temp2=explode("ZR",$temp1[1]);
+    //     $temp2=explode("R",$temp1[1]);
+    //     $tyreSizeB=$temp2[0];
+    //     $tyreSizeC=$temp2[1];
+    // }
+    
+    //  echo "Search! ".$search;
+
+   $url = "http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?".$search;
+
 }else{
     $search = '';
-    $url = "http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/GetProducts?Search=valve";
+    $url = "http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?Search=valve";
 }
 
+// if(isset($_GET["search"])){
+//     $search = $_GET['search'];
+//     if (isset($_GET['Vdata'])) {
+//         $v = $_GET['Vdata'];
+//         echo $v;
+//         if ($v == 1) {
+//             if(isset($_GET['TT'])){
+//                 $search .= "Search=".$_GET['TT'];
+//                 $url = "http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?".$search;
+//             }
+
+//             // if(isset($_GET['WheelDiameter'])){
+//             //     $search .= "&WheelDiameter=".$_GET['WheelDiameter'];
+//             // }
+//             // if(isset($_GET['WheelWidth'])){
+//             //     $search .= "&WheelWidth=".$_GET['WheelWidth'];
+//             // }
+//             // $url = "http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?".$search;      
+//         }
+        
+//     }
+    
+    
+// }
+
+// echo $url;
+// exit();
 
 
 
@@ -41,99 +125,173 @@ $username = $_SESSION['email']."-96";
 $password = $_SESSION['password'];
 
 $process = curl_init();
-curl_setopt($process, CURLOPT_URL, $url);
-curl_setopt($process, CURLOPT_TIMEOUT, 300000);
-curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
-curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
-curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
-curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
-curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-$return = curl_exec($process);
-$info = curl_getinfo($process);
-$arr = explode("\t", $return); 
-array_shift($arr);
-$products = array();
-$counter = 0;
-$catalogCounter = 13;
-$desCounter = 14;
-$brand = 15;
-$alternate = 16;
-$size = 17;
-$Image0 = 18;
-$fet = 19;
-$itemTypeId = 20;
-$ItemType = 21;
-$price = 22;
-$pricenofet = 23;
-$avail1121420 = 24;
-$isAvailable = 25;
 
-foreach ($arr as $ar) {
-    if($counter === $catalogCounter ){
-        $data['catalog'] = $ar;
-        $catalogCounter += 13;
-    }
-    if($counter === $desCounter ){
-        $data['description'] = $ar;
-        $desCounter += 13;
-    }
-    if($counter === $brand ){
-        $data['brand'] = $ar;
-        $query = "SELECT * FROM tbl_brand WHERE brand='$ar'";
-        $result = $db->query($query);
-        if($result->num_rows > 0 ){
-            $row = $result->fetch_object();
-            $data['website'] = $row->website;
-            $data['youtube'] = $row->youtube;
-        }else{
-            $data['website'] = '#';
-            $data['youtube'] = '#';
+
+function filter($arrParam,$database)
+{
+    $productstemp = array();
+    $counter = 0;
+    $catalogCounter = 13;
+    $desCounter = 14;
+    $brand = 15;
+    $alternate = 16;
+    $size = 17;
+    $Image0 = 18;
+    $fet = 19;
+    $itemTypeId = 20;
+    $ItemType = 21;
+    $price = 22;
+    $pricenofet = 23;
+    $avail1121420 = 24;
+    $isAvailable = 25;
+    // print_r($arrParam);
+    foreach ($arrParam as $ar) {
+        // print_r($ar);
+        if($counter === $catalogCounter ){
+            $data['catalog'] = $ar;
+            $catalogCounter += 13;
         }
-        $brand += 13;
+        if($counter === $desCounter ){
+            $data['description'] = $ar;
+            $desCounter += 13;
+        }
+        if($counter === $brand ){
+            $data['brand'] = $ar;
+            $query = "SELECT * FROM tbl_brand WHERE brand='$ar'";
+            $result = $database->query($query);
+            if($result->num_rows > 0 ){
+                $row = $result->fetch_object();
+                $data['website'] = $row->website;
+                $data['youtube'] = $row->youtube;
+            }else{
+                $data['website'] = '#';
+                $data['youtube'] = '#';
+            }
+            $brand += 13;
+        }
+        if($counter === $alternate ){
+            $data['alternate'] = $ar;
+            $alternate += 13;
+        }
+        if($counter === $size ){
+            $data['size'] = $ar;
+            $size += 13;
+        }
+        if($counter === $Image0 ){
+            $data['image'] = "http://wtdusaonline.com/Portals/96/WebSyncImages/".$ar;
+            $Image0 += 13;
+        }
+        if($counter === $fet ){
+            $data['fet'] = $ar;
+            $fet += 13;
+        }
+        if($counter === $itemTypeId ){
+            $data['item_type_id'] = $ar;
+            $itemTypeId += 13;
+        }
+        if($counter === $ItemType ){
+            $data['item_type'] = $ar;
+            $ItemType += 13;
+        }
+        if($counter === $price ){
+            $data['price'] = $ar;
+            $price += 13;
+        }
+        if($counter === $pricenofet ){
+            $data['pricenofet'] = $ar;
+            $pricenofet += 13;
+        }
+        if($counter === $avail1121420 ){
+            $data['avail1121420'] = $ar;
+            $avail1121420 += 13;
+        }
+        if($counter === $isAvailable ){
+            $data['isAvailable'] = substr($ar,0,3);
+            $isAvailable += 13;
+            array_push($productstemp,$data);
+        }   
+        $counter++;
+
     }
-    if($counter === $alternate ){
-        $data['alternate'] = $ar;
-        $alternate += 13;
-    }
-    if($counter === $size ){
-        $data['size'] = $ar;
-        $size += 13;
-    }
-    if($counter === $Image0 ){
-        $data['image'] = "http://wtdusaonline.com/Portals/96/WebSyncImages/".$ar;
-        $Image0 += 13;
-    }
-    if($counter === $fet ){
-        $data['fet'] = $ar;
-        $fet += 13;
-    }
-    if($counter === $itemTypeId ){
-        $data['item_type_id'] = $ar;
-        $itemTypeId += 13;
-    }
-    if($counter === $ItemType ){
-        $data['item_type'] = $ar;
-        $ItemType += 13;
-    }
-    if($counter === $price ){
-        $data['price'] = $ar;
-        $price += 13;
-    }
-    if($counter === $pricenofet ){
-        $data['pricenofet'] = $ar;
-        $pricenofet += 13;
-    }
-    if($counter === $avail1121420 ){
-        $data['avail1121420'] = $ar;
-        $avail1121420 += 13;
-    }
-    if($counter === $isAvailable ){
-        $data['isAvailable'] = substr($ar,0,3);
-        $isAvailable += 13;
-        array_push($products,$data);
-    }   
-    $counter++;
+    return $productstemp;
 }
+// echo "ConditionCase:".$case;
+$productsTyreWise=null;
+if($case==1){
+
+    // echo "URL: ".$url;
+    curl_setopt($process, CURLOPT_URL, $url);
+    curl_setopt($process, CURLOPT_TIMEOUT, 300000);
+    curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+    curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
+    curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
+    curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    $return = curl_exec($process);
+    $info = curl_getinfo($process);
+    $arr = explode("\t", $return); 
+    array_shift($arr);
+
+    $products=filter($arr,$db);
+    // print_r($products);
+
+}else if ($case==2){    
+    if(isset($_GET['WheelDiameter'])&&isset($_GET['WheelWidth'])&&isset($_GET['WheelBoltCircle'])){
+        // echo "Invoked";
+
+        $urlWheel="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?WheelDiameter=".$_GET['WheelDiameter']."&WheelWidth=".$_GET['WheelWidth']."&WheelBoltCircle=".$_GET['WheelBoltCircle'];
+         curl_setopt($process, CURLOPT_URL, $urlWheel);
+        curl_setopt($process, CURLOPT_TIMEOUT, 300000);
+        curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+        curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
+        curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
+        curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        $return = curl_exec($process);
+        $info = curl_getinfo($process);
+        $arr1 = explode("\t", $return); 
+        // print_r($return);
+
+        array_shift($arr1);
+        if(isset($products)){
+            $products=array_merge(filter($arr1,$db),$products);
+        }else{
+            $products=filter($arr1,$db);
+
+        }
+    }
+
+    if(!empty($_GET['search'])){
+        $temp1=explode("/",$_GET['search']);
+        $tyreSizeA=$temp1[0];
+            // $temp2=explode("ZR",$temp1[1]);
+        $temp2=explode("R",$temp1[1]);
+        $tyreSizeB=$temp2[0];
+        $tyreSizeC=$temp2[1];
+
+
+
+        $urlTyres="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?TireSizeA=".$tyreSizeA."&TireSizeB=".$tyreSizeB."&TireSizeC=".$tyreSizeC;
+
+        // echo $urlTyres;
+        curl_setopt($process, CURLOPT_URL, $urlTyres);
+        curl_setopt($process, CURLOPT_TIMEOUT, 300000);
+        curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+        curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
+        curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
+        curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        $return = curl_exec($process);
+        $info = curl_getinfo($process);
+        $arr2 = explode("\t", $return); 
+        array_shift($arr2);
+        $productsTyreWise=array();
+        $productsTyreWise=filter($arr2,$db);        // print_r($arr2);
+        // $arr=array_merge($arr,$arr2);
+    }
+
+}
+
 if(curl_errno($process)){
     throw new Exception(curl_error($ch));
 }
@@ -156,11 +314,12 @@ curl_close($process);
     <div class="tires-upper full-left keywordSearchAdBanner"> </div> 
     <!--<div class="bread-crumb"> 
         <a href="index.php">Home</a> 
-        <a href="products.php" class="bread-crumb-middle-nolink"> Products</a>
+        <a href="products.php" class="bread-crumb-middle-nolink"> products</a>
         <span><?php //echo substr($search,strpos($search,'=')+1) ?></span>
     </div> -->
     <div class="clear"></div> 
-    <div id="cutOffTimeMessage" class="content"> 
+    <div id="cutOffTimeMessage" class="content">
+    <?php include 'topfilternav.php'; ?>
         <div class="cutOffTimeMsgParagraphs"> 
         <!--<p>Please contact your DC for cutoff and delivery times.</p> -->
         <!--<p>Local Plus cutoff is 05:00 PM 02/25/2019 for orders to be delivered 02/25/2019.</p> -->
@@ -200,6 +359,18 @@ curl_close($process);
 #single_image:hover .tooltiptext {
   visibility: visible;
 }
+/*.product-list-description .size-div .ply-div .localDC-div{
+    width: 100% !important;
+}*/
+/*.localDC-div{
+    width: 100% !important;
+}
+.ply-div{
+    width: 100% !important;
+}
+.size-di{
+    width: 100% !important;
+}*/
 </style>
  <!-- Search Results --> <br/> 
  <!--productList.tag--> 
@@ -227,21 +398,532 @@ curl_close($process);
                 <div id="grid-data"> 
                     <div class="row product-list-description" id="product-list-description-supplies"> 
                         <div class="grid-view-div grid-view-div-supplies" id="grid-view-div-supplies-1"> 
-                            <div class="product-table featured-product product_rows_container"> </div> 
-                            <script type="text/javascript">
-                                var co = 1;
-                            </script>
+                            <div class="product-table featured-product product_rows_container"> </div>
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                 
+                                    <script type="text/javascript">
+                                        var co = 1;
+                                    </script>
+                                    <?php 
+                                    if (empty($products)) {
+                                        echo '<p style="color:red;">Wheels Not Found !</p>';
+                                    }
+                                    if (!empty($products)) {
+                                        $counter = 500;
+                                        
+                                        function sortByOrder($a, $b) {
+                                            $ret=0;
+                                            if ((isset($a)&&isset($a['price'])&& !
+                                                (isset($b)&&isset($b['price']))))  {
+                                                $ret= $a['price'];
+                                                
+                                            }else if(!(isset($a)&&isset($a['price'])&&(isset($b)&&isset($b['price'])))){
+                                                $ret= $b['price'];
+                                            }
+                                            else if((isset($a)&&isset($a['price'])&& (isset($b)&&isset($b['price'])))){
+
+                                                $ret = (float)$a['price'] - (float)$b['price'];
+                                            }
+                                            return $ret;
+                                        }                                   
+                                        usort($products, 'sortByOrder');
+                                        foreach ($products as $product) {
+                                             // echo "call";
+                                            if(!empty($wheel_Finish)){
+                                            if(strpos($product['description'], $wheel_Finish)){
+
+
+                                            if ($product['avail1121420'] != 0 && $counter > 0) {
+                                                $counter--;
+                                            $rand = uniqid();
+                                            $availqty = (int)$product['avail1121420'];
+                                            $p = '';
+                                            if($availqty >= 100){
+                                                $p = "+";
+                                                $avail = 200;
+                                            }else if($availqty >= 50){
+                                                $p = "+";
+                                                $avail = 100;
+                                            }else if($availqty > 30){
+                                                $p = "+";
+                                                $avail = 50;
+                                            }else{
+                                                
+                                                $avail = $availqty;
+                                            }
+                                            
+                                            
+                                           
+                                    ?>
+                                    <div class="gridDiv" style="margin-left:20px;">
+                                        <div class="row"> 
+                                            <div class="col-md-6">
+                                                <div class="image-description" style="margin-top:30px;"> 
+                                                    <div class="corner-image"></div> 
+                                                    <div class="product-image" > 
+                                                        <a id="single_image" class="">
+                                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
+                                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
+                                                        </a> 
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row list-view-last-row"> 
+                                                    <div class="rebate-div"> </div> 
+                                                    <div class="noreturn-div"> 
+                                                        <div class="noreturn-text-empty"></div> 
+                                                    </div> 
+                                                    <div class="add-to-cart-div text-center pull-left "> 
+                                                        <span class="qty-content" id="add-to-cart-section-3842693"> 
+                                                            <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>"  />
+                                                        </span> 
+                                                        <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
+                                                        <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
+                                                    </div> 
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="size-div"> 
+                                                        <div class="first-div" title="Size">Size</div> 
+                                                        <div class="second-div"> <?=$product['size']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div" title="Product ">Product </div> 
+                                                        <div class="second-div"> <?=$product['catalog']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div" title="Manufacturer">Manufacturer</div> 
+                                                        <div class="second-div pull-left"> <?//$product['brand']?>
+                                                        <?php
+                                                        $query = "SELECT * FROM tbl_brand";
+                                                        $resultB = $db->query($query);
+                                                        $checkB = false;
+                                                        while($rowB = $resultB->fetch_object()){
+                                                            if($product['brand'] == $rowB->brand){
+                                                                
+                                                                ?>
+                                                                <img src="<?=$rowB->logo?>" width="100px">
+                                                                <?php
+                                                                $checkB = true;
+                                                            }
+                                                        }
+                                                        if($checkB == false){
+                                                            echo $product['brand'];
+                                                        }
+                                                        ?>
+                                                         </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="ply-div"> 
+                                                        <div class="first-div">Description</div> 
+                                                        <div class="second-div"><?=$product['description']?></div>
+                                                        <div class="first-div" title="Avail"></div>
+                                                        <div class="second-div"></div>
+                                    
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <div class="localDC-div"> 
+                                                        <div class="first-div"> </div>
+                                                        <div class="second-div text-right"> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div">FET</div>
+                                                        <div class="second-div text-right"> 
+                                                            <span class="red-color-bold"><?=$product['fet']?></span> 
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div">Price</div> 
+                                                        <div class="second-div text-right"> 
+                                                            <span class="green-color-bold">$<?=$product['price']?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div ">Avail echo</div>
+                                                        <div class="second-div text-right"> 
+                                                            <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                    </div> 
+                                            </div>
+                                        </div>
+                                        <!-- <div class="description-div pull-left" style="margin-top: 30px;"> 
+                                            <div class="row"> 
+                                                
+                                                
+                                                
+                                                <div class="fet-div pull-left"> 
+                                                    <div class="first-div pull-left cost-div ">Detail</div> 
+        <!--                                            <div class="second-div pull-left text-right cost-div ">-->
+        <!--                                                <a target="_blank" href="--><?//=$product['website']?><!--">Website</a>->
+        <!--                                            </div> ->
+        <!--                                            <div class="first-div pull-left">&nbsp;</div> ->
+                                                    <div class="second-div pull-left text-right cost-div"> 
+                                                        <a target="_blank" href="<?=$product['youtube']?>">Catalog</a>
+                                                    </div> 
+                                                    <!-- <div class="first-div pull-left">&nbsp;</div> 
+                                                    <div class="second-div pull-left text-right cost-div">
+                                                        <a target="_blank" href="product_comparsion.php?p=<?=$product['price']?>">Compare</a>
+                                                    </div> -->
+                                                    <!-- <div class="clear"></div>  ->
+                                                </div> 
+                                                <div class="clear"></div> 
+                                            </div> 
+                                             
+                                        </div> --> 
+                                        <div class="clear"></div> 
+                                    </div> 
+                                    <?php
+                                    
+                                            }
+                                        }
+                                    }else{
+
+
+                                            if ($product['avail1121420'] != 0 && $counter > 0) {
+                                                $counter--;
+                                            $rand = uniqid();
+                                            $availqty = (int)$product['avail1121420'];
+                                            $p = '';
+                                            if($availqty >= 100){
+                                                $p = "+";
+                                                $avail = 200;
+                                            }else if($availqty >= 50){
+                                                $p = "+";
+                                                $avail = 100;
+                                            }else if($availqty > 30){
+                                                $p = "+";
+                                                $avail = 50;
+                                            }else{
+                                                
+                                                $avail = $availqty;
+                                            }
+                                            
+                                            
+                                           
+                                    ?>
+                                    <div class="gridDiv" style="margin-left:20px;"> 
+                                        <div class="row"> 
+                                            <div class="col-md-3">
+                                                <div class="image-description" style="margin-top:30px;"> 
+                                                    <div class="corner-image"></div> 
+                                                    <div class="product-image" > 
+                                                        <a id="single_image" class="">
+                                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
+                                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
+                                                        </a> 
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                
+                                                <!-- <div class="clearfix"></div> -->
+                                                    <div class="size-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left" title="Size">Size</div> 
+                                                        <div class="second-div pull-left"> <?=$product['size']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Product ">Product </div> 
+                                                        <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
+                                                        <div class="second-div pull-left"> <?//$product['brand']?>
+                                                        <?php
+                                                        $query = "SELECT * FROM tbl_brand";
+                                                        $resultB = $db->query($query);
+                                                        $checkB = false;
+                                                        while($rowB = $resultB->fetch_object()){
+                                                            if($product['brand'] == $rowB->brand){
+                                                                
+                                                                ?>
+                                                                <img src="<?=$rowB->logo?>" width="100px">
+                                                                <?php
+                                                                $checkB = true;
+                                                            }
+                                                        }
+                                                        if($checkB == false){
+                                                            echo $product['brand'];
+                                                        }
+                                                        ?>
+                                                         </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="ply-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left">Description</div> 
+                                                        <div class="second-div pull-left"><?=$product['description']?></div>
+                                                        <div class="first-div pull-left" title="Avail"></div>
+                                                        <div class="second-div pull-left"></div>
+                                    
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <!-- <div class="clearfix"></div> -->
+                                                    <div class="localDC-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left"> </div>
+                                                        <div class="second-div text-right pull-left"> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">FET</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="red-color-bold"><?=$product['fet']?></span> 
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Price</div> 
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold">$<?=$product['price']?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Avail</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="row list-view-last-row pull-left"> 
+                                                        <div class="rebate-div"> </div> 
+                                                        <div class="noreturn-div pull-left"> 
+                                                            <div class="noreturn-text-empty"></div> 
+                                                        </div> 
+                                                        <div class="add-to-cart-div text-center pull-left "> 
+                                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
+                                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>"  />
+                                                            </span> 
+                                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
+                                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
+                                                        </div> 
+                                                    </div> 
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="clear"></div> 
+                                    </div> 
+                                    <?php
+                                            
+                                            }
+                                        $avail=0;
+                                    }
+                                        }
+                                        
+                                        $counter = 30;
+                                        // function sortByOrder($a, $b) {
+                                        //     return $a['price'] - $b['price'];
+                                        // }
+                                        
+                                        // usort($products, 'sortByOrder');
+                                        foreach ($products as $product) {
+                                            if(!empty($wheel_Finish)){
+                                            if(strpos($product['description'], $wheel_Finish)){
+                                            if ($product['avail1121420'] == 0 && $counter > 0) {
+                                                $counter--;
+                                                $rand = uniqid();
+
+                                    ?>
+                                    <div class="gridDiv">
+                                        <div class="row"> 
+                                            <div class="col-md-3">
+                                                <div class="image-description" style="margin-top:30px;"> 
+                                                    <div class="corner-image"></div> 
+                                                    <div class="product-image" > 
+                                                        <a id="single_image" class="">
+                                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
+                                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
+                                                        </a> 
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                
+                                                <!-- <div class="clearfix"></div> -->
+                                                    <div class="size-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left" title="Size">Size</div> 
+                                                        <div class="second-div pull-left"> <?=$product['size']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Product ">Product </div> 
+                                                        <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
+                                                        <div class="second-div pull-left"> <?//$product['brand']?>
+                                                        <?php
+                                                        $query = "SELECT * FROM tbl_brand";
+                                                        $resultB = $db->query($query);
+                                                        $checkB = false;
+                                                        while($rowB = $resultB->fetch_object()){
+                                                            if($product['brand'] == $rowB->brand){
+                                                                
+                                                                ?>
+                                                                <img src="<?=$rowB->logo?>" width="100px">
+                                                                <?php
+                                                                $checkB = true;
+                                                            }
+                                                        }
+                                                        if($checkB == false){
+                                                            echo $product['brand'];
+                                                        }
+                                                        ?>
+                                                         </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="ply-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left">Description</div> 
+                                                        <div class="second-div pull-left"><?=$product['description']?></div>
+                                                        <div class="first-div pull-left" title="Avail"></div>
+                                                        <div class="second-div pull-left"></div>
+                                    
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <!-- <div class="clearfix"></div> -->
+                                                    <div class="localDC-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left"> </div>
+                                                        <div class="second-div text-right pull-left"> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">FET</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="red-color-bold"><?=$product['fet']?></span> 
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Price</div> 
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold">$<?=$product['price']?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Avail</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="row list-view-last-row pull-left"> 
+                                                        <div class="rebate-div"> </div> 
+                                                        <div class="noreturn-div pull-left"> 
+                                                            <div class="noreturn-text-empty"></div> 
+                                                        </div> 
+                                                        <div class="add-to-cart-div text-center pull-left "> 
+                                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
+                                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>" />
+                                                            </span> 
+                                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
+                                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
+                                                        </div> 
+                                                    </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+
+                                            }
+                                        } 
+                                    }else{
+                                        if ($product['avail1121420'] == 0 && $counter > 0) {
+                                                $counter--;
+                                                $rand = uniqid();
+
+                                    ?>
+                                    <div class="gridDiv">
+                                        <div class="row"> 
+                                            <div class="col-md-3">
+                                                <div class="image-description" style="margin-top:30px;"> 
+                                                    <div class="corner-image"></div> 
+                                                    <div class="product-image" > 
+                                                        <a id="single_image" class="">
+                                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
+                                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
+                                                        </a> 
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                
+                                                <!-- <div class="clearfix"></div> -->
+                                                    <div class="size-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left" title="Size">Size</div> 
+                                                        <div class="second-div pull-left"> <?=$product['size']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Product ">Product </div> 
+                                                        <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
+                                                        <div class="second-div pull-left"> <?//$product['brand']?>
+                                                        <?php
+                                                        $query = "SELECT * FROM tbl_brand";
+                                                        $resultB = $db->query($query);
+                                                        $checkB = false;
+                                                        while($rowB = $resultB->fetch_object()){
+                                                            if($product['brand'] == $rowB->brand){
+                                                                
+                                                                ?>
+                                                                <img src="<?=$rowB->logo?>" width="100px">
+                                                                <?php
+                                                                $checkB = true;
+                                                            }
+                                                        }
+                                                        if($checkB == false){
+                                                            echo $product['brand'];
+                                                        }
+                                                        ?>
+                                                         </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="ply-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left">Description</div> 
+                                                        <div class="second-div pull-left"><?=$product['description']?></div>
+                                                        <div class="first-div pull-left" title="Avail"></div>
+                                                        <div class="second-div pull-left"></div>
+                                    
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <!-- <div class="clearfix"></div> -->
+                                                    <div class="localDC-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left"> </div>
+                                                        <div class="second-div text-right pull-left"> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">FET</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="red-color-bold"><?=$product['fet']?></span> 
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Price</div> 
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold">$<?=$product['price']?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Avail</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="row list-view-last-row pull-left"> 
+                                                        <small style="color: red">This item is out of stock</small>
+                                                        <div class="rebate-div"> </div> 
+                                                        <div class="noreturn-div pull-left"> 
+                                                            <div class="noreturn-text-empty"></div> 
+                                                        </div> 
+                                                        <div class="add-to-cart-div text-center pull-left "> 
+                                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
+                                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>" disabled/>
+                                                            </span> 
+                                                            <button class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" disabled> Add to cart </button>
+                                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
+                                                        </div> 
+                                                    </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    
                             <?php 
-                            if (!empty($products)) {
+                            if (empty($productsTyreWise)) {
+                                        echo '<p style="color:red;">Tires Not Found !</p>';
+                                    }
+                            if (isset($productsTyreWise)) {
                                 $counter = 500;
                                 
-                                function sortByOrder($a, $b) {
-                                    return $a['price'] - $b['price'];
-                                }
-                                
-                                usort($products, 'sortByOrder');
-                                foreach ($products as $product) {
-                                    // echo "call";
+                                                         
+                                usort($productsTyreWise, 'sortByOrder');
+                                foreach ($productsTyreWise as $product) {
+                                     // echo "call";
                                     if(!empty($wheel_Finish)){
                                     if(strpos($product['description'], $wheel_Finish)){
 
@@ -269,107 +951,94 @@ curl_close($process);
                                    
                             ?>
                             <div class="gridDiv" style="margin-left:20px;"> 
-                                <div class="image-description pull-left " style="margin-top:30px;"> 
-                                    <div class="corner-image"></div> 
-                                    <div class="product-image" > 
-                                     
-                                        <a id="single_image" class="">
-                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
-                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
-                                        </a> 
-                                    </div> 
-                                </div> 
-                                <div class="description-div pull-left" style="margin-top: 30px;"> 
-                                    <div class="row"> 
-                                        <div class="size-div pull-left"> 
-                                            <div class="first-div pull-left" title="Size">Sizee</div> 
-                                            <div class="second-div pull-left"> <?=$product['size']?> </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left" title="Product ">Product </div> 
-                                            <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
-                                            <div class="second-div pull-left"> <?//$product['brand']?>
-                                            <?php
-                                            $query = "SELECT * FROM tbl_brand";
-                                            $resultB = $db->query($query);
-                                            $checkB = false;
-                                            while($rowB = $resultB->fetch_object()){
-                                                if($product['brand'] == $rowB->brand){
-                                                    
-                                                    ?>
-                                                    <img src="<?=$rowB->logo?>" width="100px">
-                                                    <?php
-                                                    $checkB = true;
-                                                }
-                                            }
-                                            if($checkB == false){
-                                                echo $product['brand'];
-                                            }
-                                            ?>
-                                             </div> 
-                                            <div class="clear"></div> 
-                                        </div> 
-                                        <div class="ply-div pull-left"> 
-                                            <div class="first-div pull-left">Description</div> 
-                                            <div class="second-div pull-left"><?=$product['description']?></div>
-                                            <div class="first-div pull-left" title="Avail"></div>
-                                            <div class="second-div pull-left"></div>
-                        
-                                            <div class="clear"></div> 
-                                        </div> 
-                                        <div class="localDC-div pull-left"> 
-                                            <div class="first-div pull-left"> </div>
-                                            <div class="second-div pull-left text-right"> </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left">FET</div>
-                                            <div class="second-div pull-left text-right"> 
-                                                <span class="red-color-bold"><?=$product['fet']?></span> 
-                                            </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left">Price</div> 
-                                            <div class="second-div pull-left text-right"> 
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
-                                            </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left">Avail</div>
-                                            <div class="second-div pull-left text-right"> 
-                                                <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
-                                            </div> 
-                                            <div class="clear"></div> 
-                                        </div> 
-                                        <div class="fet-div pull-left"> 
-                                            <div class="first-div pull-left cost-div ">Detail</div> 
-<!--                                            <div class="second-div pull-left text-right cost-div ">-->
-<!--                                                <a target="_blank" href="--><?//=$product['website']?><!--">Website</a>-->
-<!--                                            </div> -->
-<!--                                            <div class="first-div pull-left">&nbsp;</div> -->
-                                            <div class="second-div pull-left text-right cost-div"> 
-                                                <a target="_blank" href="<?=$product['youtube']?>">Catalog</a>
-                                            </div> 
-                                            <div class="first-div pull-left">&nbsp;</div> 
-                                            <div class="second-div pull-left text-right cost-div">
-                                                <a target="_blank" href="product_comparsion.php?p=<?=$product['price']?>">Compare</a>
+                                <div class="row"> 
+                                            <div class="col-md-3">
+                                                <div class="image-description" style="margin-top:30px;"> 
+                                                    <div class="corner-image"></div> 
+                                                    <div class="product-image" > 
+                                                        <a id="single_image" class="">
+                                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
+                                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
+                                                        </a> 
+                                                    </div> 
+                                                </div>
                                             </div>
-                                            <div class="clear"></div> 
-                                        </div> 
-                                        <div class="clear"></div> 
-                                    </div> 
-                                    <div class="row list-view-last-row"> 
-                                        <div class="rebate-div pull-left"> </div> 
-                                        <div class="noreturn-div pull-left"> 
-                                            <div class="noreturn-text-empty"></div> 
-                                        </div> 
-                                        <div class="add-to-cart-div text-center pull-left "> 
-                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
-                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>"  />
-                                            </span> 
-                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
-                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
-                                        </div> 
-                                    </div> 
-                                </div> 
-                                <div class="clear"></div> 
+                                            <div class="col-md-9">
+                                                
+                                                <!-- <div class="clearfix"></div> -->
+                                                    <div class="size-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left" title="Size">Size</div> 
+                                                        <div class="second-div pull-left"> <?=$product['size']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Product ">Product </div> 
+                                                        <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
+                                                        <div class="second-div pull-left"> <?//$product['brand']?>
+                                                        <?php
+                                                        $query = "SELECT * FROM tbl_brand";
+                                                        $resultB = $db->query($query);
+                                                        $checkB = false;
+                                                        while($rowB = $resultB->fetch_object()){
+                                                            if($product['brand'] == $rowB->brand){
+                                                                
+                                                                ?>
+                                                                <img src="<?=$rowB->logo?>" width="100px">
+                                                                <?php
+                                                                $checkB = true;
+                                                            }
+                                                        }
+                                                        if($checkB == false){
+                                                            echo $product['brand'];
+                                                        }
+                                                        ?>
+                                                         </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="ply-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left">Description</div> 
+                                                        <div class="second-div pull-left"><?=$product['description']?></div>
+                                                        <div class="first-div pull-left" title="Avail"></div>
+                                                        <div class="second-div pull-left"></div>
+                                    
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <!-- <div class="clearfix"></div> -->
+                                                    <div class="localDC-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left"> </div>
+                                                        <div class="second-div text-right pull-left"> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">FET</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="red-color-bold"><?=$product['fet']?></span> 
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Price</div> 
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold">$<?=$product['price']?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Avail</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="row list-view-last-row pull-left"> 
+                                                        <div class="rebate-div"> </div> 
+                                                        <div class="noreturn-div pull-left"> 
+                                                            <div class="noreturn-text-empty"></div> 
+                                                        </div> 
+                                                        <div class="add-to-cart-div text-center pull-left "> 
+                                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
+                                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>"  />
+                                                            </span> 
+                                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
+                                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
+                                                        </div> 
+                                                    </div> 
+                                            </div>
+                                        </div>
                             </div> 
                             <?php
                             
@@ -401,112 +1070,99 @@ curl_close($process);
                                    
                             ?>
                             <div class="gridDiv" style="margin-left:20px;"> 
-                                <div class="image-description pull-left " style="margin-top:30px;"> 
-                                    <div class="corner-image"></div> 
-                                    <div class="product-image" > 
-                                     
-                                        <a id="single_image" class="">
-                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
-                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
-                                        </a> 
-                                    </div> 
-                                </div> 
-                                <div class="description-div pull-left" style="margin-top: 30px;"> 
-                                    <div class="row"> 
-                                        <div class="size-div pull-left"> 
-                                            <div class="first-div pull-left" title="Size">Size</div> 
-                                            <div class="second-div pull-left"> <?=$product['size']?> </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left" title="Product ">Product </div> 
-                                            <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
-                                            <div class="second-div pull-left"> <?//$product['brand']?>
-                                            <?php
-                                            $query = "SELECT * FROM tbl_brand";
-                                            $resultB = $db->query($query);
-                                            $checkB = false;
-                                            while($rowB = $resultB->fetch_object()){
-                                                if($product['brand'] == $rowB->brand){
-                                                    
-                                                    ?>
-                                                    <img src="<?=$rowB->logo?>" width="100px">
-                                                    <?php
-                                                    $checkB = true;
-                                                }
-                                            }
-                                            if($checkB == false){
-                                                echo $product['brand'];
-                                            }
-                                            ?>
-                                             </div> 
-                                            <div class="clear"></div> 
-                                        </div> 
-                                        <div class="ply-div pull-left"> 
-                                            <div class="first-div pull-left">Description</div> 
-                                            <div class="second-div pull-left"><?=$product['description']?></div>
-                                            <div class="first-div pull-left" title="Avail"></div>
-                                            <div class="second-div pull-left"></div>
-                        
-                                            <div class="clear"></div> 
-                                        </div> 
-                                        <div class="localDC-div pull-left"> 
-                                            <div class="first-div pull-left"> </div>
-                                            <div class="second-div pull-left text-right"> </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left">FET</div>
-                                            <div class="second-div pull-left text-right"> 
-                                                <span class="red-color-bold"><?=$product['fet']?></span> 
-                                            </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left">Price</div> 
-                                            <div class="second-div pull-left text-right"> 
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
-                                            </div> 
-                                            <div class="clear"></div> 
-                                            <div class="first-div pull-left">Avail</div>
-                                            <div class="second-div pull-left text-right"> 
-                                                <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
-                                            </div> 
-                                            <div class="clear"></div> 
-                                        </div> 
-                                        <div class="fet-div pull-left"> 
-                                            <div class="first-div pull-left cost-div ">Detail</div> 
-<!--                                            <div class="second-div pull-left text-right cost-div ">-->
-<!--                                                <a target="_blank" href="--><?//=$product['website']?><!--">Website</a>-->
-<!--                                            </div> -->
-<!--                                            <div class="first-div pull-left">&nbsp;</div> -->
-                                            <div class="second-div pull-left text-right cost-div"> 
-                                                <a target="_blank" href="<?=$product['youtube']?>">Catalog</a>
-                                            </div> 
-                                            <div class="first-div pull-left">&nbsp;</div> 
-                                            <div class="second-div pull-left text-right cost-div">
-                                                <a target="_blank" href="product_comparsion.php?p=<?=$product['price']?>">Compare</a>
+                                <div class="row"> 
+                                            <div class="col-md-3">
+                                                <div class="image-description" style="margin-top:30px;"> 
+                                                    <div class="corner-image"></div> 
+                                                    <div class="product-image" > 
+                                                        <a id="single_image" class="">
+                                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
+                                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
+                                                        </a> 
+                                                    </div> 
+                                                </div>
                                             </div>
-                                            <div class="clear"></div> 
-                                        </div> 
-                                        <div class="clear"></div> 
-                                    </div> 
-                                    <div class="row list-view-last-row"> 
-                                        <div class="rebate-div pull-left"> </div> 
-                                        <div class="noreturn-div pull-left"> 
-                                            <div class="noreturn-text-empty"></div> 
-                                        </div> 
-                                        <div class="add-to-cart-div text-center pull-left "> 
-                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
-                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>"  />
-                                            </span> 
-                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
-                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
-                                        </div> 
-                                    </div> 
-                                </div> 
-                                <div class="clear"></div> 
+                                            <div class="col-md-9">
+                                                
+                                                <!-- <div class="clearfix"></div> -->
+                                                    <div class="size-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left" title="Size">Size</div> 
+                                                        <div class="second-div pull-left"> <?=$product['size']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Product ">Product </div> 
+                                                        <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
+                                                        <div class="second-div pull-left"> <?//$product['brand']?>
+                                                        <?php
+                                                        $query = "SELECT * FROM tbl_brand";
+                                                        $resultB = $db->query($query);
+                                                        $checkB = false;
+                                                        while($rowB = $resultB->fetch_object()){
+                                                            if($product['brand'] == $rowB->brand){
+                                                                
+                                                                ?>
+                                                                <img src="<?=$rowB->logo?>" width="100px">
+                                                                <?php
+                                                                $checkB = true;
+                                                            }
+                                                        }
+                                                        if($checkB == false){
+                                                            echo $product['brand'];
+                                                        }
+                                                        ?>
+                                                         </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="ply-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left">Description</div> 
+                                                        <div class="second-div pull-left"><?=$product['description']?></div>
+                                                        <div class="first-div pull-left" title="Avail"></div>
+                                                        <div class="second-div pull-left"></div>
+                                    
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <!-- <div class="clearfix"></div> -->
+                                                    <div class="localDC-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left"> </div>
+                                                        <div class="second-div text-right pull-left"> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">FET</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="red-color-bold"><?=$product['fet']?></span> 
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Price</div> 
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold">$<?=$product['price']?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Avail</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="row list-view-last-row pull-left"> 
+                                                        <div class="rebate-div"> </div> 
+                                                        <div class="noreturn-div pull-left"> 
+                                                            <div class="noreturn-text-empty"></div> 
+                                                        </div> 
+                                                        <div class="add-to-cart-div text-center pull-left "> 
+                                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
+                                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>"  />
+                                                            </span> 
+                                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
+                                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
+                                                        </div> 
+                                                    </div> 
+                                            </div>
+                                        </div>
                             </div> 
                             <?php
                             
                                     }
-                                
+                                $avail=0;
                             }
                                 }
                                 
@@ -515,8 +1171,8 @@ curl_close($process);
                                 //     return $a['price'] - $b['price'];
                                 // }
                                 
-                                // usort($products, 'sortByOrder');
-                                foreach ($products as $product) {
+                                // usort($productsTyreWise, 'sortByOrder');
+                                foreach ($productsTyreWise as $product) {
                                     if(!empty($wheel_Finish)){
                                     if(strpos($product['description'], $wheel_Finish)){
                                     if ($product['avail1121420'] == 0 && $counter > 0) {
@@ -525,109 +1181,94 @@ curl_close($process);
 
                             ?>
                             <div class="gridDiv">
-                                <div class="image-description pull-left" style="margin-top:30px;">
-                                    <div class="corner-image"></div>
-                                    <div class="product-image" >
-
-                                        <a id="single_image" class="">
-                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" />
-                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="description-div pull-left">
-                                    <div class="row">
-                                        <div class="size-div pull-left">
-                                            <div class="first-div pull-left" title="Size">Size</div>
-                                            <div class="second-div pull-left"> <?=$product['size']?> </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left" title="Product ">Product </div>
-                                            <div class="second-div pull-left"> <?=$product['catalog']?> </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left" title="Manufacturer">Manufacturer</div>
-                                            <div class="second-div pull-left"> <?//$product['brand']?>
-                                            <?php
-                                            $query = "SELECT * FROM tbl_brand";
-                                            $resultB = $db->query($query);
-                                            $checkB = false;
-                                            while($rowB = $resultB->fetch_object()){
-                                                if($product['brand'] == $rowB->brand){
-                                                    
-                                                    ?>
-                                                    <img src="<?=$rowB->logo?>" width="100px">
-                                                    <?php
-                                                    $checkB = true;
-                                                }
-                                            }
-                                            if($checkB == false){
-                                                echo $product['brand'];
-                                            }
-                                            ?>
-                                            
-                                            
+                                <div class="row"> 
+                                            <div class="col-md-3">
+                                                <div class="image-description" style="margin-top:30px;"> 
+                                                    <div class="corner-image"></div> 
+                                                    <div class="product-image" > 
+                                                        <a id="single_image" class="">
+                                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
+                                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
+                                                        </a> 
+                                                    </div> 
+                                                </div>
                                             </div>
-                                            <div class="clear"></div>
-                                        </div>
-                                        <div class="ply-div pull-left">
-                                            <div class="first-div pull-left">Description</div>
-                                            <div class="second-div pull-left"><?=$product['description']?></div>
-                                            <div class="first-div pull-left" title="Avail"></div>
-                                            <div class="second-div pull-left"></div>
-
-                                            <div class="clear"></div>
-                                        </div>
-                                        <div class="localDC-div pull-left">
-                                            <div class="first-div pull-left"> </div>
-                                            <div class="second-div pull-left text-right"> </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left">FET</div>
-                                            <div class="second-div pull-left text-right">
-                                                <span class="red-color-bold"><?=$product['fet']?></span>
+                                            <div class="col-md-9">
+                                                
+                                                <!-- <div class="clearfix"></div> -->
+                                                    <div class="size-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left" title="Size">Size</div> 
+                                                        <div class="second-div pull-left"> <?=$product['size']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Product ">Product </div> 
+                                                        <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
+                                                        <div class="second-div pull-left"> <?//$product['brand']?>
+                                                        <?php
+                                                        $query = "SELECT * FROM tbl_brand";
+                                                        $resultB = $db->query($query);
+                                                        $checkB = false;
+                                                        while($rowB = $resultB->fetch_object()){
+                                                            if($product['brand'] == $rowB->brand){
+                                                                
+                                                                ?>
+                                                                <img src="<?=$rowB->logo?>" width="100px">
+                                                                <?php
+                                                                $checkB = true;
+                                                            }
+                                                        }
+                                                        if($checkB == false){
+                                                            echo $product['brand'];
+                                                        }
+                                                        ?>
+                                                         </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="ply-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left">Description</div> 
+                                                        <div class="second-div pull-left"><?=$product['description']?></div>
+                                                        <div class="first-div pull-left" title="Avail"></div>
+                                                        <div class="second-div pull-left"></div>
+                                    
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <!-- <div class="clearfix"></div> -->
+                                                    <div class="localDC-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left"> </div>
+                                                        <div class="second-div text-right pull-left"> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">FET</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="red-color-bold"><?=$product['fet']?></span> 
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Price</div> 
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold">$<?=$product['price']?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Avail</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="row list-view-last-row pull-left"> 
+                                                        <div class="rebate-div"> </div> 
+                                                        <div class="noreturn-div pull-left"> 
+                                                            <div class="noreturn-text-empty"></div> 
+                                                        </div> 
+                                                        <div class="add-to-cart-div text-center pull-left "> 
+                                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
+                                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>"  />
+                                                            </span> 
+                                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
+                                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
+                                                        </div> 
+                                                    </div> 
                                             </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left">Price</div>
-                                            <div class="second-div pull-left text-right">
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
-                                            </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left">Avail</div>
-                                            <div class="second-div pull-left text-right">
-                                                <span class="green-color-bold" style="color: #0015f9 !important;"><?=$product['avail1121420']?></span>
-                                            </div>
-                                            <div class="clear"></div>
                                         </div>
-                                        <div class="fet-div pull-left">
-                                            <div class="first-div pull-left cost-div ">Detail</div>
-<!--                                            <div class="second-div pull-left text-right cost-div ">-->
-<!--                                                <a target="_blank" href="--><?//=$product['website']?><!--">Website</a>-->
-<!--                                            </div>-->
-<!--                                            <div class="first-div pull-left">&nbsp;</div>-->
-                                            <div class="second-div pull-left text-right cost-div">
-                                                <a target="_blank" href="<?=$product['youtube']?>">Catalog</a>
-                                            </div>
-                                            <div class="first-div pull-left">&nbsp;</div>
-                                            <div class="second-div pull-left text-right cost-div">
-                                                <a target="_blank" href="product_comparsion.php?p=<?=$product['price']?>">Compare</a>
-                                            </div>
-                                            <div class="clear"></div>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div class="row list-view-last-row">
-                                        <div class="rebate-div pull-left"> </div>
-                                        <div class="noreturn-div pull-left">
-                                            <div class="noreturn-text-empty"></div>
-                                        </div>
-                                        <div class="add-to-cart-div text-center pull-left ">
-                                            <span class="qty-content" id="add-to-cart-section-3842693">
-                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" />
-                                            </span>
-                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
-                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
                             </div>
                             <?php
 
@@ -640,118 +1281,106 @@ curl_close($process);
 
                             ?>
                             <div class="gridDiv">
-                                <div class="image-description pull-left" style="margin-top:30px;">
-                                    <div class="corner-image"></div>
-                                    <div class="product-image" >
-
-                                        <a id="single_image" class="">
-                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" />
-                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="description-div pull-left">
-                                    <div class="row">
-                                        <div class="size-div pull-left">
-                                            <div class="first-div pull-left" title="Size">Size</div>
-                                            <div class="second-div pull-left"> <?=$product['size']?> </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left" title="Product ">Product </div>
-                                            <div class="second-div pull-left"> <?=$product['catalog']?> </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left" title="Manufacturer">Manufacturer</div>
-                                            <div class="second-div pull-left"> <?//$product['brand']?>
-                                            <?php
-                                            $query = "SELECT * FROM tbl_brand";
-                                            $resultB = $db->query($query);
-                                            $checkB = false;
-                                            while($rowB = $resultB->fetch_object()){
-                                                if($product['brand'] == $rowB->brand){
-                                                    
-                                                    ?>
-                                                    <img src="<?=$rowB->logo?>" width="100px">
-                                                    <?php
-                                                    $checkB = true;
-                                                }
-                                            }
-                                            if($checkB == false){
-                                                echo $product['brand'];
-                                            }
-                                            ?>
-                                            
-                                            
+                                <div class="row"> 
+                                            <div class="col-md-3">
+                                                <div class="image-description" style="margin-top:30px;"> 
+                                                    <div class="corner-image"></div> 
+                                                    <div class="product-image" > 
+                                                        <a id="single_image" class="">
+                                                            <img src="<?=$product['image']?>" class="" onclick="showBox('<?=$product['image']?>')" style="height:auto;" /> 
+                                                            <span class="tooltiptext"><img src="<?=$product['image']?>" style="width: 200px;"></span>
+                                                        </a> 
+                                                    </div> 
+                                                </div>
                                             </div>
-                                            <div class="clear"></div>
-                                        </div>
-                                        <div class="ply-div pull-left">
-                                            <div class="first-div pull-left">Description</div>
-                                            <div class="second-div pull-left"><?=$product['description']?></div>
-                                            <div class="first-div pull-left" title="Avail"></div>
-                                            <div class="second-div pull-left"></div>
-
-                                            <div class="clear"></div>
-                                        </div>
-                                        <div class="localDC-div pull-left">
-                                            <div class="first-div pull-left"> </div>
-                                            <div class="second-div pull-left text-right"> </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left">FET</div>
-                                            <div class="second-div pull-left text-right">
-                                                <span class="red-color-bold"><?=$product['fet']?></span>
+                                            <div class="col-md-9">
+                                                
+                                                <!-- <div class="clearfix"></div> -->
+                                                    <div class="size-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left" title="Size">Size</div> 
+                                                        <div class="second-div pull-left"> <?=$product['size']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Product ">Product </div> 
+                                                        <div class="second-div pull-left"> <?=$product['catalog']?> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left" title="Manufacturer">Manufacturer</div> 
+                                                        <div class="second-div pull-left"> <?//$product['brand']?>
+                                                        <?php
+                                                        $query = "SELECT * FROM tbl_brand";
+                                                        $resultB = $db->query($query);
+                                                        $checkB = false;
+                                                        while($rowB = $resultB->fetch_object()){
+                                                            if($product['brand'] == $rowB->brand){
+                                                                
+                                                                ?>
+                                                                <img src="<?=$rowB->logo?>" width="100px">
+                                                                <?php
+                                                                $checkB = true;
+                                                            }
+                                                        }
+                                                        if($checkB == false){
+                                                            echo $product['brand'];
+                                                        }
+                                                        ?>
+                                                         </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="ply-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left">Description</div> 
+                                                        <div class="second-div pull-left"><?=$product['description']?></div>
+                                                        <div class="first-div pull-left" title="Avail"></div>
+                                                        <div class="second-div pull-left"></div>
+                                    
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <!-- <div class="clearfix"></div> -->
+                                                    <div class="localDC-div" style="width: 100% !important"> 
+                                                        <div class="first-div pull-left"> </div>
+                                                        <div class="second-div text-right pull-left"> </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">FET</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="red-color-bold"><?=$product['fet']?></span> 
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Price</div> 
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold">$<?=$product['price']?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                        <div class="first-div pull-left">Avail</div>
+                                                        <div class="second-div text-right pull-left"> 
+                                                            <span class="green-color-bold" style="color:#0015f9 !important;"><?=$avail?><?php echo $p?></span>
+                                                        </div> 
+                                                        <div class="clear"></div> 
+                                                    </div>
+                                                    <div class="row list-view-last-row pull-left">
+                                                        <small style="color: red">This item is out of stock</small> 
+                                                        <div class="rebate-div"> </div> 
+                                                        <div class="noreturn-div pull-left"> 
+                                                            <div class="noreturn-text-empty"></div> 
+                                                        </div> 
+                                                        <div class="add-to-cart-div text-center pull-left "> 
+                                                            <span class="qty-content" id="add-to-cart-section-3842693"> 
+                                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" avail="<?=$avail?><?php echo $pp ?>" disabled/>
+                                                            </span> 
+                                                            <button class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" disabled> Add to cart </button>
+                                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a> 
+                                                        </div> 
+                                                    </div> 
                                             </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left">Price</div>
-                                            <div class="second-div pull-left text-right">
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
-                                            </div>
-                                            <div class="clear"></div>
-                                            <div class="first-div pull-left">Avail</div>
-                                            <div class="second-div pull-left text-right">
-                                                <span class="green-color-bold" style="color: #0015f9 !important;"><?=$product['avail1121420']?></span>
-                                            </div>
-                                            <div class="clear"></div>
                                         </div>
-                                        <div class="fet-div pull-left">
-                                            <div class="first-div pull-left cost-div ">Detail</div>
-<!--                                            <div class="second-div pull-left text-right cost-div ">-->
-<!--                                                <a target="_blank" href="--><?//=$product['website']?><!--">Website</a>-->
-<!--                                            </div>-->
-<!--                                            <div class="first-div pull-left">&nbsp;</div>-->
-                                            <div class="second-div pull-left text-right cost-div">
-                                                <a target="_blank" href="<?=$product['youtube']?>">Catalog</a>
-                                            </div>
-                                            <div class="first-div pull-left">&nbsp;</div>
-                                            <div class="second-div pull-left text-right cost-div">
-                                                <a target="_blank" href="product_comparsion.php?p=<?=$product['price']?>">Compare</a>
-                                            </div>
-                                            <div class="clear"></div>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div class="row list-view-last-row">
-                                        <div class="rebate-div pull-left"> </div>
-                                        <div class="noreturn-div pull-left">
-                                            <div class="noreturn-text-empty"></div>
-                                        </div>
-                                        <div class="add-to-cart-div text-center pull-left ">
-                                            <span class="qty-content" id="add-to-cart-section-3842693">
-                                                <input type="text"  placeholder="Qty" class="inputQuantity<?=$rand?>" name="quantity" id="<?=$product['catalog']?>,<?=$product['price']?>" data-id="<?=$rand?>" />
-                                            </span>
-                                            <a class="button theme-color small" id="add-to-cart-button<?=$rand?>" onclick="addToCart('<?=$rand?>');" > Add to cart </a>
-                                            <a href="#" id="ok<?=$rand?>" style="color: green; font-size: 18px; display: none;"><i class="fa fa-check"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clear"></div>
                             </div>
                             <?php
 
+                                        }
                                     }
-                            }
                                 }
                             }
                             ?>
-
+                            </div>
+                            </div>
+                        </div>
                     </div> 
                 </div> 
             </form> 
@@ -865,6 +1494,10 @@ function addToCart(id) {
     }
     if(qty > 20){
         alert("You can add only 20 items in one order.");
+        return;
+    }
+    if(avail == 0){
+        alert("This item is out of stock.");
         return;
     }
     $(this).attr("disabled", "disabled");

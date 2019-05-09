@@ -254,19 +254,19 @@ $(document).on('click','#search_type_btnb', function() {
 	$("#search_type_btna").show();
 });       
 
-$(document).on('change','#year', function() {
-    var year = $(this).val();
-    $("#make").empty();
-    $.ajax({
-        type:"GET",
-        url: "../admin/admin_ajax.php?year="+year,
-        success:function(response){
-          // alert(response);
-            $("#make").append("<option value=''>Make</option>");
-            $("#make").append(response);
-        }
-    });
-}); 
+// $(document).on('change','#year', function() {
+//     var year = $(this).val();
+//     $("#make").empty();
+//     $.ajax({
+//         type:"GET",
+//         url: "../admin/admin_ajax.php?year="+year,
+//         success:function(response){
+//           // alert(response);
+//             $("#make").append("<option value=''>Make</option>");
+//             $("#make").append(response);
+//         }
+//     });
+// }); 
 $(document).on('change','#make', function() {
     var make = $(this).val();
     var myear = $("#year").val();
@@ -306,7 +306,7 @@ $(document).on('click','#btnasearch', function() {
         type:"GET",
         url: "../admin/admin_ajax.php?trim="+trim+"&tmake="+tmake+"&tyear="+tyear+"&tmodel="+tmodel,
         success:function(response){
-            window.location.href="products.php?search="+response;
+            window.location.href="cars.php?search="+response;
         }
     });
 });

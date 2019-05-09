@@ -87,6 +87,9 @@ if (isset($_GET['make'])) {
  	$Wheelwidth = substr($wheelSize,1,strpos($wheelSize,'J')-1);
  	echo "&WheelWidth=".$Wheelwidth;
  	
+ 	$centerBolt = $row->Boltpattern;
+ 	echo "&WheelBoltCircle=".$centerBolt;
+ 	
  	
  }
 

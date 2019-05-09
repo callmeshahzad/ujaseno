@@ -7,8 +7,8 @@
                 <!--<img id="DefaultVehicleGuideComponent" src="images/leftDownCaret.png" class="image-icon-blue-question" >-->
                 <!--<img src="images/"  id="vehicle-down-arrow"> -->
             </h4>
-            <div id="vehicle-guide-heading-container" class="container" id="vehicle">
-                <form id="vehicle-guide-search-form" action="" method="post" style="    text-align: center;width: 84%;margin-top: 10px;">
+            <div id="vehicle-guide-heading-container" class="" id="vehicle">
+                <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;width: 84%;margin-top: 10px;">
                     <label id="fitment-message-label">
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Check Vehicle Fitment
                     </label>
@@ -391,13 +391,13 @@
                     <option selected="true" value="Make">Make</option>
                     <?php
                     
-                    /*$qm = "SELECT * FROM tbl_make where year_id='1'";
+                    $qm = "SELECT DISTINCT `Make` FROM car_detail ";
                     $rm = $db->query($qm);
                     if ($rm->num_rows > 0) {
                         while ($row = $rm->fetch_object()) {
-                            echo "<option value='".$row->id."'>".$row->make."</option>";
+                            echo "<option value='".$row->Make."'>".$row->Make."</option>";
                         }
-                    }*/
+                    }
                     ?>
                 </select>
                 <!--<label for="model"></label>-->

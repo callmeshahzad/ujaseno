@@ -9,7 +9,7 @@
                 <!--<img src="images/"  id="vehicle-down-arrow"> -->
             </h4>
             <div id="vehicle-guide-heading-container" class="" id="vehicle">
-                <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;width: 84%;margin-top: 10px;">
+                <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;width: 100%;margin-top: 10px;">
                     <label id="fitment-message-label">
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Check Vehicle Fitment
                     </label>

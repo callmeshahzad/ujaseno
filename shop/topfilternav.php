@@ -1,3 +1,4 @@
+<script type="text/javascript" src="js/topfilternav.js"></script>
 <div class="row">
     <div class="col-sm-12">
         <div class="accordion-wrap" id="leftpanel-VehicleSearch">
@@ -13,7 +14,7 @@
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Check Vehicle Fitment
                     </label>
                     <!--<label for="year"></label>-->
-                    <select id="a">
+                    <select id="top_a">
                         
                         <?php 
                         if(isset($_GET['search'])){
@@ -54,7 +55,7 @@
                         <option value="42">42</option>
                     </select>
                     <!--<label for="year"></label>-->
-                    <select id="b">
+                    <select id="top_b">
                         <?php 
                         if(isset($_GET['TireSizeB'])){
                             echo '<option value="'.$_GET["TireSizeB"].'" selected>'.$_GET["TireSizeB"].'</option>';
@@ -85,7 +86,7 @@
                         <option value="R">R</option>
                     </select>
                     <!--<label for="year"></label>-->
-                    <select id="c">
+                    <select id="top_c">
                         <?php 
                         if(isset($_GET['TireSizeC'])){
                             echo '<option value="'.$_GET["TireSizeC"].'" selected>'.$_GET["TireSizeC"].'</option>';
@@ -110,7 +111,7 @@
                     </select>
                     <br>
                     <label for="fitment-go-link" style="padding: 0px !important">
-                        <input id="tire_search" value="SEARCH" type="button" style="background:red !important;">
+                        <input id="top_tire_search" value="SEARCH" type="button" style="background:red !important;">
                     </label>
 
                 </form>
@@ -134,7 +135,7 @@
                     </label> 
                     
                     <!--<label for="year"></label>-->
-                    <select id="wdiameter" style="width: 60px;">
+                    <select id="top_wdiameter" style="width: 60px;">
                         <?php 
                         if(isset($_GET['search'])){
                             $type = substr($search,0,strpos($search,'&'));
@@ -157,7 +158,7 @@
                         <option value="24">24</option>
                         <option value="26">26</option>
                     </select> x
-                    <select id="wwidth" style="width: 60px;" >
+                    <select id="top_wwidth" style="width: 60px;" >
                         <?php 
                         if(isset($_GET['WheelWidth'])){
                             echo '<option value="'.$_GET["WheelWidth"].'" selected>'.$_GET["WheelWidth"].'</option>';
@@ -178,7 +179,7 @@
                         <option value="14">14</option>
                     </select>
                     <!--<label for="make"></label>-->
-                    <select id="omax">
+                    <select id="top_omax">
                         <option value="">Offset</option>
                         <?php 
                         if(isset($_GET['WheelOffsetMin'])){
@@ -244,7 +245,7 @@
                         <option value="+50">+50</option>
                     </select>-->
                     <!--<label for="model"></label>-->
-                    <select id="b_circle">
+                    <select id="top_b_circle">
                         <?php 
                         if(isset($_GET['WheelBoltCircle'])){
                             echo '<option value="'.$_GET["WheelBoltCircle"].'" selected>'.$_GET["WheelBoltCircle"].'</option>';
@@ -276,11 +277,11 @@
                         <option value="8x180">8x180</option>    
                     </select>
                     <!--<label ></label>-->
-                    <select id="c_bore">
+                    <select id="top_c_bore">
                         <option value="">Center Bore</option>
                     </select>
                     <!--<label ></label>-->
-                    <select id="finish">
+                    <select id="top_finish">
                         <option value="">Finish</option>
                         <option value="GLOSSY SILVER">GLOSSY SILVER</option>
                         <option value="MATTE BLACK">MATTE BLACK</option>
@@ -346,7 +347,7 @@
 
                     <br>
                     <label for="fitment-go-link" style="padding: 0px !important">
-                        <input id="wheel_search" value="SEARCH" type="button" style="background:red !important;">
+                        <input id="top_wheel_search" value="SEARCH" type="button" style="background:red !important;">
                     </label> 
                     
                 </form>
@@ -367,8 +368,8 @@
                 <label id="fitment-message-label">
                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Check Vehicle Fitment
                 </label>
-                <label for="year"></label>
-                <select id="year" name="year" id="year" class="year">
+                <label for="top_year"></label>
+                <select id="top_year" name="year" class="year">
                     <option selected="true" value="Year">Year</option>
                     <?php
                     $qYear = "SELECT DISTINCT `Year` FROM car_detail ORDER BY Year DESC";
@@ -387,7 +388,7 @@
 
                 </select>
                 <!--<label for="make"></label>-->
-                <select id="make" name="make" class="">
+                <select id="top_make" name="make" class="">
                     <option selected="true" value="Make">Make</option>
                     <?php
                     
@@ -401,16 +402,16 @@
                     ?>
                 </select>
                 <!--<label for="model"></label>-->
-                <select id="model" name="model"class="">
+                <select id="top_model" name="model"class="">
                     <option selected="true" value="Model">Model</option>
                 </select>
                 <!--<label for="trim"></label>-->
-                <select id="trim" name="trim" class="">
+                <select id="top_trim" name="trim" class="">
                     <option selected="true" value="Trim">Trim</option>
                 </select>
                 <br>
                 <label for="fitment-go-link" style="padding: 0px !important">
-                    <input id="btnasearch" value="SEARCH" type="button" style="background:red !important;">
+                    <input id="top_btnasearch" value="SEARCH" type="button" style="background:red !important;">
                 </label>
 
             </form>

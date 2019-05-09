@@ -132,8 +132,104 @@
 <script type="text/javascript" src="engine2/script.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-    $('#example').DataTable();
+    // $('#example').DataTable();
 });
+
+<?php 
+  if(isset($_GET['search'])){
+    $search=$_GET['search'];
+
+     $SearchTxt=explode('Search=', $_GET['search']);
+     if(isset($SearchTxt[1])){
+        echo "$('#qsearch').val('".$SearchTxt[1]."');\n";
+     }
+      if(isset($_GET['WheelDiameter'])){
+        echo "$('#wdiameter').val('".$_GET['WheelDiameter']."');\n";
+        // echo "$('#top_wdiameter').val('".$_GET['WheelDiameter']."');\n";
+      }
+      if(isset($_GET['WheelWidth'])){
+        echo "$('#wwidth').val('".$_GET['WheelWidth']."');\n";
+        // echo "$('#top_wwidth').val('".$_GET['WheelWidth']."');\n";
+      }
+      if(isset($_GET['WheelBoltCircle'])){
+        echo "$('#b_circle').val('".$_GET['WheelBoltCircle']."');\n";
+        echo "$('#top_b_circle').val('".$_GET['WheelBoltCircle']."');\n";
+
+      }
+      if(isset($_GET['WheelCenterBore'])){
+        echo "$('#c_bore').val('".$_GET['WheelCenterBore']."');\n";
+        echo "$('#top_c_bore').val('".$_GET['WheelCenterBore']."');\n";
+      }
+      if(isset($_GET['WheelOffsetMin'])){
+        echo "$('#omax').val('".$_GET['WheelOffsetMin']."');\n";
+      } 
+      if(isset($_GET['WheelFinish'])){
+        echo "$('#finish').val('".$_GET['WheelFinish']."');\n";
+        echo "$('#top_finish').val('".$_GET['WheelFinish']."');\n";
+      }
+
+       if(isset($_GET['Year'])){
+        echo "$('#year').val('".$_GET['Year']."');\n";
+        echo "$('#top_year').val('".$_GET['Year']."');\n";
+      }
+
+      if(isset($_GET['Make'])){
+        echo "$('#make').val('".$_GET['Make']."');\n";
+        echo "$('#top_make').val('".$_GET['Make']."');\n";
+      }
+
+      if(isset($_GET['Model'])&&isset($_GET['Make'])&&isset($_GET['Year'])){
+        echo "loadModel('".$_GET['Make']."','".$_GET['Year']."');\n";
+        echo "setTimeout(function(){ $('#model').val('".$_GET['Model']."'); },1000);\n";
+
+
+        // echo "top_loadModel('".$_GET['Make']."','".$_GET['Year']."');\n";
+        echo "setTimeout(function(){ $('#top_model').val('".$_GET['Model']."'); },1000);\n";
+
+       if(isset($_GET['Trim'])){
+        echo "laodTrim('".$_GET['Model']."','".$_GET['Make']."','".$_GET['Year']."');\n";
+        echo "setTimeout(function(){ $('#trim').val('".$_GET['Trim']." ');},100);\n";
+
+        // echo "top_laodTrim('".$_GET['Model']."','".$_GET['Make']."','".$_GET['Year']."');\n";
+        echo "setTimeout(function(){ $('#top_trim').val('".$_GET['Trim']." ');},1000);\n";
+       }
+      }
+
+      
+
+      if (strpos($search, '/')&&strpos($search, 'R')) {
+          $temp1=explode("/",$_GET['search']);
+          $tyreSizeA=$temp1[0];
+              // $temp2=explode("ZR",$temp1[1]);
+          $temp2=explode("R",$temp1[1]);
+          $tyreSizeB=$temp2[0];
+          $tyreSizeC=$temp2[1];
+
+          echo "$('#a').val('".$tyreSizeA."');\n";
+          echo "$('#b').val('".$tyreSizeB."');\n";
+          echo "$('#c').val('".$tyreSizeC."');\n";
+
+
+          echo "$('#top_a').val('".$tyreSizeA."');\n";
+          echo "$('#top_b').val('".$tyreSizeB."');\n";
+          echo "$('#top_c').val('".$tyreSizeC."');\n";
+      }else{
+        if(isset($_GET['TireSizeA'])){
+          echo "$('#a').val('".$_GET['TireSizeA']."');\n";
+          echo "$('#top_a').val('".$_GET['TireSizeA']."');\n";
+        }
+        if(isset($_GET['TireSizeB'])){
+          echo "$('#b').val('".$_GET['TireSizeB']."');\n";
+          echo "$('#top_b').val('".$_GET['TireSizeB']."');\n";
+        }
+        if(isset($_GET['TireSizeA'])){
+          echo "$('#c').val('".$_GET['TireSizeC']."');\n";
+          echo "$('#top_c').val('".$_GET['TireSizeC']."');\n";
+        }
+       
+      }
+  }
+?>
 
 $("#qsearch").on('keypress',function (e) {
     if(e.which == 13) {
@@ -267,34 +363,53 @@ $(document).on('click','#search_type_btnb', function() {
 //         }
 //     });
 // }); 
-$(document).on('change','#make', function() {
-    var make = $(this).val();
-    var myear = $("#year").val();
-    $("#model").empty();
-    $.ajax({
+
+function loadModel(make,myear){
+  $("#model").empty();
+   $("#top_model").empty();
+
+  $.ajax({
         type:"GET",
         url: "../admin/admin_ajax.php?make="+make+"&myear="+myear,
         success:function(response){
-        	// alert(response);
+          // alert(response);
             $("#model").append("<option value=''>Model</option>");
             $("#model").append(response);
+
+            $("#top_model").append("<option value=''>Model</option>");
+            $("#top_model").append(response);
         }
     });
-});  
-$(document).on('change','#model', function() {
-    var model = $(this).val();
-    var momake = $("#make").val();
-    var moyear = $("#year").val();
-    $("#trim").empty();
-    let url="/admin/admin_ajax.php?momake="+momake+"&moyear="+moyear+"&model="+model;
+}
+$(document).on('change','#make', function() {
+    var make = $(this).val();
+    var myear = $("#year").val();
+    loadModel(make,myear);    
+}); 
+
+function laodTrim(model,momake,moyear){
+  $("#trim").empty();  
+  $("#top_trim").empty();
+
+  let url="/admin/admin_ajax.php?momake="+momake+"&moyear="+moyear+"&model="+model;
     $.ajax({
         type:"GET",
         url: "../admin/admin_ajax.php?momake="+momake+"&moyear="+moyear+"&model="+model,
         success:function(response){
             $("#trim").append("<option value=''>Trim</option>");
             $("#trim").append(response);
+
+
+            $("#top_trim").append("<option value=''>Trim</option>");
+            $("#top_trim").append(response);
         }
     });
+} 
+$(document).on('change','#model', function() {
+    var model = $(this).val();
+    var momake = $("#make").val();
+    var moyear = $("#year").val();
+    laodTrim(model,momake,moyear);
 });  
 $(document).on('click','#btnasearch', function() {
     var trim = $("#trim").val();
@@ -306,7 +421,7 @@ $(document).on('click','#btnasearch', function() {
         type:"GET",
         url: "../admin/admin_ajax.php?trim="+trim+"&tmake="+tmake+"&tyear="+tyear+"&tmodel="+tmodel,
         success:function(response){
-            window.location.href="cars.php?search="+response;
+            window.location.href="cars.php?search="+response+"&Year="+tyear+"&Make="+tmake+"&Model="+tmodel+"&Trim="+trim;
         }
     });
 });

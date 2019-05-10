@@ -44,7 +44,7 @@ box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75)">
                     </div>
                     <div class="form-group">
                         <label>State License No.</label>
-                        <input type="text" id="license" name="license" class="form-control">
+                        <input type="text" id="license" name="license" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>City</label>

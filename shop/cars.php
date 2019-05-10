@@ -178,8 +178,13 @@ function filter($arrParam,$database)
             $size += 13;
         }
         if($counter === $Image0 ){
-            $data['image'] = "http://wtdusaonline.com/Portals/96/WebSyncImages/".$ar;
-            $Image0 += 13;
+            if ($ar == '') {
+                $data['image'] = "../images/demo.png";
+                $Image0 += 13;    
+            }else{
+                $data['image'] = "http://wtdusaonline.com/Portals/96/WebSyncImages/".$ar;
+                $Image0 += 13;
+            }
         }
         if($counter === $fet ){
             $data['fet'] = $ar;

@@ -536,7 +536,7 @@ curl_close($process);
                                     </script>
                                     <?php 
                                     if (empty($products)) {
-                                        echo '<p style="color:red;">Wheels Not Found !</p>';
+                                        echo '<p style="color:red;margin-left:30px;margin-top:10px;">Wheels Not Found !</p>';
                                     }
                                     if (!empty($products)) {
                                         $counter = 500;
@@ -1044,7 +1044,7 @@ curl_close($process);
                                     
                             <?php 
                             if (empty($productsTyreWise)) {
-                                        echo '<p style="color:red;">Tires Not Found !</p>';
+                                        echo '<p style="color:red;margin-left:30px;margin-top:10px;">Tires Not Found !</p>';
                                     }
                             if (isset($productsTyreWise)) {
                                 $counter = 500;

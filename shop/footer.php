@@ -180,18 +180,18 @@
 
       if(isset($_GET['Model'])&&isset($_GET['Make'])&&isset($_GET['Year'])){
         echo "loadModel('".$_GET['Make']."','".$_GET['Year']."');\n";
-        echo "setTimeout(function(){ $('#model').val('".$_GET['Model']."'); },2000);\n";
+        echo "setTimeout(function(){ $('#model').val('".$_GET['Model']."'); },3000);\n";
 
 
         // echo "top_loadModel('".$_GET['Make']."','".$_GET['Year']."');\n";
-        echo "setTimeout(function(){ $('#top_model').val('".$_GET['Model']."'); },2000);\n";
+        echo "setTimeout(function(){ $('#top_model').val('".$_GET['Model']."'); },3000);\n";
 
        if(isset($_GET['Trim'])){
         echo "laodTrim('".$_GET['Model']."','".$_GET['Make']."','".$_GET['Year']."');\n";
-        echo "setTimeout(function(){ $('#trim').val('".$_GET['Trim']." ');},2000);\n";
+        echo "setTimeout(function(){ $('#trim').val('".$_GET['Trim']." ');},6000);\n";
 
         // echo "top_laodTrim('".$_GET['Model']."','".$_GET['Make']."','".$_GET['Year']."');\n";
-        echo "setTimeout(function(){ $('#top_trim').val('".$_GET['Trim']." ');},2000);\n";
+        echo "setTimeout(function(){ $('#top_trim').val('".$_GET['Trim']." ');},6000);\n";
        }
       }
 
@@ -205,12 +205,12 @@
           $tyreSizeB=$temp2[0];
           $tyreSizeC=$temp2[1];
 
-          echo "$('#a').val('".$tyreSizeA."');\n";
+          echo "debugger; $('#a').val('".$tyreSizeA."');\n";
           echo "$('#b').val('".$tyreSizeB."');\n";
           echo "$('#c').val('".$tyreSizeC."');\n";
 
 
-          echo "$('#top_a').val('".$tyreSizeA."');\n";
+          echo " debugger;  $('#top_a').val('".$tyreSizeA."');\n";
           echo "$('#top_b').val('".$tyreSizeB."');\n";
           echo "$('#top_c').val('".$tyreSizeC."');\n";
       }else{

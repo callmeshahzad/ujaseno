@@ -221,7 +221,8 @@ function filter($arrParam,$database)
     return $productstemp;
 }
 // echo "ConditionCase:".$case;
-$productsTyreWise=null;
+$productsTyreWise=array();
+$products=array();
 if($case==1){
 
     // echo "URL: ".$url;
@@ -241,61 +242,184 @@ if($case==1){
     // print_r($products);
 
 }else if ($case==2){    
-    if(isset($_GET['WheelDiameter'])&&isset($_GET['WheelWidth'])&&isset($_GET['WheelBoltCircle'])){
-        // echo "Invoked";
 
-        $urlWheel="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?WheelDiameter=".$_GET['WheelDiameter']."&WheelWidth=".$_GET['WheelWidth']."&WheelBoltCircle=".$_GET['WheelBoltCircle'];
-         curl_setopt($process, CURLOPT_URL, $urlWheel);
-        curl_setopt($process, CURLOPT_TIMEOUT, 300000);
-        curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
-        curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
-        curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
-        curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        $return = curl_exec($process);
-        $info = curl_getinfo($process);
-        $arr1 = explode("\t", $return); 
-        // print_r($return);
 
-        array_shift($arr1);
-        if(isset($products)){
-            $products=array_merge(filter($arr1,$db),$products);
-        }else{
-            $products=filter($arr1,$db);
+    // if(isset($_GET['WheelDiameter'])&&isset($_GET['WheelWidth'])&&isset($_GET['WheelBoltCircle'])){
+    //     // echo "Invoked";
 
+    //     $urlWheel="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?WheelDiameter=".$_GET['WheelDiameter']."&WheelWidth=".$_GET['WheelWidth']."&WheelBoltCircle=".$_GET['WheelBoltCircle'];
+    //      curl_setopt($process, CURLOPT_URL, $urlWheel);
+    //     curl_setopt($process, CURLOPT_TIMEOUT, 300000);
+    //     curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
+    //     curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+    //     curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
+    //     curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
+    //     curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    //     $return = curl_exec($process);
+    //     $info = curl_getinfo($process);
+    //     $arr1 = explode("\t", $return); 
+    //     // print_r($return);
+
+    //     array_shift($arr1);
+    //     if(isset($products)){
+    //         $products=array_merge(filter($arr1,$db),$products);
+    //     }else{
+    //         $products=filter($arr1,$db);
+
+    //     }
+    // }
+
+    // if(!empty($_GET['search'])){
+    //     $temp1=explode("/",$_GET['search']);
+    //     $tyreSizeA=$temp1[0];
+    //         // $temp2=explode("ZR",$temp1[1]);
+    //     $temp2=explode("R",$temp1[1]);
+    //     $tyreSizeB=$temp2[0];
+    //     $tyreSizeC=$temp2[1];
+
+
+
+    //     $urlTyres="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?TireSizeA=".$tyreSizeA."&TireSizeB=".$tyreSizeB."&TireSizeC=".$tyreSizeC;
+
+    //     // echo $urlTyres;
+    //     curl_setopt($process, CURLOPT_URL, $urlTyres);
+    //     curl_setopt($process, CURLOPT_TIMEOUT, 300000);
+    //     curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
+    //     curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+    //     curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
+    //     curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
+    //     curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    //     $return = curl_exec($process);
+    //     $info = curl_getinfo($process);
+    //     $arr2 = explode("\t", $return); 
+    //     array_shift($arr2);
+    //     $productsTyreWise=array();
+    //     $productsTyreWise=filter($arr2,$db);        // print_r($arr2);
+    //     // $arr=array_merge($arr,$arr2);
+    // }
+
+
+        $q = "SELECT DISTINCT Tiresize FROM car_detail WHERE Make='".$_GET['Make']."' AND Year='".$_GET['Year']."' AND Model='".$_GET['Model']."' AND Version='".$_GET['Trim']."' ";
+        $r = $db->query($q);
+        //  echo "<script>alert('".count($r)."') </script>";
+        // echo $q;
+        // echo "<pre>";
+        $lastTrim="";
+        $lastWheeldiameter="";
+        $lastWheelwidth="";
+        $lastcenterBolt="";
+        if ($r->num_rows > 0 ) {
+            while ($row = $r->fetch_object()) {
+                $trim = $row->Tiresize;
+                        // echo $trim;
+                $trimm=substr($trim,7,9);
+                        // echo 'TireSizeA='.$row->tsizea.'&TireSizeB='.$row->tsizeb.'&TireSizeC='.$row->tsizec;
+                // $wheelSize = $row->Rimsize;
+                // $lastWheeldiameter = substr($wheelSize,strpos($wheelSize,'x')+1,2);
+
+                // $lastWheelwidth = substr($wheelSize,1,strpos($wheelSize,'J')-1);
+
+                // $lastcenterBolt = $row->Boltpattern;
+
+                $temp1=explode("/",$trimm);
+                $tyreSizeA=$temp1[0];
+                    // $temp2=explode("ZR",$temp1[1]);
+                $temp2=explode("R",$temp1[1]);
+                $tyreSizeB=$temp2[0];
+                $tyreSizeC=$temp2[1];
+        
+                $urlTyres="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?TireSizeA=".$tyreSizeA."&TireSizeB=".$tyreSizeB."&TireSizeC=".$tyreSizeC;
+                
+                // echo "api url:".$urlTyres."\n";
+                // echo $urlTyres;
+                curl_setopt($process, CURLOPT_URL, $urlTyres);
+                curl_setopt($process, CURLOPT_TIMEOUT, 300000);
+                curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
+                curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+                curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
+                curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
+                curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                $return = curl_exec($process);
+                $info = curl_getinfo($process);
+                $arr2 = explode("\t", $return); 
+                array_shift($arr2);
+                // $productsTyreWise=array();
+                
+                // sleep(0.1);
+            
+                // set_time_limit(3);
+                
+                $productsTyreWise=array_merge(filter($arr2,$db), $productsTyreWise);   
+     // print_r($arr2);
+            }
+                    
         }
-    }
 
-    if(!empty($_GET['search'])){
-        $temp1=explode("/",$_GET['search']);
-        $tyreSizeA=$temp1[0];
-            // $temp2=explode("ZR",$temp1[1]);
-        $temp2=explode("R",$temp1[1]);
-        $tyreSizeB=$temp2[0];
-        $tyreSizeC=$temp2[1];
+        // echo $lastTrim;
+        // echo "&WheelDiameter=".$lastWheeldiameter;
+        // echo "&WheelWidth=".$lastWheelwidth;
+        // echo "&WheelBoltCircle=".$lastcenterBolt;
 
-
-
-        $urlTyres="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?TireSizeA=".$tyreSizeA."&TireSizeB=".$tyreSizeB."&TireSizeC=".$tyreSizeC;
-
-        // echo $urlTyres;
-        curl_setopt($process, CURLOPT_URL, $urlTyres);
-        curl_setopt($process, CURLOPT_TIMEOUT, 300000);
-        curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
-        curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
-        curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
-        curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        $return = curl_exec($process);
-        $info = curl_getinfo($process);
-        $arr2 = explode("\t", $return); 
-        array_shift($arr2);
-        $productsTyreWise=array();
-        $productsTyreWise=filter($arr2,$db);        // print_r($arr2);
+      
         // $arr=array_merge($arr,$arr2);
-    }
+    
+
+        $q = "SELECT DISTINCT Rimsize,Boltpattern FROM car_detail WHERE Make='".$_GET['Make']."' AND Year='".$_GET['Year']."' AND Model='".$_GET['Model']."' AND Version='".$_GET['Trim']."' ";
+        $r = $db->query($q);
+        //  echo "<script>alert('".count($r)."') </script>";
+        // echo $q;
+        // echo "<pre>";
+        $lastTrim="";
+        $lastWheeldiameter="";
+        $lastWheelwidth="";
+        $lastcenterBolt="";
+        if ($r->num_rows > 0 ) {
+            while ($row = $r->fetch_object()) {
+                // $trim = $row->Tiresize;
+                        // echo $trim;
+                // $lastTrim=substr($trim,7,9);
+                        // echo 'TireSizeA='.$row->tsizea.'&TireSizeB='.$row->tsizeb.'&TireSizeC='.$row->tsizec;
+                $wheelSize = $row->Rimsize;
+                $wheeldiameter = substr($wheelSize,strpos($wheelSize,'x')+1,2);
+
+                $wheelwidth = substr($wheelSize,1,strpos($wheelSize,'J')-1);
+
+                $wheelcenterBolt = $row->Boltpattern;
+
+
+                $urlWheel="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?wheeldiameter=".$wheeldiameter."&wheelwidth=".$wheelwidth."&wheelboltcircle=".$wheelcenterBolt;
+                // echo "\n".$urlWheel."\n";
+                
+                curl_setopt($process, CURLOPT_URL, $urlWheel);
+                curl_setopt($process, CURLOPT_TIMEOUT, 300000);
+                curl_setopt($process, CURLOPT_RETURNTRANSFER, TRUE);
+                curl_setopt($process, CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+                curl_setopt($process, CURLOPT_FOLLOWLOCATION,TRUE);
+                curl_setopt($process, CURLOPT_USERPWD, $username . ":" . $password);
+                curl_setopt($process, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                $return = curl_exec($process);
+                $info = curl_getinfo($process);
+                $arr1 = explode("\t", $return); 
+                // print_r($return);
+        
+                array_shift($arr1);
+
+                // set_time_limit(3);
+                // sleep(0.1);
+                $products=array_merge(filter($arr1,$db),$products);
+                
+
+            }
+                    
+        }
+       
+
+    
 
 }
+
+
+
 
 if(curl_errno($process)){
     throw new Exception(curl_error($ch));
@@ -412,7 +536,7 @@ curl_close($process);
                                     </script>
                                     <?php 
                                     if (empty($products)) {
-                                        echo '<p style="color:red;">Wheels Not Found !</p>';
+                                        echo '<p style="color:red;margin-left:30px;margin-top:10px;">Wheels Not Found !</p>';
                                     }
                                     if (!empty($products)) {
                                         $counter = 500;
@@ -920,7 +1044,7 @@ curl_close($process);
                                     
                             <?php 
                             if (empty($productsTyreWise)) {
-                                        echo '<p style="color:red;">Tires Not Found !</p>';
+                                        echo '<p style="color:red;margin-left:30px;margin-top:10px;">Tires Not Found !</p>';
                                     }
                             if (isset($productsTyreWise)) {
                                 $counter = 500;

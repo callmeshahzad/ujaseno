@@ -68,27 +68,56 @@ if (isset($_GET['make'])) {
 	$year = $_GET['tyear'];
  	// $q  = "SELECT * FROM tbl_car_detail WHERE trim_id= '$trim'";
  	$q = "SELECT * FROM car_detail WHERE Make='$make' AND Year='$year' AND Model='$model' AND Version='$trim' ";
- 	$r = $db->query($q);
- 	$row = $r->fetch_object();
+	 $r = $db->query($q);
+	//  echo "<script>alert('".count($r)."') </script>";
+	// echo $q;
+	// echo "<pre>";
+	$lastTrim="";
+	$lastWheeldiameter="";
+	$lastWheelwidth="";
+	$lastcenterBolt="";
+	if ($r->num_rows > 0 ) {
+		while ($row = $r->fetch_object()) {
+			$trim = $row->Tiresize;
+					// echo $trim;
+			$lastTrim=substr($trim,7,9);
+					// echo 'TireSizeA='.$row->tsizea.'&TireSizeB='.$row->tsizeb.'&TireSizeC='.$row->tsizec;
+			$wheelSize = $row->Rimsize;
+			$lastWheeldiameter = substr($wheelSize,strpos($wheelSize,'x')+1,2);
 
- 	// tire size
- 	$trim = $row->Tiresize;
- 	$ttrim = substr($trim,7,9);
- 	// echo "Search=".$ttrim;
- 	echo $ttrim;
- 	// $Vdata =1;
- 	// echo "Vdata=".$Vdata;
- 	// echo "&TT=".$ttrim;
+			$lastWheelwidth = substr($wheelSize,1,strpos($wheelSize,'J')-1);
 
- 	//wheel size 
- 	$wheelSize = $row->Rimsize;
- 	$Wheeldiameter = substr($wheelSize,strpos($wheelSize,'x')+1,2);
- 	echo "&WheelDiameter=".$Wheeldiameter;
- 	$Wheelwidth = substr($wheelSize,1,strpos($wheelSize,'J')-1);
- 	echo "&WheelWidth=".$Wheelwidth;
+			$lastcenterBolt = $row->Boltpattern;
+		}
+				
+	}
+	echo $lastTrim;
+	echo "&WheelDiameter=".$lastWheeldiameter;
+	echo "&WheelWidth=".$lastWheelwidth;
+	echo "&WheelBoltCircle=".$lastcenterBolt;
+
+
+	// echo "</pre>";
+ 	// $row = $r->fetch_object();
+
+ 	// // tire size
+ 	// $trim = $row->Tiresize;
+ 	// $ttrim = substr($trim,7,9);
+ 	// // echo "Search=".$ttrim;
+ 	// echo $ttrim;
+ 	// // $Vdata =1;
+ 	// // echo "Vdata=".$Vdata;
+ 	// // echo "&TT=".$ttrim;
+
+ 	// //wheel size 
+ 	// $wheelSize = $row->Rimsize;
+ 	// $Wheeldiameter = substr($wheelSize,strpos($wheelSize,'x')+1,2);
+ 	// echo "&WheelDiameter=".$Wheeldiameter;
+ 	// $Wheelwidth = substr($wheelSize,1,strpos($wheelSize,'J')-1);
+ 	// echo "&WheelWidth=".$Wheelwidth;
  	
- 	$centerBolt = $row->Boltpattern;
- 	echo "&WheelBoltCircle=".$centerBolt;
+ 	// $centerBolt = $row->Boltpattern;
+ 	// echo "&WheelBoltCircle=".$centerBolt;
  	
  	
  }

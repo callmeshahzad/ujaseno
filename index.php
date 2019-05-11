@@ -102,7 +102,7 @@ if (isset($_GET['error'])) {
 		                        	<p>Having trouble logging in? Call Online Customer Care at  (602) 875-8335 for assistance.</p>
 		                        	<p>Our Customer Care Team is available:<br>
 		                        		Monday–Friday 8:00 AM to 6:30 PM EST<br>
-		                        	Saturday 8:00 AM to 6:00 PM EST</p>
+		                        	    Saturday 8:00 AM to 6:00 PM EST</p>
 		                        	<a href="index.php#form-section" type="button" class="btn btn-primary" style="position: absolute;left: 15px;bottom: 15px;width: 150px;background: #0015f9;border: #0015f9;font-weight: bold;">REGISTER</a>
 		                        </div>
  							</div>

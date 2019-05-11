@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/homestyle.css">
 
 </head>
- <body data-gr-c-s-loaded=true cz-shortcut-listen=true>
+ <body data-gr-c-s-loaded=true cz-shortcut-listen=true id="google_translate_element">
  <div id="app" class="english">
 <?php include 'nav.php'; ?>
 <?php 

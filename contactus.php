@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="css/contactus.css">
 <link rel=icon type=image/png sizes=32x32 href="images/ficon.png">
 </head>
-<body data-gr-c-s-loaded="true" cz-shortcut-listen=true>
+<body data-gr-c-s-loaded="true" cz-shortcut-listen=true id="google_translate_element">
 	<div id=app class=english>
 		<?php include 'nav.php'; ?>
 		<div data-v-a6982a3c class="component-ServiceOffering vue-router-section" lang=en scroller=0 style=visibility:inherit;opacity:1>

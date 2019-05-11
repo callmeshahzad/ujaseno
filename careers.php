@@ -55,7 +55,7 @@ if (isset($_POST['email'])) {
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
 </head>
 
- <body data-gr-c-s-loaded=true cz-shortcut-listen=true class=hide-contact-button>
+ <body data-gr-c-s-loaded=true cz-shortcut-listen=true class=hide-contact-button id="google_translate_element"> 
  <div id=app class=english>
  	<?php include "nav.php"; ?>
  	<style type="text/css">

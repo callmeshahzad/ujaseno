@@ -142,7 +142,7 @@ curl_close($process);
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-<body>
+<body id="google_translate_element">
 	<?php include 'nav.php'; ?>
 	<style type="text/css">
     	.announcements p{

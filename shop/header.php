@@ -99,7 +99,7 @@ if(isset($_SESSION['cart'])){
     $count = 0;
 }
 ?>
-<body class="language-en"  style="null">
+<body class="language-en"  style="null" id="google_translate_element">
     <script src="js/vendor.min.js"></script> 
     <script src="js/wtd.min.js"></script>
 

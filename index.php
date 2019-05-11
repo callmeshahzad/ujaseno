@@ -96,13 +96,13 @@ if (isset($_GET['error'])) {
 		                            
 		                            
 		                            ?>
-		                        	<h4 style="font-weight:bold;">Welcome to WTD online</h4><br>
-		                        	<p>WTDOnline offers tire dealers and service shops instant access to pricing, ordering, and order tracking 24 hours a day, 7 days a week.</p>
+		                        	<h4 style="font-weight:bold;">Welcome to WTD USA Online</h4><br>
+		                        	<p>WTD Online offers tire dealers and service shops instant access to pricing, ordering, and order tracking 24 hours a day, 7 days a week.</p>
 		                        	<p>It is a free service of WTD, helping dealers stock and grow their businesses through fast delivery, dedicated specialists, and marketing support programs.</p>
 		                        	<p>Having trouble logging in? Call Online Customer Care at  (602) 875-8335 for assistance.</p>
 		                        	<p>Our Customer Care Team is available:<br>
-		                        		Monday–Friday 8:00 AM to 6:00 PM EST<br>
-		                        	Saturday 8:00 AM to 4:00 PM EST</p>
+		                        		Monday–Friday 8:00 AM to 6:30 PM EST<br>
+		                        	Saturday 8:00 AM to 6:00 PM EST</p>
 		                        	<a href="index.php#form-section" type="button" class="btn btn-primary" style="position: absolute;left: 15px;bottom: 15px;width: 150px;background: #0015f9;border: #0015f9;font-weight: bold;">REGISTER</a>
 		                        </div>
  							</div>

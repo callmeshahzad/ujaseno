@@ -323,10 +323,31 @@ if($case==1){
 
                 $temp1=explode("/",$trimm);
                 $tyreSizeA=$temp1[0];
-                    // $temp2=explode("ZR",$temp1[1]);
-                $temp2=explode("R",$temp1[1]);
-                $tyreSizeB=$temp2[0];
-                $tyreSizeC=$temp2[1];
+                $temp2=array();
+
+                // echo "Exploded: ".$temp1[1]."\n";
+                $temp2=explode("ZR",$temp1[1]);     
+                $tyreSizeB="";  
+                $tyreSizeC="";  
+                if(count($temp2)==2){                    
+                    $tyreSizeB=$temp2[0];
+                    $tyreSizeC=$temp2[1];
+                    // echo "tyreSizeB1: ".$tyreSizeB." tyreSizeC1:".$tyreSizeC."\n";
+
+                }else if(count($temp2)==1){                    
+                    $temp2=explode("R",$temp1[1]);
+                    $tyreSizeB=$temp2[0];
+                    $tyreSizeC=$temp2[1];                    
+                    // echo "tyreSizeB2: ".$tyreSizeB." tyreSizeC2:".$tyreSizeC."\n";
+                }
+                // echo "Exploded count:".count($temp2)."\n";         
+                // print_r($temp2);
+                // if(count($temp2)==2){
+                //     echo "ZR Exploded";
+                // }else{
+                //     echo "ZR not Exploded";
+                // }
+                
         
                 $urlTyres="http://wtdusaonline.com/DesktopModules/AutoBiz_Vault/API/ProductListing/getproducts?TireSizeA=".$tyreSizeA."&TireSizeB=".$tyreSizeB."&TireSizeC=".$tyreSizeC;
                 

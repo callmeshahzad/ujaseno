@@ -88,15 +88,20 @@ if (isset($_GET['error'])) {
 		                            if(isset($_GET['msg'])){
 		                                $ms = $_GET['msg'];
 		                                if($ms == "success"){
-		                                    echo '<div class="alert alert-success">
-                                              <strong>Success!</strong> WTD coustomer service repesentative will contact you shorty
+		                                    echo '<div class="alert alert-success" style="margin-top: -15px; margin-bottom: -1px;">
+                                              <strong>Application successfully submitted!</strong>
+                                              <br>
+                                              <span>
+                                                We appreciate your interest of buisness with WTD USA.
+                                                One of our sales representative will contact you shortly.
+                                              </span>
                                             </div>';
 		                                }
 		                            }
 		                            
 		                            
 		                            ?>
-		                        	<h4 style="font-weight:bold;">Welcome to WTD USA Online</h4><br>
+		                        	<h4 style="font-weight:bold;">Welcome to WTD USA Online</h4>
 		                        	<p>WTD Online offers tire dealers and service shops instant access to pricing, ordering, and order tracking 24 hours a day, 7 days a week.</p>
 		                        	<p>It is a free service of WTD, helping dealers stock and grow their businesses through fast delivery, dedicated specialists, and marketing support programs.</p>
 		                        	<p>Having trouble logging in? Call Online Customer Care at  (602) 875-8335 for assistance.</p>

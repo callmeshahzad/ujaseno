@@ -351,7 +351,7 @@
                         <option value="">Center Bore</option>
                     </select>
                     <!--<label ></label>-->
-                    <select id="top_finish" style="width: 230px;">
+                    <select id="top_finish" style="width: 220px;">
                         <option value="">Finish</option>
                         <option value="GLOSSY SILVER">GLOSSY SILVER</option>
                         <option value="MATTE BLACK">MATTE BLACK</option>

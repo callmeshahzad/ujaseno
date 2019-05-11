@@ -54,7 +54,8 @@ box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75)">
                         <label>What Are You Interested In</label>
                         <select name="question" class="form-control">
                             <option value="">What are you interested in</option>
-                            <option>Partner with WTD</option>
+                            <option>Dealership Application</option>
+                            <option>Business Partnership with WTD USA</option>
                             <option>Learn more about Tire Pros</option>
                             <option>Learn more about TireBuyer</option>
                             <option>Other</option>

@@ -9,7 +9,17 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
 <link rel="stylesheet" type="text/css" href="css/homestyle.css">
-
+    <style>
+        .skiptranslate .goog-te-gadget{
+            position: fixed;
+            top: 0;
+            left: 800px;
+            z-index: 999;
+            width: 100%;
+            height: 23px;
+            float: right;
+        }
+    </style>
 </head>
  <body data-gr-c-s-loaded=true cz-shortcut-listen=true id="google_translate_element">
  <div id="app" class="english">

@@ -124,7 +124,12 @@ if (isset($_GET['error'])) {
 
 
 
- <div data-v-2b7285cc data-v-5ff8ac3c id=product-breadth class=component-ProductBreadth><svg data-v-2b7285cc xmlns=http://www.w3.org/2000/svg width=331 height=331 viewBox="0 0 331 331" class=donut-bottom><path fill=#A5A5A5 fill-rule=evenodd d="M165.5 331C74.097 331 0 256.903 0 165.5S74.097 0 165.5 0 331 74.097 331 165.5 256.903 331 165.5 331zm1-78c47.773 0 86.5-38.727 86.5-86.5S214.273 80 166.5 80 80 118.727 80 166.5s38.727 86.5 86.5 86.5z"></path></svg> <div data-v-2b7285cc class=common-center-container><h3 data-v-2b7285cc class=heading>Our Brands </h3> <h4 data-v-2b7285cc class="subheading webkit-font">We are here with bestselling brands not only with the tires also with the wheels, their sizes, and manufacture also accessories as per your requirement.</h4>
+ <div data-v-2b7285cc data-v-5ff8ac3c id=product-breadth class=component-ProductBreadth>
+    <svg data-v-2b7285cc xmlns=http://www.w3.org/2000/svg width=331 height=331 viewBox="0 0 331 331" class="donut-bottom" style="margin-top: -162px;">
+    <path fill=#A5A5A5 fill-rule=evenodd d="M165.5 331C74.097 331 0 256.903 0 165.5S74.097 0 165.5 0 331 74.097 331 165.5 256.903 331 165.5 331zm1-78c47.773 0 86.5-38.727 86.5-86.5S214.273 80 166.5 80 80 118.727 80 166.5s38.727 86.5 86.5 86.5z"></path>
+    </svg> 
+ <div data-v-2b7285cc class=common-center-container>
+ <h5 data-v-2b7285cc class=heading>OUR BRANDS </h5> <h4 data-v-2b7285cc class="subheading webkit-font">We are here with bestselling brands not only with the tires also with the wheels, their sizes, and manufacture also accessories as per your requirement.</h4>
          <style>
              #wheeltab{
                  display: none;

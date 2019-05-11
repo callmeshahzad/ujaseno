@@ -45,7 +45,7 @@ if (isset($_POST['email'])) {
 if (isset($_POST['phonecall'])) {
 	$name = $_POST['name'];
 	$phone = $_POST['phonecall'];
-	$tooo = 'khurram@esspk.com';
+	$tooo = 'info@wtdusaonline.com';
     $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com';
 
 	$subject = 'Dealer Application Request';

@@ -9,9 +9,19 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
 <link rel="stylesheet" type="text/css" href="css/homestyle.css">
-
+    <style>
+        .skiptranslate .goog-te-gadget{
+            position: fixed;
+            top: 0;
+            left: 800px;
+            z-index: 999;
+            width: 100%;
+            height: 23px;
+            float: right;
+        }
+    </style>
 </head>
- <body data-gr-c-s-loaded=true cz-shortcut-listen=true>
+ <body data-gr-c-s-loaded=true cz-shortcut-listen=true id="google_translate_element">
  <div id="app" class="english">
 <?php include 'nav.php'; ?>
 <?php 
@@ -124,7 +134,12 @@ if (isset($_GET['error'])) {
 
 
 
- <div data-v-2b7285cc data-v-5ff8ac3c id=product-breadth class=component-ProductBreadth><svg data-v-2b7285cc xmlns=http://www.w3.org/2000/svg width=331 height=331 viewBox="0 0 331 331" class=donut-bottom><path fill=#A5A5A5 fill-rule=evenodd d="M165.5 331C74.097 331 0 256.903 0 165.5S74.097 0 165.5 0 331 74.097 331 165.5 256.903 331 165.5 331zm1-78c47.773 0 86.5-38.727 86.5-86.5S214.273 80 166.5 80 80 118.727 80 166.5s38.727 86.5 86.5 86.5z"></path></svg> <div data-v-2b7285cc class=common-center-container><h3 data-v-2b7285cc class=heading>Our Brands </h3> <h4 data-v-2b7285cc class="subheading webkit-font">We are here with bestselling brands not only with the tires also with the wheels, their sizes, and manufacture also accessories as per your requirement.</h4>
+ <div data-v-2b7285cc data-v-5ff8ac3c id=product-breadth class=component-ProductBreadth style="margin-top: -223px;">
+    <svg data-v-2b7285cc xmlns=http://www.w3.org/2000/svg width=331 height=331 viewBox="0 0 331 331" class="donut-bottom" style="margin-top: -162px;">
+    <path fill=#A5A5A5 fill-rule=evenodd d="M165.5 331C74.097 331 0 256.903 0 165.5S74.097 0 165.5 0 331 74.097 331 165.5 256.903 331 165.5 331zm1-78c47.773 0 86.5-38.727 86.5-86.5S214.273 80 166.5 80 80 118.727 80 166.5s38.727 86.5 86.5 86.5z"></path>
+    </svg> 
+ <div data-v-2b7285cc class=common-center-container>
+ <h2 data-v-2b7285cc class=>OUR BRANDS </h2> <h4 data-v-2b7285cc class="subheading webkit-font">We are here with bestselling brands not only with the tires also with the wheels, their sizes, and manufacture also accessories as per your requirement.</h4>
          <style>
              #wheeltab{
                  display: none;

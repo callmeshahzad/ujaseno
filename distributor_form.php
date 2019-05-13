@@ -1,3 +1,52 @@
+<style>
+
+.demo-error {
+	display:inline-block;
+	color:#FF0000;
+	margin-left:5px;
+}
+.demo-input {
+    width: 100%;
+    border-radius: 5px;
+    border: #CCC 1px solid;
+    padding: 10px;
+    margin-top: 5px;
+}
+.demo-btn {
+	padding: 10px;
+    border-radius: 5px;
+    background: #478347;
+    border: #325a32 1px solid;
+    color: #FFF;
+    font-size: 1em;
+    width: 100%;
+    cursor:pointer;
+}
+.demo-heading {
+	font-size: 1.5em;
+    border-bottom: #CCC 1px solid;
+    margin-bottom:5px;
+}
+.demo-table {
+    background: #dcfddc;
+    border-radius: 5px;
+    padding: 10px;
+}
+.demo-success {
+    margin-top: 5px;
+    color: #478347;
+    background: #e2ead1;
+    padding: 10px;
+    border-radius: 5px;
+}
+.captcha-input {
+	background: url('captcha_code.php') repeat-y;
+	padding-left: 85px;	
+	padding-top: 2px;
+	background-color: white;
+    color: black;
+}
+</style>
 <div data-v-68d9be01 data-v-5ff8ac3c id=form-section class=component-FormSection style="!important; padding:20px; background:url(images/back.png)">
  	<div data-v-68d9be01 class=common-center-container style="-webkit-box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75);
 -moz-box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75);
@@ -61,6 +110,12 @@ box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75)">
                             <option>Other</option>
                         </select>
                     </div>
+					<div class="form-group">
+					<label>Captcha Code: <div id="error-captcha" class="demo-error"><?php if (isset($_GET['error_message'])) {echo "Incorrect Captcha Code";}?></div></label>
+						
+						
+						<input name="captcha_code" type="text" class="demo-input captcha-input">
+					</div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary" style="float: right;right: 15px;bottom: 15px;width: 150px;background: red;border: red; font-weight:bold">SUBMIT</button>
                     </div>

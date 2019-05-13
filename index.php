@@ -629,6 +629,9 @@ if (isset($_GET['error'])) {
                             
                         </div>
 
+
+
+                        <!-- wheels logo start from here -->
                         <div data-v-3cde03ad data-v-9cf6d062 class=component-TabLogos index=0 id="wheeltab">
                             <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
                                 <div data-v-67e91ef2 class=logo>
@@ -640,7 +643,21 @@ if (isset($_GET['error'])) {
                             <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
                                 <div data-v-67e91ef2 class=logo>
                                     <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
+                                        <img data-v-436329e0 src="images/logos/wheels/Ballistic.png" class="contain center" style="object-fit:contain;object-position:50% 50%;background-position:50% 50%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
+                                <div data-v-67e91ef2 class=logo>
+                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
                                         <img data-v-436329e0 src="images/logos/wheels/ELEMENT.jpg" class="contain center" style="object-fit:contain;object-position:50% 50%;background-position:50% 50%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
+                                <div data-v-67e91ef2 class=logo>
+                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
+                                        <img data-v-436329e0 src="images/logos/wheels/elevate.jpeg" class="contain center" style="object-fit:contain;padding-top: 13px;object-position:50% 50%;background-position:50% 50%">
                                     </div>
                                 </div>
                             </div>
@@ -720,6 +737,13 @@ if (isset($_GET['error'])) {
                             <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
                                 <div data-v-67e91ef2 class=logo>
                                     <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
+                                        <img data-v-436329e0 src="images/logos/wheels/street-force.jpeg" class="contain center" style="object-fit:contain;padding-top:10px;;object-position:50% 50%;background-position:50% 50%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
+                                <div data-v-67e91ef2 class=logo>
+                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
                                         <img data-v-436329e0 src="images/logos/wheels/U2.jpg" class="contain center" style="object-fit:contain;object-position:50% 50%;background-position:50% 50%">
                                     </div>
                                 </div>
@@ -745,27 +769,8 @@ if (isset($_GET['error'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
-                                <div data-v-67e91ef2 class=logo>
-                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
-                                        <img data-v-436329e0 src="images/logos/wheels/elevate.jpeg" class="contain center" style="object-fit:contain;padding-top: 13px;object-position:50% 50%;background-position:50% 50%">
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
-                                <div data-v-67e91ef2 class=logo>
-                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
-                                        <img data-v-436329e0 src="images/logos/wheels/Ballistic.png" class="contain center" style="object-fit:contain;object-position:50% 50%;background-position:50% 50%">
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
-                                <div data-v-67e91ef2 class=logo>
-                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
-                                        <img data-v-436329e0 src="images/logos/wheels/street-force.jpeg" class="contain center" style="object-fit:contain;padding-top:10px;;object-position:50% 50%;background-position:50% 50%">
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
                         </div>
                     </div>
                 </div>

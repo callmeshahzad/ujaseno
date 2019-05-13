@@ -79,7 +79,7 @@ if (!isset($_SESSION['email'])) {
             width: 1000px;
         }
         .top-header-margin{
-            margin-top: 75px;
+            margin-top: 102px;
         }
     </style>
    
@@ -88,6 +88,7 @@ if (!isset($_SESSION['email'])) {
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <script type="text/javascript" src="engine1/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="engine2/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/translator.css" />
     <script type="text/javascript" src="engine2/jquery.js"></script>
     <link rel=icon type=image/png sizes=32x32 href="../images/1.png">
 </head>
@@ -99,18 +100,23 @@ if(isset($_SESSION['cart'])){
     $count = 0;
 }
 ?>
-<body class="language-en"  style="null" id="google_translate_element">
+<body class="language-en"  style="null" >
+
     <script src="js/vendor.min.js"></script> 
     <script src="js/wtd.min.js"></script>
 
     <div class="wrapper " id="content">
+    
         <a name="top"></a>
         <div class="header full-left header-fixed" id="header-full-left">
             <div class="top-header full-left" style="background-color:#0015f9">
                 <?php include "nav.php"; ?>
 
             </div> 
-            <div class="bottom-header full-left" align="center">
+            <div class="bottom-header full-left" align="center" style="margin-bottom: 33px;">
+                <div style="width:100%">
+                    <div id="google_translate_element" class="gt-1"></div>  
+                </div>
                 <a class="ATD-logo gs" href="#">
                     <img src="images/1.png" style="max-height: 70px;margin-top: -25px;margin-left:-11px;" /> 
                 </a>
@@ -168,6 +174,7 @@ if(isset($_SESSION['cart'])){
                     <li class="pull-left button-gap " id="navtab-contactLink" style="padding: 15px 0 0 0px; font-size:11px !important">
                         <span class="link-name" style=""><strong>Welcome</strong><br/> <?=$_SESSION['email']?></span>
                     </li>
+                   
                 </ul> 
                 <div class="pull-right"> </div> 
             </div> 

@@ -12,8 +12,11 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/contactus.css">
 <link rel=icon type=image/png sizes=32x32 href="images/ficon.png">
+<link rel="stylesheet" type="text/css" href="css/translator.css"> 
 </head>
-<body data-gr-c-s-loaded="true" cz-shortcut-listen=true id="google_translate_element">
+<body data-gr-c-s-loaded="true" cz-shortcut-listen=true style="background-color: #E1EBF4;">
+
+<div id="google_translate_element" class="gt-3"></div>
 	<div id=app class=english>
 		<?php include 'nav.php'; ?>
 		<div data-v-a6982a3c class="component-ServiceOffering vue-router-section" lang=en scroller=0 style=visibility:inherit;opacity:1>

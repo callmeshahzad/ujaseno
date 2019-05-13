@@ -84,7 +84,7 @@ if (isset($_GET['error'])) {
 		                            		<button type="submit" class="btn btn-primary" style="position: absolute;float: right;right: 15px;bottom: 15px;width: 150px;background: #0015f9;border: #0015f9;font-weight: bold;">LOGIN</button>
 		                            	</div>
 		                            </form>
-		                        </div>
+		                        </div> 
 		                        <div class="col-sm-6" style="height: 480px;">
 		                            <?php
 		                            if(isset($_GET['msg'])){

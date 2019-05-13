@@ -1005,7 +1005,7 @@ if (isset($_GET['error'])) {
                         </div>
                     </div> 
                     <div data-v-55126885 class=title-content-container>
-                        <h5 data-v-55126885 class=title>WTD Warehouse Expension Coming Soon</h5> <h5 data-v-55126885 class=content>WTD Warehouse Expension</h5> 
+                        <h5 data-v-55126885 class=title>WTD Warehouse Expansion Coming Soon</h5> <h5 data-v-55126885 class=content>WTD Warehouse Expansion</h5> 
                         <div data-v-55126885 class=button-container>
                             <div data-v-49614bf8 data-v-55126885 class="component-ArrowLink small">
                                 <div data-v-49614bf8 class=link>

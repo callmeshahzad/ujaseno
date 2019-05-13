@@ -590,13 +590,13 @@ if (isset($_GET['error'])) {
                                     </div>
                                 </div>
                             </div>
-                              <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
+                              <!-- <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
                                 <div data-v-67e91ef2 class=logo>
                                     <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
                                         <img data-v-436329e0 src="images/logos/tires/VELOCITY.png" class="contain center" style="object-fit:contain;object-position:50% 50%;background-position:50% 50%">
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div data-v-67e91ef2 data-v-3cde03ad class="component-BrandLogo no-border">
                                 <div data-v-67e91ef2 class=logo>
                                     <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
@@ -765,6 +765,13 @@ if (isset($_GET['error'])) {
                             <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
                                 <div data-v-67e91ef2 class=logo>
                                     <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
+                                        <img data-v-436329e0 src="images/logos/wheels/velocity-wheels.png" class="contain center" style="object-fit:contain;object-position:50% 50%;padding-top:10px;background-position:50% 50%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
+                                <div data-v-67e91ef2 class=logo>
+                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
                                         <img data-v-436329e0 src="images/logos/wheels/XIX.jpg" class="contain center" style="object-fit:contain;object-position:50% 50%;background-position:50% 50%">
                                     </div>
                                 </div>
@@ -804,11 +811,11 @@ if (isset($_GET['error'])) {
                     <h4 data-v-0b309813 class="body-text webkit-font">We give you to deal with the best products as an independent dealer to build your brand selling the tires, wheels and suppliers your consumers demand. Our deal with the best manufacturers. You can get the offers in volume savings, business and marketing support and best selection of products, making an exclusive dealer programs.
                         <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white">
                             <div data-v-49614bf8 class=link>
-                                <div data-v-49614bf8 class=label>Read More</div> 
+                                <div data-v-49614bf8 class=label></div> 
                                 <div data-v-49614bf8 class=arrow-container>
-                                    <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                    <!-- <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
                                         <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
-                                    </svg>
+                                    </svg> -->
                                 </div>
                             </div>
                         </div>
@@ -830,11 +837,11 @@ if (isset($_GET['error'])) {
                     <h4 data-v-0b309813 class="body-text webkit-font">Check the power of WTD by online stream your business operations you can get the access our selections current availability and best prices 24/7.
                     <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white">
                         <div data-v-49614bf8 class=link>
-                            <div data-v-49614bf8 class=label>Read More</div> 
+                            <div data-v-49614bf8 class=label></div> 
                             <div data-v-49614bf8 class=arrow-container>
-                                <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                <!-- <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
                                     <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
-                                </svg>
+                                </svg> -->
                             </div>
                         </div>
                     </div>
@@ -857,11 +864,11 @@ if (isset($_GET['error'])) {
                     Join the best selling brand in the Ameriaca’s largest and best selling brands with independent dealers. When you will be the member of WTD you will be find out the best benefits from our services and profitabilty .
                     <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white">
                         <div data-v-49614bf8 class=link>
-                            <div data-v-49614bf8 class=label>Read More</div> 
+                            <div data-v-49614bf8 class=label></div> 
                             <div data-v-49614bf8 class=arrow-container>
-                                <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                <!-- <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
                                     <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
-                                </svg>
+                                </svg> -->
                             </div>
                         </div>
                     </div>
@@ -884,11 +891,11 @@ if (isset($_GET['error'])) {
                     When you will be the part of WTD as a prefered dealer than you will also be te part of TireBuyer installer. when you will be the part of WTD online purchases will be delivered to you for installation. Giving you brand new customers and a new means to expand you business as per you like.
                     <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white">
                         <div data-v-49614bf8 class=link>
-                            <div data-v-49614bf8 class=label>Read More</div> 
+                            <div data-v-49614bf8 class=label></div> 
                             <div data-v-49614bf8 class=arrow-container>
-                                <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                <!-- <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
                                     <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
-                                </svg>
+                                </svg> -->
                             </div>
                         </div>
                     </div>

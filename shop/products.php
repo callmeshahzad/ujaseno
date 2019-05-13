@@ -387,7 +387,9 @@ curl_close($process);
                 <li>
                     <a href="#search-supplies-tab">Products</a>
                 </li> 
-            </ul> 
+            </ul>
+            <button class="btn btn-info" id="price_hide_button" onclick="hidePri();" style="float: right;">Hide Price</button> 
+            <button class="btn btn-info" id="price_show_button" onclick="showPri();" style="display: none;float: right;">Show Price</button> 
         </div> 
         <div id="search-supplies-tab" class="left-rounded-border tabs-content"> 
             <div class="first-filter row "> 
@@ -516,7 +518,7 @@ curl_close($process);
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left">Price</div> 
                                             <div class="second-div pull-left text-right"> 
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
+                                                <span class="green-color-bold hidePrice" id="hidePrice<?=$counter?>">$<?=$product['price']?></span>
                                             </div> 
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left">Avail</div>
@@ -648,7 +650,7 @@ curl_close($process);
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left">Price</div> 
                                             <div class="second-div pull-left text-right"> 
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
+                                                <span class="green-color-bold hidePrice" id="hidePrice<?=$counter?>">$<?=$product['price']?></span>
                                             </div> 
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left">Avail</div>
@@ -774,7 +776,7 @@ curl_close($process);
                                             <div class="clear"></div>
                                             <div class="first-div pull-left">Price</div>
                                             <div class="second-div pull-left text-right">
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
+                                                <span class="green-color-bold hidePrice" id="hidePrice<?=$counter?>">$<?=$product['price']?></span>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="first-div pull-left">Avail</div>
@@ -889,7 +891,7 @@ curl_close($process);
                                             <div class="clear"></div>
                                             <div class="first-div pull-left">Price</div>
                                             <div class="second-div pull-left text-right">
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
+                                                <span class="green-color-bold hidePrice" id="hidePrice<?=$counter?>">$<?=$product['price']?></span>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="first-div pull-left">Avail</div>
@@ -1037,7 +1039,7 @@ curl_close($process);
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left">Price</div> 
                                             <div class="second-div pull-left text-right"> 
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
+                                                <span class="green-color-bold hidePrice" id="hidePrice<?=$counter?>">$<?=$product['price']?></span>
                                             </div> 
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left">Avail</div>
@@ -1169,7 +1171,7 @@ curl_close($process);
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left">Price</div> 
                                             <div class="second-div pull-left text-right"> 
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
+                                                <span class="green-color-bold hidePrice" id="hidePrice<?=$counter?>">$<?=$product['price']?></span>
                                             </div> 
                                             <div class="clear"></div> 
                                             <div class="first-div pull-left">Avail</div>
@@ -1295,7 +1297,7 @@ curl_close($process);
                                             <div class="clear"></div>
                                             <div class="first-div pull-left">Price</div>
                                             <div class="second-div pull-left text-right">
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
+                                                <span class="green-color-bold hidePrice" id="hidePrice<?=$counter?>">$<?=$product['price']?></span>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="first-div pull-left">Avail</div>
@@ -1410,7 +1412,7 @@ curl_close($process);
                                             <div class="clear"></div>
                                             <div class="first-div pull-left">Price</div>
                                             <div class="second-div pull-left text-right">
-                                                <span class="green-color-bold">$<?=$product['price']?></span>
+                                                <span class="green-color-bold hidePrice" id="hidePrice<?=$counter?>">$<?=$product['price']?></span>
                                             </div>
                                             <div class="clear"></div>
                                             <div class="first-div pull-left">Avail</div>

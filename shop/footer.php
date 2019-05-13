@@ -131,6 +131,21 @@
 <script type="text/javascript" src="engine2/wowslider.js"></script>
 <script type="text/javascript" src="engine2/script.js"></script>
 <script type="text/javascript">
+    function hidePri() {
+        // for (var i =500; i<= 500; i--) {
+        // }
+          $(".hidePrice").hide();  
+        
+        $("#price_hide_button").hide();
+        $("#price_show_button").show();
+    }
+    function showPri() {
+        $("#price_show_button").hide();
+        $("#price_hide_button").show();
+        $(".hidePrice").show();   
+    }
+</script>
+<script type="text/javascript">
 	$(document).ready(function() {
     // $('#example').DataTable();
 });

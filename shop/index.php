@@ -256,7 +256,7 @@ if (isset($_GET['trim'])) {
     </div> 
     <style type="text/css">
         .img-box{
-            border: 1px solid;
+            border: 0px solid;
             margin-top: 10%;
             height:200px;
         }

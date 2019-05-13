@@ -469,7 +469,6 @@ curl_close($process);
     </div> -->
     <div class="clear"></div> 
     <div id="cutOffTimeMessage" class="content">
-    <?php include 'topfilternav.php'; ?>
         <div class="cutOffTimeMsgParagraphs"> 
         <!--<p>Please contact your DC for cutoff and delivery times.</p> -->
         <!--<p>Local Plus cutoff is 05:00 PM 02/25/2019 for orders to be delivered 02/25/2019.</p> -->
@@ -478,7 +477,8 @@ curl_close($process);
         
         <p><b>Hotshots:</b> 9am to 5pm, Please contact with sales team to take that advantage </p>
         
-        </div> 
+        </div>
+        <?php include 'topfilternav.php'; ?> 
     </div> 
 
 <style>

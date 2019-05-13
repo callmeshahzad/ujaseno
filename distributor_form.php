@@ -110,14 +110,17 @@ box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75)">
                             <option>Other</option>
                         </select>
                     </div>
-					<div class="form-group">
-					<label>Captcha Code: <div id="error-captcha" class="demo-error"><?php if (isset($_GET['error_message'])) {echo "Incorrect Captcha Code";}?></div></label>
-						
-						
-						<input name="captcha_code" type="text" class="demo-input captcha-input">
-					</div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary" style="float: right;right: 15px;bottom: 15px;width: 150px;background: red;border: red; font-weight:bold">SUBMIT</button>
+					
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 center-block" style="float: none;">
+                        <div class="form-group">
+                            <label> Not A Roboat: <div id="error-captcha" class="demo-error"><?php if (isset($_GET['error_message'])) {echo "Incorrect Captcha Code";}?></div></label>
+                            <input name="captcha_code" type="text" class="demo-input captcha-input">
+                        </div>
+                        <div class="form-group" align="center">
+                            <button type="submit" class="btn btn-primary" style="bottom: 15px;width: 150px;background: red;border: red; font-weight:bold">SUBMIT</button>
+                        </div>
                     </div>
                 </div>
             </form>

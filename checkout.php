@@ -32,9 +32,12 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
-<body id="google_translate_element"> 
+<link rel="stylesheet" type="text/css" href="css/translator.css"> 
+<body>
+
+<div id="google_translate_element" class="gt-1"></div>
   <?php include 'nav.php'; ?>
-  <div data-v-a6982a3c class="component-ServiceOffering " style=>
+  <div data-v-a6982a3c class="component-ServiceOffering ">
             <div data-v-a6982a3c>
                 <div data-v-8ba6f6e2 data-v-a6982a3c class=>
                     <div data-v-8ba6f6e2 class=bg-container style=right:-540px>

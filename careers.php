@@ -54,7 +54,7 @@ if (isset($_POST['email'])) {
 <link rel="stylesheet" type="text/css" href="css/careers.css">
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
     <style>
-        .skiptranslate .goog-te-gadget{
+        #google_translate_element{
             position: fixed;
             top: 0;
             left: 800px;

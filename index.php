@@ -9,19 +9,11 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
 <link rel="stylesheet" type="text/css" href="css/homestyle.css">
-    <style>
-        .skiptranslate .goog-te-gadget{
-            position: fixed;
-            top: 0;
-            left: 800px;
-            z-index: 999;
-            width: 100%;
-            height: 23px;
-            float: right;
-        }
-    </style>
+<link rel="stylesheet" type="text/css" href="css/translator.css"> 
 </head>
- <body data-gr-c-s-loaded=true cz-shortcut-listen=true id="google_translate_element">
+ <body data-gr-c-s-loaded=true cz-shortcut-listen=true style="background-color: #E1EBF4;">
+ 
+<div id="google_translate_element" class="gt-1"></div>
  <div id="app" class="english">
 <?php include 'nav.php'; ?>
 <?php 
@@ -48,14 +40,14 @@ if (isset($_GET['error'])) {
  	<div data-v-5ff8ac3c>
  		<div data-v-b6d53204 data-v-5ff8ac3c class=component-LandingHero>
 
- 			<div data-v-b6d53204 class=bg-container>
+ 			<div data-v-b6d53204 class=bg-container style="margin-left: 5%;">
  				<div data-v-b6d53204 class=bg-masker>
  					<div data-v-436329e0 data-v-b6d53204 class=component-image-pre-loader style=width:100vw;height:100%;position:absolute;top:0;right:0;bottom:0>
  						<div data-v-b329ee4c data-v-436329e0 tabindex=-1 class=resize-observer>
  							<object style=display:block;position:absolute;top:0;left:0;height:100%;width:100%;overflow:hidden;pointer-events:none;z-index:-1 aria-hidden=true tabindex=-1 type=text/html data="data:text/html,<html>" sandbox></object>
  						</div> 
  						<div data-v-436329e0 class=pre-loader-overlay style=display:none></div> 
- 						<img data-v-436329e0 src="images/mainbanner.jpg" class="contain top-right" style="object-fit:contain;object-position:100% 0;background-position:100% 0"> 
+ 						<img data-v-436329e0 src="images/mainbanner.jpg" class="contain top-right" style="object-fit:contain;object-position:95% 0;background-position:95% 0"> 
  						<div data-v-436329e0 class=blue-tint></div>
  					</div>
  				</div> 

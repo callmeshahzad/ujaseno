@@ -9,10 +9,13 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/careers.css">
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
+<link rel="stylesheet" type="text/css" href="css/translator.css"> 
 </head>
 
-<body data-gr-c-s-loaded=true cz-shortcut-listen=true class=hide-contact-button id="google_translate_element">
+<body data-gr-c-s-loaded=true cz-shortcut-listen=true class=hide-contact-button style="background-color: #E1EBF4;">
 <div id=app class=english>
+
+<div id="google_translate_element" class="gt-2" style="margin-top:20px"></div>
     <?php include "nav.php"; ?>
     <style type="text/css">
 		.closebtn{
@@ -51,7 +54,7 @@
         Back To Home
         
     </a>
-    <div data-v-0b5d6b6e class="component-Careers vue-router-section" lang=en style=visibility:inherit;opacity:1>
+    <div data-v-0b5d6b6e class="component-Careers vue-router-section" lang=en style="visibility:inherit;opacity:1;margin-top: -58px;">
         <div class="logo" style="position:absolute;top:0px;left:34%;width: 200px;"><a href="index.php"><img src="images/1.png" alt="WTD" class="img-responsive logoimg" style="position:absolute;top:0px;z-index: 9999;"></a></div>
         <div data-v-0b5d6b6e><div data-v-c0b305c2 data-v-0b5d6b6e class=component-CareersHero><div data-v-c0b305c2 class=bg-container style=left:-321px>
                     <div data-v-c0b305c2 class=bg-masker>

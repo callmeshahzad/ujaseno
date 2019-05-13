@@ -13313,7 +13313,7 @@ div[class*="-helppopup"] h4 {
     width: 156px;
     float: left;
     background: #e5e6e7;
-    padding-top: 20px;
+    padding-top: 0px;
     -webkit-box-shadow: 6px 0 5px 0 rgba(213, 215, 216, .72);
     -moz-box-shadow: 3px 0 5px 0 rgba(213, 215, 216, .72);
     box-shadow: 3px 0 5px 0 rgba(213, 215, 216, .72)

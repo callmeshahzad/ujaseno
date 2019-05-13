@@ -15,7 +15,7 @@ if (isset($_GET['trim'])) {
         
     }
 }else{
-    $car_pic = "wtd_cars/camry.png";
+    $car_pic = "wtd_cars/lamborghini_PNG10703.png";
 }
 
 ?>

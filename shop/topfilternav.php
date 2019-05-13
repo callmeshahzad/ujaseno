@@ -1,20 +1,90 @@
 <script type="text/javascript" src="js/topfilternav.js"></script>
-<div class="row">
+<style>
+#vehicle-guide-heading-container{
+    padding-top: 0px !important;
+}
+
+</style>
+<div class="row" style="border:1px solid #ccc;border-radius: 15px;">
+<div class="col-sm-12">
+    <div class="accordion-wrap" id="leftpanel-VehicleSearch">
+        <input type="hidden" name="componentUid" id="componentUid" value="DefaultVehicleGuideComponent"/>
+        <h4 id="vehicle-guide-heading" class="collapsed" data-toggle="collapse" data-target="#vehicle" style="background:transparent !important;border-color: transparent;
+     ">Vehicle
+            <!--<img id="DefaultVehicleGuideComponent" src="images/leftDownCaret.png" class="image-icon-blue-question" >-->
+            <!--<img src="images/"  id="vehicle-down-arrow"> -->
+        </h4>
+        <div id="vehicle-guide-heading-container" class="" id="vehicle">
+            <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;margin-top: 0px;">
+                <label id="fitment-message-label">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Check Vehicle Fitment
+                </label>
+                <label for="top_year"></label>
+                <select id="top_year" name="year" class="year" style="width: 160px;">
+                    <option selected="true" value="Year">Year</option>
+                    <?php
+                    $qYear = "SELECT DISTINCT `Year` FROM car_detail ORDER BY Year DESC";
+                    $rYear = $db->query($qYear);
+                    if($rYear->num_rows > 0){
+                        while ($row = $rYear->fetch_object()) {
+                            echo '<option value="'.$row->Year.'">'.$row->Year.'</option>';
+                        }
+                    }
+                    /*$currentYear = date('Y');
+                    while ($currentYear >= 1950) {
+                        echo '<option value="'.$currentYear.'">'.$currentYear.'</option>';
+                        $currentYear--;
+                    }*/
+                    ?>
+
+                </select>
+                <!--<label for="make"></label>-->
+                <select id="top_make" name="make" class="" style="width: 150px;">
+                    <option selected="true" value="Make">Make</option>
+                    <?php
+                    
+                    $qm = "SELECT DISTINCT `Make` FROM car_detail ";
+                    $rm = $db->query($qm);
+                    if ($rm->num_rows > 0) {
+                        while ($row = $rm->fetch_object()) {
+                            echo "<option value='".$row->Make."'>".$row->Make."</option>";
+                        }
+                    }
+                    ?>
+                </select>
+                <!--<label for="model"></label>-->
+                <select id="top_model" name="model"class="" style="width: 150px;">
+                    <option selected="true" value="Model">Model</option>
+                </select>
+                <!--<label for="trim"></label>-->
+                <select id="top_trim" name="trim" class="" style="width: 160px;">
+                    <option selected="true" value="Trim">Trim</option>
+                </select>
+                <!-- <br> -->
+                <label for="fitment-go-link" style="padding: 0px !important">
+                    <input id="top_btnasearch" value="SEARCH" type="button" style="background:red !important;height: 30px;">
+                </label>
+
+            </form>
+        </div>
+        <div class="DefaultVehicleGuideComponent-helppopup helppopup_left"></div>
+    </div>
+    </div>
     <div class="col-sm-12">
         <div class="accordion-wrap" id="leftpanel-VehicleSearch">
             <input type="hidden" name="componentUid" id="componentUid" value="DefaultVehicleGuideComponent"/>
-            <h4 id="vehicle-guide-heading" class="collapsed" data-toggle="collapse" data-target="#vehicle" style="background:#1500f9 !important;
-        color:#fff !important;">Tire
+            <h4 id="vehicle-guide-heading" class="collapsed" data-toggle="collapse" data-target="#vehicle" style="background:transparent; !important;border-color: transparent;
+        padding-bottom: 0px;padding-top: 0px;">Tire
                 <!--<img id="DefaultVehicleGuideComponent" src="images/leftDownCaret.png" class="image-icon-blue-question" >-->
                 <!--<img src="images/"  id="vehicle-down-arrow"> -->
             </h4>
             <div id="vehicle-guide-heading-container" class="" id="vehicle">
-                <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;width: 100%;margin-top: 10px;">
+                <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;width: 100%;margin-top: 0px;">
                     <label id="fitment-message-label">
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Check Vehicle Fitment
                     </label>
                     <!--<label for="year"></label>-->
-                    <select id="top_a">
+                    <select id="top_a" style="width: 210px;">
                         
                         <?php 
                         if(isset($_GET['search'])){
@@ -55,7 +125,7 @@
                         <option value="42">42</option>
                     </select>
                     <!--<label for="year"></label>-->
-                    <select id="top_b">
+                    <select id="top_b" style="width: 210px;">
                         <?php 
                         if(isset($_GET['TireSizeB'])){
                             echo '<option value="'.$_GET["TireSizeB"].'" selected>'.$_GET["TireSizeB"].'</option>';
@@ -86,7 +156,7 @@
                         <option value="R">R</option>
                     </select>
                     <!--<label for="year"></label>-->
-                    <select id="top_c">
+                    <select id="top_c" style="width: 210px;">
                         <?php 
                         if(isset($_GET['TireSizeC'])){
                             echo '<option value="'.$_GET["TireSizeC"].'" selected>'.$_GET["TireSizeC"].'</option>';
@@ -109,9 +179,9 @@
                         <option value="28">28</option>
                         <option value="30">30</option>
                     </select>
-                    <br>
+                    <!-- <br> -->
                     <label for="fitment-go-link" style="padding: 0px !important">
-                        <input id="top_tire_search" value="SEARCH" type="button" style="background:red !important;">
+                        <input id="top_tire_search" value="SEARCH" type="button" style="background:red !important;height: 30px;">
                     </label>
 
                 </form>
@@ -123,13 +193,13 @@
     <div class="col-sm-12">
         <div class="accordion-wrap" id="leftpanel-VehicleSearch"> 
             <input type="hidden" name="componentUid" id="componentUid" value="DefaultVehicleGuideComponent"/> 
-            <h4 id="vehicle-guide-heading" class="collapsed" data-toggle="collapse" data-target="#vehicle" style="background:#1500f9 !important;
-        color:#fff !important;">Wheel 
+            <h4 id="vehicle-guide-heading" class="collapsed" data-toggle="collapse" data-target="#vehicle" style="background:transparent !important;border-color: transparent;padding-bottom: 0px;
+    padding-top: 0px;">Wheel 
                 <!--<img id="DefaultVehicleGuideComponent" src="images/leftDownCaret.png" class="image-icon-blue-question" > -->
                 <!--<img src="images/"  id="vehicle-down-arrow"> -->
             </h4> 
             <div id="vehicle-guide-heading-container" class="a" id="vehicle"> 
-                <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;margin-top: 10px;">
+                <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;margin-top: 0px;">
                     <label id="fitment-message-label"> 
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Check Vehicle Fitment
                     </label> 
@@ -245,7 +315,7 @@
                         <option value="+50">+50</option>
                     </select>-->
                     <!--<label for="model"></label>-->
-                    <select id="top_b_circle">
+                    <select id="top_b_circle" style="width: 85px;">
                         <?php 
                         if(isset($_GET['WheelBoltCircle'])){
                             echo '<option value="'.$_GET["WheelBoltCircle"].'" selected>'.$_GET["WheelBoltCircle"].'</option>';
@@ -281,7 +351,7 @@
                         <option value="">Center Bore</option>
                     </select>
                     <!--<label ></label>-->
-                    <select id="top_finish">
+                    <select id="top_finish" style="width: 220px;">
                         <option value="">Finish</option>
                         <option value="GLOSSY SILVER">GLOSSY SILVER</option>
                         <option value="MATTE BLACK">MATTE BLACK</option>
@@ -345,9 +415,9 @@
                         <option value="BLS">BLS</option>
                     </select>
 
-                    <br>
+                    <!-- <br> -->
                     <label for="fitment-go-link" style="padding: 0px !important">
-                        <input id="top_wheel_search" value="SEARCH" type="button" style="background:red !important;">
+                        <input id="top_wheel_search" value="SEARCH" type="button" style="background:red !important;height: 30px;">
                     </label> 
                     
                 </form>
@@ -355,68 +425,5 @@
             <div class="DefaultVehicleGuideComponent-helppopup helppopup_left"></div> 
         </div>    
     </div>
-    <div class="col-sm-12">
-    <div class="accordion-wrap" id="leftpanel-VehicleSearch">
-        <input type="hidden" name="componentUid" id="componentUid" value="DefaultVehicleGuideComponent"/>
-        <h4 id="vehicle-guide-heading" class="collapsed" data-toggle="collapse" data-target="#vehicle" style="background:#1500f9 !important;
-     color:#fff !important;">Vehicle
-            <!--<img id="DefaultVehicleGuideComponent" src="images/leftDownCaret.png" class="image-icon-blue-question" >-->
-            <!--<img src="images/"  id="vehicle-down-arrow"> -->
-        </h4>
-        <div id="vehicle-guide-heading-container" class="" id="vehicle">
-            <form id="vehicle-guide-search-form" action="" method="post" style="text-align: center;margin-top: 10px;">
-                <label id="fitment-message-label">
-                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Check Vehicle Fitment
-                </label>
-                <label for="top_year"></label>
-                <select id="top_year" name="year" class="year">
-                    <option selected="true" value="Year">Year</option>
-                    <?php
-                    $qYear = "SELECT DISTINCT `Year` FROM car_detail ORDER BY Year DESC";
-                    $rYear = $db->query($qYear);
-                    if($rYear->num_rows > 0){
-                        while ($row = $rYear->fetch_object()) {
-                            echo '<option value="'.$row->Year.'">'.$row->Year.'</option>';
-                        }
-                    }
-                    /*$currentYear = date('Y');
-                    while ($currentYear >= 1950) {
-                        echo '<option value="'.$currentYear.'">'.$currentYear.'</option>';
-                        $currentYear--;
-                    }*/
-                    ?>
-
-                </select>
-                <!--<label for="make"></label>-->
-                <select id="top_make" name="make" class="">
-                    <option selected="true" value="Make">Make</option>
-                    <?php
-                    
-                    $qm = "SELECT DISTINCT `Make` FROM car_detail ";
-                    $rm = $db->query($qm);
-                    if ($rm->num_rows > 0) {
-                        while ($row = $rm->fetch_object()) {
-                            echo "<option value='".$row->Make."'>".$row->Make."</option>";
-                        }
-                    }
-                    ?>
-                </select>
-                <!--<label for="model"></label>-->
-                <select id="top_model" name="model"class="">
-                    <option selected="true" value="Model">Model</option>
-                </select>
-                <!--<label for="trim"></label>-->
-                <select id="top_trim" name="trim" class="">
-                    <option selected="true" value="Trim">Trim</option>
-                </select>
-                <br>
-                <label for="fitment-go-link" style="padding: 0px !important">
-                    <input id="top_btnasearch" value="SEARCH" type="button" style="background:red !important;">
-                </label>
-
-            </form>
-        </div>
-        <div class="DefaultVehicleGuideComponent-helppopup helppopup_left"></div>
-    </div>
-    </div>
+    
 </div>

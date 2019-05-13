@@ -84,7 +84,7 @@ if (isset($_GET['error'])) {
 		                            		<button type="submit" class="btn btn-primary" style="position: absolute;float: right;right: 15px;bottom: 15px;width: 150px;background: #0015f9;border: #0015f9;font-weight: bold;">LOGIN</button>
 		                            	</div>
 		                            </form>
-		                        </div>
+		                        </div> 
 		                        <div class="col-sm-6" style="height: 480px;">
 		                            <?php
 		                            if(isset($_GET['msg'])){
@@ -759,6 +759,13 @@ if (isset($_GET['error'])) {
                                     </div>
                                 </div>
                             </div>
+                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
+                                <div data-v-67e91ef2 class=logo>
+                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
+                                        <img data-v-436329e0 src="images/logos/wheels/street-force.jpeg" class="contain center" style="object-fit:contain;padding-top:10px;;object-position:50% 50%;background-position:50% 50%">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -777,13 +784,115 @@ if (isset($_GET['error'])) {
              <div data-v-0d6be6a8 class=cards-container>
                  <a data-v-0b309813 data-v-0d6be6a8 href=# class=component-ServicesCard>
                      <div data-v-0b309813 class=card-container>
-                         <div data-v-0b309813 class=background-para><div data-v-0b309813 class=background-image style="background-image:url(images/dealer_programe.jpg)"></div></div> <div data-v-0b309813 class=overlay></div> <div data-v-0b309813 class=title-overlay-container><div data-v-0b309813 class="title webkit-font">Dealer Programs </div></div> <svg data-v-0b309813 xmlns=http://www.w3.org/2000/svg width=47 height=49 viewBox="0 0 47 49" class=red style=transform:translate3d(0,98.0614%,0)><path fill=#FF4D4D fill-rule=evenodd d="M46.758 0L0 48.479h46.758z"></path></svg></div> <h4 data-v-0b309813 class="body-text webkit-font">We give you to deal with the best products as an independent dealer to build your brand selling the tires, wheels and suppliers your consumers demand. Our deal with the best manufacturers. You can get the offers in volume savings, business and marketing support and best selection of products, making an exclusive dealer programs.
- <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white"><div data-v-49614bf8 class=link><div data-v-49614bf8 class=label>Read More</div> <div data-v-49614bf8 class=arrow-container><svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle><path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path></svg></div></div></div></h4> </a><a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard><div data-v-0b309813 class=card-container><div data-v-0b309813 class=background-para><div data-v-0b309813 class=background-image style="background-image:url(images/digital_tool_bg.jpeg)"></div></div> <div data-v-0b309813 class=overlay></div> <div data-v-0b309813 class=title-overlay-container><div data-v-0b309813 class="title webkit-font">Digital Tools</div></div> <svg data-v-0b309813 xmlns=http://www.w3.org/2000/svg width=47 height=49 viewBox="0 0 47 49" class=red style=transform:translate3d(0,98.0614%,0)><path fill=#FF4D4D fill-rule=evenodd d="M46.758 0L0 48.479h46.758z"></path></svg></div> <h4 data-v-0b309813 class="body-text webkit-font">Check the power of WTD by online stream your business operations you can get the access our selections current availability and best prices 24/7.
- <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white"><div data-v-49614bf8 class=link><div data-v-49614bf8 class=label>Read More</div> <div data-v-49614bf8 class=arrow-container><svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle><path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path></svg></div></div></div></h4> </a><a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard><div data-v-0b309813 class=card-container><div data-v-0b309813 class=background-para><div data-v-0b309813 class=background-image style="background-image:url(images/tire_pros.jpg)"></div></div> <div data-v-0b309813 class=overlay></div> <div data-v-0b309813 class=title-overlay-container><div data-v-0b309813 class="title webkit-font">The benefits</div></div> <svg data-v-0b309813 xmlns=http://www.w3.org/2000/svg width=47 height=49 viewBox="0 0 47 49" class=red style=transform:translate3d(0,98.0614%,0)><path fill=#FF4D4D fill-rule=evenodd d="M46.758 0L0 48.479h46.758z"></path></svg></div> <h4 data-v-0b309813 class="body-text webkit-font">
- Join the best selling brand in the Ameriaca’s largest and best selling brands with independent dealers. When you will be the member of WTD you will be find out the best benefits from our services and profitabilty .
- <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white"><div data-v-49614bf8 class=link><div data-v-49614bf8 class=label>Read More</div> <div data-v-49614bf8 class=arrow-container><svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle><path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path></svg></div></div></div></h4> </a><a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard><div data-v-0b309813 class=card-container><div data-v-0b309813 class=background-para><div data-v-0b309813 class=background-image style="background-image:url(images/tire_buyer_bg.jpg)"></div></div> <div data-v-0b309813 class=overlay></div> <div data-v-0b309813 class=title-overlay-container><div data-v-0b309813 class="title webkit-font">Prefered buyers </div></div> <svg data-v-0b309813 xmlns=http://www.w3.org/2000/svg width=47 height=49 viewBox="0 0 47 49" class=red style=transform:translate3d(0,98.0614%,0)><path fill=#FF4D4D fill-rule=evenodd d="M46.758 0L0 48.479h46.758z"></path></svg></div> <h4 data-v-0b309813 class="body-text webkit-font">
- When you will be the part of WTD as a prefered dealer than you will also be te part of TireBuyer installer. when you will be the part of WTD online purchases will be delivered to you for installation. Giving you brand new customers and a new means to expand you business as per you like.
- <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white"><div data-v-49614bf8 class=link><div data-v-49614bf8 class=label>Read More</div> <div data-v-49614bf8 class=arrow-container><svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle><path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path></svg></div></div></div></h4> </a></div></div></div> 
+                         <div data-v-0b309813 class=background-para>
+                            <div data-v-0b309813 class=background-image style="background-image:url(images/dealer_programe.jpg)">
+                            </div>
+                        </div> 
+                        <div data-v-0b309813 class=overlay></div> 
+                        <div data-v-0b309813 class=title-overlay-container>
+                            <div data-v-0b309813 class="title webkit-font">Dealer Programs </div>
+                        </div> 
+                        <svg data-v-0b309813 xmlns=http://www.w3.org/2000/svg width=47 height=49 viewBox="0 0 47 49" class=red style=transform:translate3d(0,98.0614%,0)>
+                            <path fill=#FF4D4D fill-rule=evenodd d="M46.758 0L0 48.479h46.758z"></path>
+                        </svg>
+                    </div> 
+                    <h4 data-v-0b309813 class="body-text webkit-font">We give you to deal with the best products as an independent dealer to build your brand selling the tires, wheels and suppliers your consumers demand. Our deal with the best manufacturers. You can get the offers in volume savings, business and marketing support and best selection of products, making an exclusive dealer programs.
+                        <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white">
+                            <div data-v-49614bf8 class=link>
+                                <div data-v-49614bf8 class=label>Read More</div> 
+                                <div data-v-49614bf8 class=arrow-container>
+                                    <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                        <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </h4> 
+                </a>
+                <a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard>
+                    <div data-v-0b309813 class=card-container>
+                        <div data-v-0b309813 class=background-para>
+                            <div data-v-0b309813 class=background-image style="background-image:url(images/digital_tool_bg.jpeg)"></div>
+                        </div> 
+                        <div data-v-0b309813 class=overlay></div> 
+                        <div data-v-0b309813 class=title-overlay-container>
+                            <div data-v-0b309813 class="title webkit-font">Digital Tools</div>
+                        </div> 
+                        <svg data-v-0b309813 xmlns=http://www.w3.org/2000/svg width=47 height=49 viewBox="0 0 47 49" class=red style=transform:translate3d(0,98.0614%,0)>
+                            <path fill=#FF4D4D fill-rule=evenodd d="M46.758 0L0 48.479h46.758z"></path>
+                        </svg>
+                    </div> 
+                    <h4 data-v-0b309813 class="body-text webkit-font">Check the power of WTD by online stream your business operations you can get the access our selections current availability and best prices 24/7.
+                    <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white">
+                        <div data-v-49614bf8 class=link>
+                            <div data-v-49614bf8 class=label>Read More</div> 
+                            <div data-v-49614bf8 class=arrow-container>
+                                <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                    <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </h4> 
+            </a>
+            <a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard>
+                <div data-v-0b309813 class=card-container>
+                    <div data-v-0b309813 class=background-para>
+                        <div data-v-0b309813 class=background-image style="background-image:url(images/tire_pros.jpg)"></div>
+                    </div> 
+                    <div data-v-0b309813 class=overlay></div> 
+                    <div data-v-0b309813 class=title-overlay-container>
+                        <div data-v-0b309813 class="title webkit-font">The benefits</div>
+                    </div> 
+                    <svg data-v-0b309813 xmlns=http://www.w3.org/2000/svg width=47 height=49 viewBox="0 0 47 49" class=red style=transform:translate3d(0,98.0614%,0)>
+                        <path fill=#FF4D4D fill-rule=evenodd d="M46.758 0L0 48.479h46.758z"></path>
+                    </svg>
+                </div> 
+                <h4 data-v-0b309813 class="body-text webkit-font">
+                    Join the best selling brand in the Ameriaca’s largest and best selling brands with independent dealers. When you will be the member of WTD you will be find out the best benefits from our services and profitabilty .
+                    <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white">
+                        <div data-v-49614bf8 class=link>
+                            <div data-v-49614bf8 class=label>Read More</div> 
+                            <div data-v-49614bf8 class=arrow-container>
+                                <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                    <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </h4> 
+            </a>
+            <a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard>
+                <div data-v-0b309813 class=card-container>
+                    <div data-v-0b309813 class=background-para>
+                        <div data-v-0b309813 class=background-image style="background-image:url(images/tire_buyer_bg.jpg)"></div>
+                    </div> 
+                    <div data-v-0b309813 class=overlay></div> 
+                    <div data-v-0b309813 class=title-overlay-container>
+                        <div data-v-0b309813 class="title webkit-font">Prefered buyers </div>
+                    </div> 
+                    <svg data-v-0b309813 xmlns=http://www.w3.org/2000/svg width=47 height=49 viewBox="0 0 47 49" class=red style=transform:translate3d(0,98.0614%,0)>
+                        <path fill=#FF4D4D fill-rule=evenodd d="M46.758 0L0 48.479h46.758z"></path>
+                    </svg>
+                </div> 
+                <h4 data-v-0b309813 class="body-text webkit-font">
+                    When you will be the part of WTD as a prefered dealer than you will also be te part of TireBuyer installer. when you will be the part of WTD online purchases will be delivered to you for installation. Giving you brand new customers and a new means to expand you business as per you like.
+                    <div data-v-49614bf8 data-v-0b309813 class="component-ArrowLink small white">
+                        <div data-v-49614bf8 class=link>
+                            <div data-v-49614bf8 class=label>Read More</div> 
+                            <div data-v-49614bf8 class=arrow-container>
+                                <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                    <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </h4> 
+            </a>
+        </div>
+    </div>
+</div>
+<?php //include("app_store.php")?> 
  <div data-v-52670f54 data-v-5ff8ac3c class=component-NewAtAtd>
  	<div data-v-52670f54 class=common-center-container>
  		<h3 data-v-52670f54 class=heading>NEWS AT WTD</h3> 
@@ -793,19 +902,19 @@ if (isset($_GET['error'])) {
  				<div data-v-55126885 class=card-container>
  					<div data-v-55126885 class=background-image-container>
  						<div data-v-55126885 class=background-image-para>
- 							<div data-v-55126885 class=background-image style=background-image:url(images/ware_house.jpg)></div>
+ 							<div data-v-55126885 class=background-image style=background-image:url(images/play-store-&-apple-store-banner.png)></div>
  						</div>
  					</div> 
  					<div data-v-55126885 class=title-content-container>
- 						<h5 data-v-55126885 class=title>WTD Cuts the Ribbon at Pennsylvania’s New Million-Square-Foot Mixing Warehouse</h5> <h5 data-v-55126885 class=content>WTD, Inc. (WTD) today celebrated the opening of its new one million-square-foot Pocono Mixing Warehouse in Blakeslee, Pennsylvania.</h5> 
+ 						<h5 data-v-55126885 class=title>Find Us </h5> <h5 data-v-55126885 class=content>On Play Store As WTDUSA</h5> 
  						<div data-v-55126885 class=button-container>
  							<div data-v-49614bf8 data-v-55126885 class="component-ArrowLink small">
  								<div data-v-49614bf8 class=link>
- 									<div data-v-49614bf8 class=label>Read More</div> 
+ 									<div data-v-49614bf8 class=label></div> 
  									<div data-v-49614bf8 class=arrow-container>
- 										<svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+ 										<!-- <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
  											<path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
- 										</svg>
+ 										</svg> -->
  									</div>
  								</div>
  							</div>
@@ -813,7 +922,32 @@ if (isset($_GET['error'])) {
  					</div>
  				</div>
  			</a>
- 			<a data-v-55126885 data-v-52670f54 href=# class=component-NewCard>
+            <a data-v-55126885 data-v-52670f54 href=# class=component-NewCard>
+            <div data-v-55126885 class=card-container>
+                <div data-v-55126885 class=background-image-container>
+                    <div data-v-55126885 class=background-image-para>
+                        <div data-v-55126885 class=background-image style=background-image:url(images/play-store-&-apple-store-banner-1.png)></div>
+                    </div>
+                </div> 
+                <div data-v-55126885 class=title-content-container>
+                    <h5 data-v-55126885 class=title>Find Us </h5> 
+                    <h5 data-v-55126885 class=content>On Apple Store As WTDUSA</h5> 
+                    <div data-v-55126885 class=button-container>
+                        <div data-v-49614bf8 data-v-55126885 class="component-ArrowLink small">
+                            <div data-v-49614bf8 class=link>
+                                <div data-v-49614bf8 class=label></div> 
+                                    <div data-v-49614bf8 class=arrow-container>
+                                        <!-- <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                            <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
+                                        </svg> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+ 			<!-- <a data-v-55126885 data-v-52670f54 href=# class=component-NewCard>
  			<div data-v-55126885 class=card-container>
  				<div data-v-55126885 class=background-image-container>
  					<div data-v-55126885 class=background-image-para>
@@ -837,8 +971,8 @@ if (isset($_GET['error'])) {
  						</div>
  					</div>
  				</div>
- 			</a>
- 			<a data-v-55126885 data-v-52670f54 href=# class=component-NewCard>
+ 			</a> -->
+ 			<!-- <a data-v-55126885 data-v-52670f54 href=# class=component-NewCard>
  				<div data-v-55126885 class=card-container>
  					<div data-v-55126885 class=background-image-container>
  						<div data-v-55126885 class=background-image-para>
@@ -862,7 +996,31 @@ if (isset($_GET['error'])) {
  						</div>
  					</div>
  				</div>
- 			</a>
+ 			</a> -->
+            <a data-v-55126885 data-v-52670f54 href=# class=component-NewCard>
+                <div data-v-55126885 class=card-container>
+                    <div data-v-55126885 class=background-image-container>
+                        <div data-v-55126885 class=background-image-para>
+                            <div data-v-55126885 class=background-image style=background-image:url(images/warehouse.jpg)></div>
+                        </div>
+                    </div> 
+                    <div data-v-55126885 class=title-content-container>
+                        <h5 data-v-55126885 class=title>WTD Warehouse Extension Comming Soon</h5> <h5 data-v-55126885 class=content>WTD Warehouse Extension</h5> 
+                        <div data-v-55126885 class=button-container>
+                            <div data-v-49614bf8 data-v-55126885 class="component-ArrowLink small">
+                                <div data-v-49614bf8 class=link>
+                                    <div data-v-49614bf8 class=label></div> 
+                                    <div data-v-49614bf8 class=arrow-container>
+                                        <!-- <svg data-v-49614bf8 xmlns=http://www.w3.org/2000/svg viewBox="0 0 90 90" class=triangle>
+                                            <path fill=red fill-rule=evenodd d="M90 45L0 90V0z"></path>
+                                        </svg> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
  		</div>
  	</div>
  </div>

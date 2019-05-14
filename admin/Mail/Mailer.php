@@ -4,7 +4,7 @@ class Mailer
 {
     public function send($to, $subject, $body)
     {
-        $from = 'foremail@wtdusaonline.net'; //change this to your email address
+        $from = 'wdtusaonline@gmail.com'; //change this to your email address
         
         $headers = array(
             'From' => $from,
@@ -13,11 +13,11 @@ class Mailer
         );
 
         $smtp = Mail::factory('smtp', array(
-                'host' => 'mail.wtdusaonline.net',
-                'port' => '25',
+                'host' => 'smtp.gmail.com',
+                'port' => '587',
                 'auth' => true,
                 'username' => $from, //your gmail account
-                'password' => 'Pakistan@4646' // your password
+                'password' => 'Fifa1234!' // your password
             ));
 
         // Send the mail
@@ -25,26 +25,6 @@ class Mailer
 
     }
 
-    public function sendme( $subject, $body)
-    {
-        $from = 'foremail@wtdusaonline.net'; //change this to your email address
-        
-        $headers = array(
-            'From' => $from,
-            'To' => $from,
-            'Subject' => $subject
-        );
-
-        $smtp = Mail::factory('smtp', array(
-            'host' => 'mail.wtdusaonline.net',
-            'port' => '25',
-            'auth' => true,
-            'username' => $from, //your gmail account
-            'password' => 'Pakistan@4646' // your password
-        ));
-        // Send the mail
-        $mail = $smtp->send($from, $headers, $body);
-
-    }
+  
 
 }

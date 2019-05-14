@@ -41,8 +41,8 @@ if (count($_POST) > 0) {
             $message .= "<tr><td><strong>Question:</strong> </td><td>" . strip_tags($_POST['question']) . "</td></tr>";
             $message .= "</table>";
             $message .= "</body></html>";
-            $mailer->sendme("Dealer Application Request",$message);
-            $mailer->send("dyhedido@getnada.com","Dealer Application Request");
+            // $mailer->sendme("Dealer Application Request",$message);
+            $mailer->send($_POST['email'].", waseem@wtdusaonline.com, Liz@wtdusaonline.com, umer@esspk.com","Dealer Application Request Received",$message);
             $msg = "success";
             header("location:index.php?msg=success");
 

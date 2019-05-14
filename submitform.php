@@ -42,7 +42,7 @@ if (count($_POST) > 0) {
             $message .= "</table>";
             $message .= "</body></html>";
             // $mailer->sendme("Dealer Application Request",$message);
-            $mailer->send($_POST['email'].", waseem@wtdusaonline.com, Liz@wtdusaonline.com, umer@esspk.com","Dealer Application Request Received",$message);
+            $mailer->send($_POST['email'].", waseem@wtdusaonline.com, Liz@wtdusaonline.com, umer@esspk.com, khurram@esspk.com","Dealer Application Request Received",$message);
             $msg = "success";
             header("location:index.php?msg=success");
 
@@ -59,64 +59,64 @@ if (count($_POST) > 0) {
     //     header("location:index.php?error_message=captcha");
 	// }
 	
-	 if (isset($_POST['phonecall'])) {
-            $name = $_POST['name'];
-            $phone = $_POST['phonecall'];
-            $tooo = 'info@wtdusaonline.com';
-            $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com';
+	 // if (isset($_POST['phonecall'])) {
+        //     $name = $_POST['name'];
+        //     $phone = $_POST['phonecall'];
+        //     $tooo = 'info@wtdusaonline.com';
+        //     $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com';
 
-            $subject = 'Dealer Application Request';
+        //     $subject = 'Dealer Application Request';
 
-            $headers = "From: " . $tooo . "\r\n";
-            $headers .= "Reply-To: " . $tooo . "\r\n";
-            // $headers .= "CC: susan@example.com\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        //     $headers = "From: " . $tooo . "\r\n";
+        //     $headers .= "Reply-To: " . $tooo . "\r\n";
+        //     // $headers .= "CC: susan@example.com\r\n";
+        //     $headers .= "MIME-Version: 1.0\r\n";
+        //     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-            $message = '<html><body>';
-            $message = '<h4>Dealer Call Bcak Request</h4>';
-            $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-            $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
-            $message .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($_POST['phonecall']) . "</td></tr>";
-            $message .= "</table>";
-            $message .= "</body></html>";
-            if (mail($to, $subject, $message, $headers)) {
-                $msg = "success";
-            } else {
-                $msg = "error";
-            }
-            header("location:about.php");
+        //     $message = '<html><body>';
+        //     $message = '<h4>Dealer Call Bcak Request</h4>';
+        //     $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+        //     $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
+        //     $message .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($_POST['phonecall']) . "</td></tr>";
+        //     $message .= "</table>";
+        //     $message .= "</body></html>";
+        //     if (mail($to, $subject, $message, $headers)) {
+        //         $msg = "success";
+        //     } else {
+        //         $msg = "error";
+        //     }
+        //     header("location:about.php");
 
-        }
+        // }
 
-        if (isset($_POST['message'])) {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $subject = $_POST['subject'];
-            $msgg = $_POST['message'];
-            $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com';
+        // if (isset($_POST['message'])) {
+        //     $name = $_POST['name'];
+        //     $email = $_POST['email'];
+        //     $subject = $_POST['subject'];
+        //     $msgg = $_POST['message'];
+        //     $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com';
 
-            //$subject = 'Dealer Application Request';
+        //     //$subject = 'Dealer Application Request';
 
-            $headers = "From: " . $email . "\r\n";
-            $headers .= "Reply-To: " . $email . "\r\n";
-            // $headers .= "CC: susan@example.com\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        //     $headers = "From: " . $email . "\r\n";
+        //     $headers .= "Reply-To: " . $email . "\r\n";
+        //     // $headers .= "CC: susan@example.com\r\n";
+        //     $headers .= "MIME-Version: 1.0\r\n";
+        //     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-            $message = '<html><body>';
-            $message = '<h4>Dealer Call Bcak Request</h4>';
-            $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-            $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
-            $message .= "<tr><td><strong></strong> </td><td>" . strip_tags($_POST['message']) . "</td></tr>";
-            $message .= "</table>";
-            $message .= "</body></html>";
-            if (mail($to, $subject, $message, $headers)) {
-                $msg = "success";
-            } else {
-                $msg = "error";
-            }
-            header("location:index.php");
+        //     $message = '<html><body>';
+        //     $message = '<h4>Dealer Call Bcak Request</h4>';
+        //     $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+        //     $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
+        //     $message .= "<tr><td><strong></strong> </td><td>" . strip_tags($_POST['message']) . "</td></tr>";
+        //     $message .= "</table>";
+        //     $message .= "</body></html>";
+        //     if (mail($to, $subject, $message, $headers)) {
+        //         $msg = "success";
+        //     } else {
+        //         $msg = "error";
+        //     }
+        //     header("location:index.php");
 
-        }
+        // }
 }

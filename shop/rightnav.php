@@ -50,13 +50,18 @@
     	 	<div class="DefaultATDQuickLinkComponent-helppopup helppopup_right"></div> 
     	 </div> 
     	 <div class="accordion-wrap" id="rightpanel-OrderHistory"> 
-          <h4 id="order-history-heading" data-target="#orderhistory"> Announcements
-      		<img id="DefaultOrderHistoryAccordionComponent" src="images/leftDownCaret.png" class="image-icon-blue-question">
+			 	<h4 id="order-history-heading" data-target="#orderhistory" style="padding: 3px;">  <div id="google_translate_element" style="padding:-10px"></div>  
+      			<img id="DefaultOrderHistoryAccordionComponent" src="images/leftDownCaret.png" class="image-icon-blue-question">
       	   <!-- <img src="" class="arrow-image orderhistory-arrow-down-right image-icon-down-arrow">-->
-      	</h4>
-      	     <div id="order-history-heading-container" class="accordion-container order-history-accordion-div">
-       	     </div> 
-       	     <div class="DefaultOrderHistoryAccordionComponent-helppopup helppopup_right"></div> 
+      		</h4>
+			 
+          <h4 id="order-history-heading" data-target="#orderhistory"> Announcements
+      			<img id="DefaultOrderHistoryAccordionComponent" src="images/leftDownCaret.png" class="image-icon-blue-question">
+      	   <!-- <img src="" class="arrow-image orderhistory-arrow-down-right image-icon-down-arrow">-->
+      		</h4>
+      	    <div id="order-history-heading-container" class="accordion-container order-history-accordion-div">
+       	  	</div> 
+       	    <div class="DefaultOrderHistoryAccordionComponent-helppopup helppopup_right"></div> 
        	 </div>
 
          <?php 

@@ -79,7 +79,8 @@ if (!isset($_SESSION['email'])) {
             width: 1000px;
         }
         .top-header-margin{
-            margin-top: 102px;
+            margin-top: 79px;
+            position: relative;
         }
     </style>
    
@@ -113,10 +114,8 @@ if(isset($_SESSION['cart'])){
                 <?php include "nav.php"; ?>
 
             </div> 
-            <div class="bottom-header full-left" align="center" style="margin-bottom: 33px;">
-                <div style="width:100%">
-                    <div id="google_translate_element" class="gt-1"></div>  
-                </div>
+            <div class="bottom-header full-left" align="center">
+              
                 <a class="ATD-logo gs" href="#">
                     <img src="images/1.png" style="max-height: 70px;margin-top: -25px;margin-left:-11px;" /> 
                 </a>

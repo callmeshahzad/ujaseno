@@ -233,7 +233,7 @@
                     <option value="24">24</option>
                     <option value="26">26</option>
                 </select> x
-                <select id="wwidth" style="width: 60px;" >
+                <select id="wwidth" style="width: 57px;" >
                     <?php 
                     if(isset($_GET['WheelWidth'])){
                         echo '<option value="'.$_GET["WheelWidth"].'" selected>'.$_GET["WheelWidth"].'</option>';
@@ -630,7 +630,7 @@
                         <option value="24">24</option>
                         <option value="26">26</option>
                     </select> x
-                    <select id="wwidth" style="width: 60px;" >
+                    <select id="wwidth" style="width: 57px;" >
                         <?php 
                         if(isset($_GET['WheelWidth'])){
                             echo '<option value="'.$_GET["WheelWidth"].'" selected>'.$_GET["WheelWidth"].'</option>';

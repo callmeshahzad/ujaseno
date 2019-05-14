@@ -13,7 +13,9 @@
 </head>
  <body data-gr-c-s-loaded=true cz-shortcut-listen=true style="background-color: #E1EBF4;">
  
-<div id="google_translate_element" class="gt-1"></div>
+<div class="gt-1">
+    <div id="google_translate_element" ></div>
+</div>
  <div id="app" class="english">
 <?php include 'nav.php'; ?>
 <?php 

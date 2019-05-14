@@ -4,7 +4,7 @@ class Mailer
 {
     public function send($to, $subject, $body)
     {
-        $from = 'wdtusaonline@gmail.com'; //change this to your email address
+        $from = 'noreplywtdusaonline@gmail.com'; //change this to your email address
         
         $headers = array(
             'From' => $from,

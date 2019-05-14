@@ -80,7 +80,7 @@ if (isset($_GET['make'])) {
 		while ($row = $r->fetch_object()) {
 			$trim = $row->Tiresize;
 					// echo $trim;
-			$lastTrim=substr($trim,7,9);
+			$lastTrim=substr($trim,7,10);
 					// echo 'TireSizeA='.$row->tsizea.'&TireSizeB='.$row->tsizeb.'&TireSizeC='.$row->tsizec;
 			$wheelSize = $row->Rimsize;
 			$lastWheeldiameter = substr($wheelSize,strpos($wheelSize,'x')+1,2);

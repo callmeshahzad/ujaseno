@@ -312,7 +312,7 @@ if($case==1){
             while ($row = $r->fetch_object()) {
                 $trim = $row->Tiresize;
                         // echo $trim;
-                $trimm=substr($trim,7,9);
+                $trimm=substr($trim,7,10);
                         // echo 'TireSizeA='.$row->tsizea.'&TireSizeB='.$row->tsizeb.'&TireSizeC='.$row->tsizec;
                 // $wheelSize = $row->Rimsize;
                 // $lastWheeldiameter = substr($wheelSize,strpos($wheelSize,'x')+1,2);
@@ -326,19 +326,27 @@ if($case==1){
                 $temp2=array();
 
                 // echo "Exploded: ".$temp1[1]."\n";
-                $temp2=explode("ZR",$temp1[1]);     
+                $temp2=explode("ZR",$temp1[1]);    
+                echo "ZR Temp2:".$temp1[1]; 
                 $tyreSizeB="";  
                 $tyreSizeC="";  
                 if(count($temp2)==2){                    
                     $tyreSizeB=$temp2[0];
-                    $tyreSizeC=$temp2[1];
+                    $tyreSizeC=$temp2[1];         
+                    if(strlen($tyreSizeC)==3){
+                        $tyreSizeC=substr($tyreSizeC,0,2);
+                    }           
                     // echo "tyreSizeB1: ".$tyreSizeB." tyreSizeC1:".$tyreSizeC."\n";
 
                 }else if(count($temp2)==1){                    
                     $temp2=explode("R",$temp1[1]);
                     $tyreSizeB=$temp2[0];
-                    $tyreSizeC=$temp2[1];                    
-                    // echo "tyreSizeB2: ".$tyreSizeB." tyreSizeC2:".$tyreSizeC."\n";
+                    $tyreSizeC=$temp2[1];     
+                    
+                    if(strlen($tyreSizeC)==3){
+                        $tyreSizeC=substr($tyreSizeC,0,2);
+                    }
+                    // echo "tyreSizeB2: ".$tyreSizeB." tyreSizeC2:".$tyreSizeC." TypreSizeC2Length:".strlen($tyreSizeC)." TryeSizeCTrimming".substr($tyreSizeC,0,2)."\n";
                 }
                 // echo "Exploded count:".count($temp2)."\n";         
                 // print_r($temp2);

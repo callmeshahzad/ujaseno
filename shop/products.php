@@ -278,12 +278,18 @@ if($case==1){
         if(count($temp2)==2){                    
             $tyreSizeB=$temp2[0];
             $tyreSizeC=$temp2[1];
+            if(strlen($tyreSizeC)==3){
+                $tyreSizeC=substr($tyreSizeC,0,2);
+                }   
                     // echo "tyreSizeB1: ".$tyreSizeB." tyreSizeC1:".$tyreSizeC."\n";
 
         }else if(count($temp2)==1){                    
             $temp2=explode("R",$temp1[1]);
             $tyreSizeB=$temp2[0];
-            $tyreSizeC=$temp2[1];                    
+            $tyreSizeC=$temp2[1];  
+            if(strlen($tyreSizeC)==3){
+                $tyreSizeC=substr($tyreSizeC,0,2);
+                }                     
                     // echo "tyreSizeB2: ".$tyreSizeB." tyreSizeC2:".$tyreSizeC."\n";
         }
 

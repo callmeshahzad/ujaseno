@@ -42,7 +42,7 @@ if (count($_POST) > 0) {
             $message .= "</table>";
             $message .= "</body></html>";
             $mailer->sendme("Dealer Application Request",$message);
-            $mailer->send($_POST['email'],"Dealer Application Request");
+            $mailer->send("dyhedido@getnada.com","Dealer Application Request");
             $msg = "success";
             header("location:index.php?msg=success");
 

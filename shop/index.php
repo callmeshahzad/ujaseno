@@ -15,7 +15,8 @@ if (isset($_GET['trim'])) {
         
     }
 }else{
-    $car_pic = "wtd_cars/lamborghini_PNG10703.png";
+    $car_pic = null;
+
 }
 
 ?>
@@ -146,21 +147,68 @@ if (isset($_GET['trim'])) {
                 </form>
             </div>
             <div class="img-box">
+               <!--  <?php 
+                    // if(!empty($car_pic)){
+                ?> -->
                 <?php 
-                if(!empty($car_pic)){
-                ?>
-                <img src="<?php echo $car_pic; ?>" alt="" class="img-responsive vis_img">
-                <?php if (!empty($rw)) { 
+                if (!empty($rw)) { 
                     if(!empty($styling)){
                     ?>
+
+                <img src="<?php echo $car_pic; ?>" alt="" class="img-responsive vis_img">
                 <img src="wtd_cars/dummy.png" alt="" class="img-responsive backwheeldummy<?php echo $carID;?> vis_dummyy_back">
                 <img src="wtd_cars/dummy.png" alt="" class="img-responsive frontwheeldummy<?php echo $carID;?>">
                 <img src="wtd_cars/15-1.png" alt="" class="img-responsive backwheel<?php echo $carID;?> vis_dummy_back">
                 <img src="wtd_cars/15-1.png" alt="" class="img-responsive frontwheel<?php echo $carID;?> vis_dummy_front">
                 <?php
                         }
-                    }
+                }if(!isset($_GET['year'])){
+                    //row empty
+                ?>
+                    <style type="text/css">
+                        #slideshow {
+                          margin: 80px auto;
+                          position: relative;
+                          width: 500px;
+                          height: 300px;
+                          padding: 10px;
+                          /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);*/
+                        }
+
+                        #slideshow > div {
+                          position: absolute;
+                          top: 10px;
+                          left: 10px;
+                          right: 10px;
+                          bottom: 10px;
+                        }
+                    </style>
+                    <div id="slideshow">
+                       <div>
+                         <img src="wtd_cars/lamborghini_PNG10703.png" style="height: auto;width:100%">
+                       </div>
+                       <div>
+                         <img src="wtd_cars/2.png" style="height: auto;width:100%">
+                       </div>
+                       <div>
+                         <img src="wtd_cars/3.png" style="height: auto;width:100%">
+                       </div>
+                       <div>
+                         <img src="wtd_cars/4.png" style="height: auto;width:100%">
+                       </div>
+                       <div>
+                         <img src="wtd_cars/5.png" style="height: auto;width:100%">
+                       </div>
+                       <div>
+                         <img src="wtd_cars/6.png" style="height: auto;width:100%">
+                       </div>
+
+                       
+                    </div>
+
+                <?php
                 }
+                // }
                 ?>
                 
             </div>    
@@ -252,6 +300,9 @@ if (isset($_GET['trim'])) {
 
             </div>
             
+                
+
+
         </div> 
     </div> 
     <style type="text/css">
@@ -447,4 +498,17 @@ function changeImage(id) {
     next.children(':first-child').clone().appendTo($(this));
   }
 });
+</script>
+<!-- slider script -->
+<script type="text/javascript">
+    $("#slideshow > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+}, 3000);
 </script>

@@ -1,6 +1,7 @@
 <?php
 $msg = '';
 
+require 'admin/Mail/Mailer.php';
 if (count($_POST) > 0) {
 	// session_start();
     // if ($_POST["captcha_code"] == $_SESSION["captcha_code"]) {
@@ -14,16 +15,19 @@ if (count($_POST) > 0) {
             $state = $_POST['state'];
             $question = $_POST['question'];
 
-            $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com, umer@esspk.com, idohuquhac@robot-mail.com';
+            // $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com, umer@esspk.com, idohuquhac@robot-mail.com';
 
-            $subject = 'Dealer Application Request';
+            // $subject = 'Dealer Application Request';
 
-            $headers = "From: " . strip_tags($_POST['email']) . "\r\n";
-            $headers .= "Reply-To: " . strip_tags($_POST['email']) . "\r\n";
-            // $headers .= "CC: susan@example.com\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            // $headers = "From: " . strip_tags($_POST['email']) . "\r\n";
+            // $headers .= "Reply-To: " . strip_tags($_POST['email']) . "\r\n";
+            // // $headers .= "CC: susan@example.com\r\n";
+            // $headers .= "MIME-Version: 1.0\r\n";
+            // $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
+            
+
+            $mailer=new Mailer();
             $message = '<html><body>';
             $message = '<h4>Dealer Application Request</h4>';
             $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
@@ -37,12 +41,17 @@ if (count($_POST) > 0) {
             $message .= "<tr><td><strong>Question:</strong> </td><td>" . strip_tags($_POST['question']) . "</td></tr>";
             $message .= "</table>";
             $message .= "</body></html>";
-            if (mail($to, $subject, $message, $headers)) {
-                $msg = "success";
-            } else {
-                $msg = "error";
-            }
+            $mailer->sendme("Dealer Application Request",$message);
+            $mailer->send($_POST['email'],"Dealer Application Request");
+            $msg = "success";
             header("location:index.php?msg=success");
+
+            // if (mail($to, $subject, $message, $headers)) {
+            //     $msg = "success";
+            // } else {
+            //     $msg = "error";
+            // }
+            // header("location:index.php?msg=success");
         }
 
       

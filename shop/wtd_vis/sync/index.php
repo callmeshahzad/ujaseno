@@ -138,6 +138,6 @@ $result = $pdo->query($query);
 //     echo "Success :" . $year['year'] . "\n";
 
 // }
-echo "connected".$pdo;
+echo "connected";
 
 ?>

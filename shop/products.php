@@ -386,7 +386,12 @@ curl_close($process);
  <!-- Search Results --> <br/> 
  <!--productList.tag--> 
  <div id="product-list-container"> 
-    <h4 class="order-heading" style="margin-left: 12px;">SEARCH RESULTS</h4>  
+    <h4 class="order-heading" style="margin-left: 12px;">
+        <?php
+            echo (isset($_GET['vis']))?"RELATED RESULTS":"SEARCH RESULTS";
+        ?>
+        
+    </h4>  
     <div id="search-tabs" class="multiTabSearchTabs"> <span class="pull-right pr20"> </span> 
         <div class="tabs memo-1-tab list-tab"> 
             <ul class="multiTabsGlobalSearch"> 

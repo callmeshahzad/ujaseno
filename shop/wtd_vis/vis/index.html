@@ -1,0 +1,145 @@
+<link rel="stylesheet" href="wtd_vis/vis/wtd_slideshow.css">
+<link rel="stylesheet" href="wtd_vis/vis/vis.css">
+<div ng-app="WTD_APP" ng-controller="visController" class="container" style="width:100%">
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{carRimView.imidOBJ.catalog}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="http://wtdusaonline.com/Portals/96/WebSyncImages/{{carRimView.imidOBJ.Image0}}"
+                                style="height: 165px;width:100%;">
+                        </div>
+                        <div class="col-sm-8">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <form name="f">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>
+                        Year
+                    </label>
+                    <select class="form-control" name="year" placholder="Year" ng-model="selectedYear"
+                        ng-options="obj.id as obj.year for obj in years" required ng-change="getMakes()"></select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>
+                        Make
+                    </label>
+                    <select class="form-control" name="make" placholder="Make" ng-model="selectedMake"
+                        ng-options="obj.id as obj.make for obj in makes" required ng-change="getModels()"></select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>
+                        Model
+                    </label>
+                    <select class="form-control" name="model" placholder="Model" ng-model="selectedModel"
+                        ng-options="obj.id as obj.model for obj in models" required ng-change="getTrims()"></select>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>
+                        Trim
+                    </label>
+                    <select class="form-control" name="trim" placholder="Trim" ng-model="selectedTrim"
+                        ng-options="obj.id as obj.trim for obj in trims" required ng-change="trimChange()"></select>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div id="s1" ng-show="!selectedTrimObj">
+        <div>
+            <img src="wtd_cars/lamborghini_PNG10703.png" style="height: auto;width:100%">
+        </div>
+        <div>
+            <img src="wtd_cars/2.png" style="height: auto;width:100%">
+        </div>
+        <div>
+            <img src="wtd_cars/3.png" style="height: auto;width:100%">
+        </div>
+        <div>
+            <img src="wtd_cars/4.png" style="height: auto;width:100%">
+        </div>
+        <div>
+            <img src="wtd_cars/5.png" style="height: auto;width:100%">
+        </div>
+        <div>
+            <img src="wtd_cars/6.png" style="height: auto;width:100%">
+        </div>
+    </div>
+    <div style="position: relative;width:100%">
+        <div ng-if="selectedTrimObj&&selectedTrimObj.carImage!=''" style="text-align: center;">
+            <img src="wtd_vis/images/car_images/{{selectedTrimObj.carImage}}" style="height: 210px;width: auto;">
+        </div>
+        <div ng-if="selectedTrimObj&&selectedTrimObj.carImage==''"
+            style="text-align: center;padding:100px;background-color: #F3F3F3">
+            <h2 class="text-danger">Car Image Comming Soon</h2>
+        </div>
+
+        <img src="wtd_vis/images/car_rim_images/{{selectedCarRim.rimFaceImage}}"
+            ng-if="selectedTrimObj&&selectedTrimObj.carImage!=''&&selectedCarRim&&selectedCarRim.rimFaceImage!=''"
+            alt="" id="frontRim" style="position: absolute;height: 80px"
+            ng-style="selectedTrimObj&&selectedTrimObj.top!=''&&selectedTrimObj.left!='' && {'top':selectedTrimObj.top+'px','left':selectedTrimObj.left+'px'} ">
+
+
+        <img src="wtd_vis/images/car_rim_images/{{selectedCarRim.rimFaceImage}}"
+            ng-if="selectedTrimObj&&selectedTrimObj.carImage!=''&&selectedCarRim&&selectedCarRim.rimFaceImage!=''"
+            alt="" style="position: absolute;height: 80px"
+            ng-style="selectedTrimObj&&selectedTrimObj.top!=''&&selectedTrimObj.right!='' && {'top':selectedTrimObj.top+'px','right':selectedTrimObj.right+'px'} ">
+
+
+    </div>
+
+
+    <div class="carousel slide" id="myCarousel" ng-if="carRims.length>0" data-interval="false">
+        <div class="carousel-inner">
+            <div class="item {{($index==0)?'active':''}}" ng-repeat="outer in carRims">
+                <div class="row">
+                    <div class="col-sm-2" ng-repeat="inner in outer" ng-show="inner.imidOBJ&&inner.imidOBJ!=''">
+                        <!-- <a href="#{{inner.imidOBJ.Image0}}"> -->
+                        <img src="http://wtdusaonline.com/Portals/96/WebSyncImages/{{inner.imidOBJ.Image0}}"
+                            style="height: 80px;width:80px;" class="{{(inner.selected)?'fadedOpacity':'fullOpacity'}}"
+                            ng-if="inner.imidOBJ.Image0!=''" ng-click="onRimClick(inner)">
+
+                        <img src="wtd_vis/images/car_images/demo.png" style="height: 80px;width:80px;"
+                            ng-if="inner.imidOBJ.Image0==''">
+
+                        <button class="btn btn-primary "
+                            style="min-width: 80px;"  ng-click="onViewClick(inner)">
+                            View
+                        </button>
+                        <!-- </a> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="width:35px"><i
+                class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next" style="width:35px"><i
+                class="glyphicon glyphicon-chevron-right"></i></a>
+    </div>
+</div>

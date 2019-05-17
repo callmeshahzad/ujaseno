@@ -1,0 +1,16 @@
+#s1 {
+    margin: 80px auto;
+    position: relative;
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);*/
+  }
+
+  #s1 > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }

@@ -1,23 +1,5 @@
 <?php include 'header.php'; 
 
-if (isset($_GET['trim'])) {
-    $trim = $_GET['trim'];
-    $q  = "SELECT * FROM tbl_vis_car WHERE trim_id= '$trim'";
-    $r = $db->query($q);
-    if ($r->num_rows > 0 ) {
-        $row = $r->fetch_object();
-        $carID = $row->id;
-        $car_pic = $row->car_pic;
-        $styling = $row->styling;
-        $qw = "SELECT * FROM tbl_vis_wheels WHERE car_id='$carID'";
-        $rw = $db->query($qw);
-
-        
-    }
-}else{
-    $car_pic = null;
-
-}
 
 ?>
 <div class="content-wrapper full-left top-header-margin"> 
@@ -113,105 +95,7 @@ if (isset($_GET['trim'])) {
     <div class="center-content"> 
         <div class="widget-wrap row">
 
-            <div class="search-box">
-                <form action="" method="get" id="car_search">
-                    <div class="col-sm-3" style="padding: 1px !important;">
-                        <select name="year" class="form-control" id="vis_year">
-                            <option value="">Year</option>
-                            <?php 
-                                $queryY = "SELECT * FROM tbl_vis_year ORDER BY year DESC";
-                                $resultY = $db->query($queryY);
-                                if ($resultY->num_rows > 0 ) {
-                                    while ($rowY = $resultY->fetch_object()) {
-                                        echo '<option value="'.$rowY->id.'">'.$rowY->year.'</option>';
-                                    }
-                                }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="col-sm-3" style="padding: 1px !important">
-                        <select name="make" class="form-control" id="vis_make">
-                            <option value="">Make</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3" style="padding: 1px !important">
-                        <select name="model" class="form-control" id="vis_model">
-                            <option value="">Model</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3" style="padding: 1px !important">
-                        <select name="trim" class="form-control" id="vis_trim">
-                            <option value="">Trim</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-            <div class="img-box">
-               <!--  <?php 
-                    // if(!empty($car_pic)){
-                ?> -->
-                <?php 
-                if (!empty($rw)) { 
-                    if(!empty($styling)){
-                    ?>
-
-                <img src="<?php echo $car_pic; ?>" alt="" class="img-responsive vis_img">
-                <img src="wtd_cars/dummy.png" alt="" class="img-responsive backwheeldummy<?php echo $carID;?> vis_dummyy_back">
-                <img src="wtd_cars/dummy.png" alt="" class="img-responsive frontwheeldummy<?php echo $carID;?>">
-                <img src="wtd_cars/15-1.png" alt="" class="img-responsive backwheel<?php echo $carID;?> vis_dummy_back">
-                <img src="wtd_cars/15-1.png" alt="" class="img-responsive frontwheel<?php echo $carID;?> vis_dummy_front">
-                <?php
-                        }
-                }if(!isset($_GET['year'])){
-                    //row empty
-                ?>
-                    <style type="text/css">
-                        #slideshow {
-                          margin: 80px auto;
-                          position: relative;
-                          width: 500px;
-                          height: 300px;
-                          padding: 10px;
-                          /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);*/
-                        }
-
-                        #slideshow > div {
-                          position: absolute;
-                          top: 10px;
-                          left: 10px;
-                          right: 10px;
-                          bottom: 10px;
-                        }
-                    </style>
-                    <div id="slideshow">
-                       <div>
-                         <img src="wtd_cars/lamborghini_PNG10703.png" style="height: auto;width:100%">
-                       </div>
-                       <div>
-                         <img src="wtd_cars/2.png" style="height: auto;width:100%">
-                       </div>
-                       <div>
-                         <img src="wtd_cars/3.png" style="height: auto;width:100%">
-                       </div>
-                       <div>
-                         <img src="wtd_cars/4.png" style="height: auto;width:100%">
-                       </div>
-                       <div>
-                         <img src="wtd_cars/5.png" style="height: auto;width:100%">
-                       </div>
-                       <div>
-                         <img src="wtd_cars/6.png" style="height: auto;width:100%">
-                       </div>
-
-                       
-                    </div>
-
-                <?php
-                }
-                // }
-                ?>
-                
-            </div>    
+            <?php include 'wtd_vis/vis/index.html';?>   
             <br>        
             <div class="clearfix"></div>
             <div class="img-slider" style="">

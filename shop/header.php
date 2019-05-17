@@ -42,6 +42,12 @@ if (!isset($_SESSION['email'])) {
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+        <script src="wtd_vis/angularjs/WTD_APP.js"></script>
+        <script src="wtd_vis/angularjs/scopeService.js"></script>
+        <script src="wtd_vis/vis/vis.controller.js"></script>
     <link rel="stylesheet" href="css/global.min.css">
     <style>
         @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -92,6 +98,8 @@ if (!isset($_SESSION['email'])) {
     <link rel="stylesheet" type="text/css" href="../css/translator.css" />
     <script type="text/javascript" src="engine2/jquery.js"></script>
     <link rel=icon type=image/png sizes=32x32 href="../images/1.png">
+
+    
 </head>
 <?php
 if(isset($_SESSION['cart'])){

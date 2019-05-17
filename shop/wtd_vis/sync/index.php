@@ -2,8 +2,12 @@
 <?php
 
 $process = curl_init();
-
-$pdo = new PDO('mysql:host=127.0.0.1;dbname=wtd', 'root', '');
+// $host 	= "localhost";
+// $dbName = "wtdusao2_wtdusa";
+// $user 	= "wtdusao2_wtdusa";
+// $pass 	= "WWaTSeSaO]d9";
+// $pdo = new PDO('mysql:host=127.0.0.1;dbname=wtd', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=wtdusao2_wtdusa', 'wtdusao2_wtdusa', 'WWaTSeSaO]d9');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 require '../year/classes/yearDAL.php';
@@ -40,7 +44,7 @@ foreach ($result as $row) {
     //Year
 
     $query = "SELECT DISTINCT Make FROM `car_detail` ";
-    $query.=" WHERE Make='audi'";
+    // $query.=" WHERE Make='audi'";
     $resultMake = $pdo->query($query);
     foreach ($resultMake as $rowMake) {
         $make = new makeBAL();
@@ -132,7 +136,9 @@ foreach ($result as $row) {
         }
     }
     echo "Success :" . $year['year'] . "\n";
+    // echo "Success :" . $row['Year'] . "\n";
 
 }
+// echo "connected";
 
 ?>

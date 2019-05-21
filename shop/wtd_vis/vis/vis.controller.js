@@ -84,36 +84,41 @@ WTD_APP.controller('visController', function ($scope, $http, scopeService, $time
         return arr;
     }
 
+
     function getCarRims(id) {
         $http.get(superRoot + root + "car_rim" + url + "?trimId=" + $scope.selectedTrim).then(m => {
-            m.data.forEach((inner, i) => {
-                let apiURL = "https://wtd-api-helper.herokuapp.com/api?wheeldiameter=" + inner.wheeldiameter + "&wheelwidth=" + inner.wheelwidth + "&wheelboltcircle=" + inner.wheelboltcircle;
+            //   debugger;
+            let distinctWheelDiameter = [...new Set(m.data.map(x => x.wheeldiameter))];
+            let distinctWheelWidth = [...new Set(m.data.map(x => x.wheelwidth))];
+            let distinctWheelBoltCicle = [...new Set(m.data.map(x => x.wheelboltcircle))];
+            let rims = [];
+            for (let index = 0; index < distinctWheelDiameter.length; index++) {
+                let apiURL = "https://wtd-api-helper.herokuapp.com/api?wheeldiameter=" + distinctWheelDiameter[index] + "&wheelwidth=" + distinctWheelWidth[index] + "&wheelboltcircle=" + distinctWheelBoltCicle[0];
                 apiURL = apiURL.replace(' ', '2%');
 
                 $http.get(apiURL).then(res => {
-                    let imidOBJ = res.data.find(g => g.imid == inner.imid);
-                    if (imidOBJ) {
-                        inner["imidOBJ"] = imidOBJ;
-                    } else {
-                        if (m.data[i])
-                            delete m.data[i];
-                    }
+                    // console.log(res.data);
+                    res.data.forEach(item => {
+                        let imidOBJ = res.data.find(g => g.imid == item.imid);
+                        let obj = m.data.find(k => k.imid == item.imid);
+                        if (imidOBJ && obj) {
+                            obj["imidOBJ"] = imidOBJ;
+                            rims.push(obj);
+                            $scope.carRims = pairing(rims);
+
+                        }
+                    })
+
+
                 })
-            })
-            // console.log(m.data);
+
+            }
 
             setTimeout(() => {
-                let rims = [];
-                m.data.forEach(j => {
-                    rims.push(j);
-                })
+                scopeService.safeApply($scope, function () {
+                });
 
-
-                $scope.carRims = pairing(rims);
-                // console.log($scope.carRims);
-
-            }, 4000);
-
+            }, distinctWheelDiameter.length * 2000);
         })
     }
 
@@ -134,7 +139,7 @@ WTD_APP.controller('visController', function ($scope, $http, scopeService, $time
 
     $scope.onViewClick = function (rim) {
         $scope.carRimView = rim;
-        let url = superRoot + 'shop/products.php?search=WheelDiameter=' + rim.wheeldiameter + '&WheelWidth=' + rim.wheelwidth + '&WheelBoltCircle=' + rim.wheelboltcircle + '&check=wheel&vis=1';
+        let url = superRoot + 'shop/view.php?search=WheelDiameter=' + rim.wheeldiameter + '&WheelWidth=' + rim.wheelwidth + '&WheelBoltCircle=' + rim.wheelboltcircle + '&check=wheel&vis=1&imid='+rim.imid;
         url = url.replace(' ', '2%');
         location.href = url;
     }

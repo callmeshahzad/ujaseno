@@ -107,6 +107,20 @@ WTD_APP.controller('visController', function ($scope, $http, scopeService, $time
                             $scope.carRims = pairing(rims);
 
                         }
+                        if(imidOBJ&&!obj){
+                            obj= {
+                                "id": 0,
+                                "trimId": $scope.selectedTrim,
+                                "rimFaceImage": "",
+                                "imid": item.imid,
+                                "imidOBJ": imidOBJ,
+                                "wheeldiameter": distinctWheelDiameter[index],
+                                "wheelwidth": distinctWheelWidth[index],
+                                "wheelboltcircle": distinctWheelBoltCicle[0]
+                            };
+                            rims.push(obj);
+                            $scope.carRims = pairing(rims);
+                        }
                     })
 
 

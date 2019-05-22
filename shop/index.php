@@ -96,7 +96,7 @@
         <div class="widget-wrap row">
 
             <?php include 'wtd_vis/vis/index.html';?>   
-            <br>        
+            <!-- <br>        
             <div class="clearfix"></div>
             <div class="img-slider" style="">
                 <div class="row">
@@ -114,42 +114,42 @@
                     }*/
                     ?>
 
-                    <?php if (!empty($rw)) { ?>
+                    <?php //if (!empty($rw)) { ?>
                     <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="300000" id="myCarousel">
                       <div class="carousel-inner">
                         <?php 
-                            if (!empty($rw)) {
-                                if ($rw->num_rows > 0) {
-                                    $check = "active";
-                                    while ($rowW = $rw->fetch_object()) {
+                            // if (!empty($rw)) {
+                            //     if ($rw->num_rows > 0) {
+                            //         $check = "active";
+                            //         while ($rowW = $rw->fetch_object()) {
 
                                 ?>
-                                <div class="item <?php echo $check ?>">
-                                    <div class="col-md-2 col-sm-6 col-xs-12" id="bimg<?=$rowW->id?>">
-                                        <img src="<?php echo $rowW->feature_img ?>" alt="" class="img-responsive orimg wimg<?=$rowW->id?>" id="<?=$rowW->catalog?>" onclick="changeImage(<?php echo $rowW->id ?>)" style="">
+                                <div class="item <?php //echo $check ?>">
+                                    <div class="col-md-2 col-sm-6 col-xs-12" id="bimg">
+                                        <img src="<?php //echo $rowW->feature_img ?>" alt="" class="img-responsive orimg wimg<?=$rowW->id?>" id="<?=$rowW->catalog?>" onclick="changeImage(<?php echo $rowW->id ?>)" style="">
                                     </div>
                                 </div>
                                 <?php
-                                $check = "";
-                                    }
-                                }
-                            }
+                            //     $check = "";
+                            //         }
+                            //     }
+                            // }
                             ?>
                         
                       </div>
-                      <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>-->
+                      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>-->
                       <!--<a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>-->
-                    </div>
+                    <!-- </div> -->
 
-                <?php } ?>
+                <?php //} ?>
 
 
-                </div>
+                <!-- </div>
             </div>
 
 
 
-<br><br><br>
+<br><br><br>  -->
             <div id="wowslider-container3">
                 <div class="ws_images">
                     <ul>

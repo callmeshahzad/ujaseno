@@ -38,7 +38,7 @@
                         Year
                     </label>
                     <select class="form-control" name="year" placholder="Year" ng-model="selectedYear"
-                        ng-options="obj.id as obj.year for obj in years" required ng-change="getMakes()"></select>
+                        ng-options="obj.id as obj.year for obj in years" required ng-change="getMakes()" disabled></select>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -47,7 +47,7 @@
                         Make
                     </label>
                     <select class="form-control" name="make" placholder="Make" ng-model="selectedMake"
-                        ng-options="obj.id as obj.make for obj in makes" required ng-change="getModels()"></select>
+                        ng-options="obj.id as obj.make for obj in makes" required ng-change="getModels()" disabled></select>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -56,7 +56,7 @@
                         Model
                     </label>
                     <select class="form-control" name="model" placholder="Model" ng-model="selectedModel"
-                        ng-options="obj.id as obj.model for obj in models" required ng-change="getTrims()"></select>
+                        ng-options="obj.id as obj.model for obj in models" required ng-change="getTrims()" disabled></select>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -65,7 +65,7 @@
                         Trim
                     </label>
                     <select class="form-control" name="trim" placholder="Trim" ng-model="selectedTrim"
-                        ng-options="obj.id as obj.trim for obj in trims" required ng-change="trimChange()"></select>
+                        ng-options="obj.id as obj.trim for obj in trims" required ng-change="trimChange()" disabled></select>
                 </div>
             </div>
         </div>

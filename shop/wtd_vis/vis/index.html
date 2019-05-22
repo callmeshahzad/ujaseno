@@ -105,6 +105,16 @@
             <img src="wtd_cars/6.png" style="height: auto;width:100%">
         </div>
     </div>
+    <script>
+        $("#s1 > div:gt(0)").hide();
+        $('#s1 > div:first')
+        .fadeOut(0)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#s1');
+        
+    </script>
     <div style="position: relative;width:100%">
         <div ng-if="selectedTrimObj&&selectedTrimObj.carImage!=''" style="text-align: center;">
             <img src="wtd_vis/images/car_images/{{selectedTrimObj.carImage}}" style="height: 210px;width: auto;">

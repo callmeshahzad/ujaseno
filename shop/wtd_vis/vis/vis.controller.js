@@ -166,13 +166,7 @@ $(document).ready(function () {
 });
 
 function slideShow() {
-    $("#s1 > div:gt(0)").hide();
-    $('#s1 > div:first')
-        .fadeOut(0)
-        .next()
-        .fadeIn(1000)
-        .end()
-        .appendTo('#s1');
+  
 
 
 }

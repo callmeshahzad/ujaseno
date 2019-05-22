@@ -96,8 +96,8 @@
         <div class="widget-wrap row">
 
             <?php include 'wtd_vis/vis/index.html';?>   
-            <!-- <br>        
-            <div class="clearfix"></div>
+            <br>        
+            <!-- <div class="clearfix"></div>
             <div class="img-slider" style="">
                 <div class="row">
                     <?php 

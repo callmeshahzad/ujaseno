@@ -369,8 +369,8 @@ curl_close($process);
                 <div class="row">
                     <div class="col-md-3">
                         <?php
-                            if(!empty($result['image0'])){
-                                echo '<img scr="http://wtdusaonline.com/Portals/96/WebSyncImages/'.$result['image0'].'" style="width: 190px;"';
+                            if(!empty($result['Image0'])){
+                                echo '<img scr="http://wtdusaonline.com/Portals/96/WebSyncImages/'.$result['Image0'].'" style="width: 190px;"';
                             }else{
 
                                 echo '<img src="../images/demo.png" style="width: 190px;">';

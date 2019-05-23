@@ -416,7 +416,7 @@ curl_close($process);
                             </div>
                             <div class="col-md-3">
                                 <p class="size" style="color:red;"><?=$result['fet']?></p>
-                                <p class="size" style="color:#6dc335;"><?=$result['price']?></p>
+                                <p class="size" style="color:#6dc335;">$<?=$result['price']?></p>
                                 <p class="size" style="color:#0015f9;"><?=$result['avail1121420']?></p>
                             </div>
                         </div>

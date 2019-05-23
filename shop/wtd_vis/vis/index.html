@@ -38,7 +38,8 @@
                         Year
                     </label>
                     <select class="form-control" name="year" placholder="Year" ng-model="selectedYear"
-                        ng-options="obj.id as obj.year for obj in years" required ng-change="getMakes()" disabled></select>
+                        ng-options="obj.id as obj.year for obj in years" required ng-change="getMakes()"
+                        disabled></select>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -47,7 +48,8 @@
                         Make
                     </label>
                     <select class="form-control" name="make" placholder="Make" ng-model="selectedMake"
-                        ng-options="obj.id as obj.make for obj in makes" required ng-change="getModels()" disabled></select>
+                        ng-options="obj.id as obj.make for obj in makes" required ng-change="getModels()"
+                        disabled></select>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -56,7 +58,8 @@
                         Model
                     </label>
                     <select class="form-control" name="model" placholder="Model" ng-model="selectedModel"
-                        ng-options="obj.id as obj.model for obj in models" required ng-change="getTrims()" disabled></select>
+                        ng-options="obj.id as obj.model for obj in models" required ng-change="getTrims()"
+                        disabled></select>
                 </div>
             </div>
             <div class="col-sm-3">
@@ -65,12 +68,98 @@
                         Trim
                     </label>
                     <select class="form-control" name="trim" placholder="Trim" ng-model="selectedTrim"
-                        ng-options="obj.id as obj.trim for obj in trims" required ng-change="trimChange()" disabled></select>
+                        ng-options="obj.id as obj.trim for obj in trims" required ng-change="trimChange()"
+                        disabled></select>
                 </div>
             </div>
         </div>
     </form>
-    <div id="s1" ng-show="!selectedTrimObj">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-left: 0px;">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>            
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
+            <li data-target="#myCarousel" data-slide-to="7"></li>
+            <li data-target="#myCarousel" data-slide-to="8"></li>
+            <li data-target="#myCarousel" data-slide-to="9"></li>
+            <li data-target="#myCarousel" data-slide-to="10"></li>
+            <li data-target="#myCarousel" data-slide-to="11"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <!-- 0 -->
+            <div class="item active">
+                <img src="wtd_cars/flyer.jpg" alt="Los Angeles" style="width:100%;">
+            </div>
+            <!-- 1 -->
+            <div class="item">
+                <!-- Car Image here -->
+                <img src="wtd_cars/lamborghini_PNG10703.png" style="height: auto;width:100%">
+            </div>
+            <!-- 2 -->
+            <div class="item">
+                <img src="wtd_cars/flyer-1.jpg" alt="Chicago" style="width:100%;">
+            </div>
+            <!-- 3 -->
+            <div class="item">
+                <!-- Car Image here -->
+                <img src="wtd_cars/2.png" style="height: auto;width:100%">
+            </div>
+            <!-- 4 -->
+            <div class="item">
+                <img src="wtd_cars/flyer.jpg" alt="Los Angeles" style="width:100%;">
+            </div>
+            <!-- 5 -->
+            <div class="item">
+                <!-- Car Image here -->
+                <img src="wtd_cars/3.png" style="height: auto;width:100%">
+            </div>
+            <!-- 6 -->
+            <div class="item">
+                <img src="wtd_cars/flyer-1.jpg" alt="Chicago" style="width:100%;">
+            </div>
+            <!-- 7 -->
+            <div class="item">
+                <!-- Car Image here -->
+                <img src="wtd_cars/4.png" style="height: auto;width:100%">
+            </div>
+            <!-- 8 -->
+            <div class="item">
+                <img src="wtd_cars/flyer.jpg" alt="Los Angeles" style="width:100%;">
+            </div>
+            <!-- 9 -->
+            <div class="item">
+                <!-- Car Image here -->
+                <img src="wtd_cars/5.png" style="height: auto;width:100%">
+            </div>
+            <!-- 10 -->
+            <div class="item">
+                <img src="wtd_cars/flyer-1.jpg" alt="Chicago" style="width:100%;">
+            </div>
+            <!-- 11 -->
+            <div class="item">
+                <!-- Car Image here -->
+                <img src="wtd_cars/6.png" style="height: auto;width:100%">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- <div id="s1" ng-show="!selectedTrimObj">
         <div>
             <img src="wtd_cars/lamborghini_PNG10703.png" style="height: auto;width:100%">
         </div>
@@ -114,7 +203,7 @@
         .end()
         .appendTo('#s1');
         
-    </script>
+    </script> -->
     <div style="position: relative;width:100%">
         <div ng-if="selectedTrimObj&&selectedTrimObj.carImage!=''" style="text-align: center;">
             <img src="wtd_vis/images/car_images/{{selectedTrimObj.carImage}}" style="height: 210px;width: auto;">
@@ -152,8 +241,7 @@
                         <img src="wtd_vis/images/car_images/demo.png" style="height: 80px;width:80px;"
                             ng-if="inner.imidOBJ.Image0==''">
 
-                        <button class="btn btn-primary "
-                            style="min-width: 80px;"  ng-click="onViewClick(inner)">
+                        <button class="btn btn-primary " style="min-width: 80px;" ng-click="onViewClick(inner)">
                             View
                         </button>
                         <!-- </a> -->

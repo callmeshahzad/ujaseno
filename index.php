@@ -792,7 +792,7 @@ if (isset($_GET['error'])) {
      </div>
  </div>
     </div>
-     <div data-v-0d6be6a8 data-v-5ff8ac3c id=service-offering class=component-ServicesOffering style=background-image:url(img/back.png)>
+     <div data-v-0d6be6a8 data-v-5ff8ac3c id=service-offering class=component-ServicesOffering style=background-image:url(img/95a8c6fab98cd7ac816fbe7f9fd3d15f-700.jpg)>
          <div data-v-0d6be6a8 class=common-center-container>
              <h3 data-v-0d6be6a8 class="heading webkit-font">DRIVING YOUR BUSINESS</h3>
              <div data-v-0d6be6a8 class=cards-container>

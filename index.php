@@ -799,7 +799,7 @@ if (isset($_GET['error'])) {
                  <a data-v-0b309813 data-v-0d6be6a8 href=# class=component-ServicesCard>
                      <div data-v-0b309813 class=card-container>
                          <div data-v-0b309813 class=background-para>
-                            <div data-v-0b309813 class=background-image style="background-image:url(images/dealer_programe.jpg)">
+                            <div data-v-0b309813 class=background-image style="background-image:url(images/d1.jpg)">
                             </div>
                         </div> 
                         <div data-v-0b309813 class=overlay></div> 
@@ -826,7 +826,7 @@ if (isset($_GET['error'])) {
                 <a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard>
                     <div data-v-0b309813 class=card-container>
                         <div data-v-0b309813 class=background-para>
-                            <div data-v-0b309813 class=background-image style="background-image:url(images/digital_tool_bg.jpeg)"></div>
+                            <div data-v-0b309813 class=background-image style="background-image:url(images/d2.jpg)"></div>
                         </div> 
                         <div data-v-0b309813 class=overlay></div> 
                         <div data-v-0b309813 class=title-overlay-container>
@@ -852,7 +852,7 @@ if (isset($_GET['error'])) {
             <a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard>
                 <div data-v-0b309813 class=card-container>
                     <div data-v-0b309813 class=background-para>
-                        <div data-v-0b309813 class=background-image style="background-image:url(images/tire_pros.jpg)"></div>
+                        <div data-v-0b309813 class=background-image style="background-image:url(images/d3.jpg)"></div>
                     </div> 
                     <div data-v-0b309813 class=overlay></div> 
                     <div data-v-0b309813 class=title-overlay-container>
@@ -879,7 +879,7 @@ if (isset($_GET['error'])) {
             <a data-v-0b309813 data-v-0d6be6a8 href=service_offering.html class=component-ServicesCard>
                 <div data-v-0b309813 class=card-container>
                     <div data-v-0b309813 class=background-para>
-                        <div data-v-0b309813 class=background-image style="background-image:url(images/tire_buyer_bg.jpg)"></div>
+                        <div data-v-0b309813 class=background-image style="background-image:url(images/d4.jpg)"></div>
                     </div> 
                     <div data-v-0b309813 class=overlay></div> 
                     <div data-v-0b309813 class=title-overlay-container>

@@ -5,7 +5,7 @@ require 'admin/Mail/Mailer.php';
 // if (count($_POST) > 0) {
 // session_start();
 // if ($_POST["captcha_code"] == $_SESSION["captcha_code"]) {
-if (count($_POST) > 6 
+if (count($_POST) > 6
     && isset($_POST['email'])
     && isset($_POST['businessname'])
     && isset($_POST['name'])
@@ -13,7 +13,7 @@ if (count($_POST) > 6
     && isset($_POST['city'])
     && isset($_POST['state'])
     && isset($_POST['question'])) {
-        
+
     $name = $_POST['name'];
     $businessname = $_POST['businessname'];
     $email = $_POST['email'];
@@ -36,10 +36,10 @@ if (count($_POST) > 6
     $mailer = new Mailer();
     $message = "Name: " . $_POST['name'] . "\n";
     $message .= "Email: " . $_POST['email'] . "\n";
-    $message .= "Business Name: " . $_POST['businessname']. "\n";
-    $message .= "Phone No: " . $_POST['phone']. "\n";
-    $message .= "License: " . $_POST['license']. "\n";
-    $message .= "City: " . $_POST['city']. "\n";
+    $message .= "Business Name: " . $_POST['businessname'] . "\n";
+    $message .= "Phone No: " . $_POST['phone'] . "\n";
+    $message .= "License: " . $_POST['license'] . "\n";
+    $message .= "City: " . $_POST['city'] . "\n";
     $message .= "State: " . $_POST['state'] . "\n";
     $message .= "Question: " . $_POST['question'] . "\n";
     // $message = '<html><body>';
@@ -56,7 +56,7 @@ if (count($_POST) > 6
     // $message .= "</table>";
     // $message .= "</body></html>";
     // $mailer->sendme("Dealer Application Request",$message);
-    $mailer->send($_POST['email'] . ", Liz@wtdusaonline.com, waseem@wtdusaonline.com, wdtusaonline@gmail.com, callmeshahzad@gmail.com, bhatti9t7@gmail.com", "Dealer Application Request Received", $message);
+    $mailer->send($_POST['email'] . ", Liz@wtdusaonline.com, waseem@wtdusaonline.com, wdtusaonline@gmail.com, callmeshahzad@gmail.com", "Dealer Application Request Received", $message);
     //  $mailer->send($_POST['email'] . ", qaxubu@getnada.com, bhatti9t7@gmail.com", "Dealer Application Request Received", $message);
     $msg = "success";
     header("location:index.php?msg=success");
@@ -73,64 +73,51 @@ if (count($_POST) > 6
 //     header("location:index.php?error_message=captcha");
 // }
 
-// if (isset($_POST['phonecall'])) {
-//     $name = $_POST['name'];
-//     $phone = $_POST['phonecall'];
-//     $tooo = 'info@wtdusaonline.com';
-//     $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com';
+if (isset($_POST['phonecall'])&&isset($_POST['name'])) {
+    $name = $_POST['name'];
+    $phone = $_POST['phonecall'];
 
-//     $subject = 'Dealer Application Request';
+    $subject = 'Dealer Call Back Request';
 
-//     $headers = "From: " . $tooo . "\r\n";
-//     $headers .= "Reply-To: " . $tooo . "\r\n";
-//     // $headers .= "CC: susan@example.com\r\n";
-//     $headers .= "MIME-Version: 1.0\r\n";
-//     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    // $headers = "From: " . $tooo . "\r\n";
+    // $headers .= "Reply-To: " . $tooo . "\r\n";
+    // $headers .= "CC: susan@example.com\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-//     $message = '<html><body>';
-//     $message = '<h4>Dealer Call Bcak Request</h4>';
-//     $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-//     $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
-//     $message .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($_POST['phonecall']) . "</td></tr>";
-//     $message .= "</table>";
-//     $message .= "</body></html>";
-//     if (mail($to, $subject, $message, $headers)) {
-//         $msg = "success";
-//     } else {
-//         $msg = "error";
-//     }
-//     header("location:about.php");
+    $message = '<html><body>';
+    $message = '<h4>Dealer Call Bcak Request</h4>';
+    $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+    $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
+    $message .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($_POST['phonecall']) . "</td></tr>";
+    $message .= "</table>";
+    $message .= "</body></html>";
+    $mailer->send($_POST['email'] . ", Liz@wtdusaonline.com, waseem@wtdusaonline.com, wdtusaonline@gmail.com, callmeshahzad@gmail.com", "Dealer Call Back Request Received", $message);
+    header("location:about.php");
 
-// }
+}
 
-// if (isset($_POST['message'])) {
-//     $name = $_POST['name'];
-//     $email = $_POST['email'];
-//     $subject = $_POST['subject'];
-//     $msgg = $_POST['message'];
-//     $to = 'Liz@wtdusaonline.com, waseem@wtdusaonline.com';
+if (isset($_POST['message'])&&isset($_POST['email'])&&isset($_POST['name'])&&isset($_POST['subject'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $msgg = $_POST['message'];
+    //$subject = 'Dealer Application Request';
 
-//     //$subject = 'Dealer Application Request';
+    // $headers = "From: " . $email . "\r\n";
+    // $headers .= "Reply-To: " . $email . "\r\n";
+    // // $headers .= "CC: susan@example.com\r\n";
+    // $headers .= "MIME-Version: 1.0\r\n";
+    // $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-//     $headers = "From: " . $email . "\r\n";
-//     $headers .= "Reply-To: " . $email . "\r\n";
-//     // $headers .= "CC: susan@example.com\r\n";
-//     $headers .= "MIME-Version: 1.0\r\n";
-//     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-//     $message = '<html><body>';
-//     $message = '<h4>Dealer Call Bcak Request</h4>';
-//     $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-//     $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
-//     $message .= "<tr><td><strong></strong> </td><td>" . strip_tags($_POST['message']) . "</td></tr>";
-//     $message .= "</table>";
-//     $message .= "</body></html>";
-//     if (mail($to, $subject, $message, $headers)) {
-//         $msg = "success";
-//     } else {
-//         $msg = "error";
-//     }
-//     header("location:index.php");
-
-// }
+    $message = '<html><body>';
+    $message = '<h4>Message Request</h4>';
+    $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+    $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
+    $message .= "<tr><td><strong></strong> </td><td>" . strip_tags($_POST['message']) . "</td></tr>";
+    $message .= "</table>";
+    $message .= "</body></html>";
+    $mailer->send($_POST['email'] . ", Liz@wtdusaonline.com, waseem@wtdusaonline.com, wdtusaonline@gmail.com, callmeshahzad@gmail.com", "Message Request Received", $message);
+    header("location:index.php?msg=success");
+}
 // }

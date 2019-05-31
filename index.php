@@ -678,6 +678,13 @@ if (isset($_GET['error'])) {
                                     </div>
                                 </div>
                             </div>
+                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
+                                <div data-v-67e91ef2 class=logo>
+                                    <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>
+                                        <img data-v-436329e0 src="images/logos/wheels/impact.png" class="contain center" style="object-fit:contain;object-position:50% 50%;background-position:50% 50%">
+                                    </div>
+                                </div>
+                            </div>
                            <div data-v-67e91ef2 data-v-3cde03ad class=component-BrandLogo>
                                 <div data-v-67e91ef2 class=logo>
                                     <div data-v-436329e0 data-v-67e91ef2 class=component-image-pre-loader>

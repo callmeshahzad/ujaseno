@@ -1,4 +1,4 @@
-<div data-v-68d9be01 data-v-5ff8ac3c id="contactus-form" class=component-FormSection style="!important; padding:20px; background:url(images/back.png)">
+<div data-v-68d9be01 data-v-5ff8ac3c id="contactus-form" class=component-FormSection style="padding-top:50px; background:url(images/background-tire.jpg)">
     <div data-v-68d9be01 class=common-center-container style="-webkit-box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75);
 -moz-box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75);
 box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75)">

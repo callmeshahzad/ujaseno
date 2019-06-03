@@ -1,5 +1,8 @@
 <?php
 $msg = '';
+require_once'nexmo-service.php';
+$nexmoService=new NexmoService();
+// $nexmoService->SendSMS("923230117193","Hello world");
 
 require 'admin/Mail/Mailer.php';
 // if (count($_POST) > 0) {

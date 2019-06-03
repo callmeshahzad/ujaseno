@@ -8,6 +8,7 @@
 <meta name=theme-color content=#ffffff>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/careers.css">
+<link rel="stylesheet" type="text/css" href="css/translator.css"> 
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
 <style>
     .paragraf-font-size{

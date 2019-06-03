@@ -486,7 +486,7 @@
         $("#contactus-form").slideToggle();
         $('html, body').animate({
             scrollTop: $("#contact-form-link").offset().top
-        }, 1500);
+        }, 1200);
     });
     // alert(<?php //echo $_SESSION['status_id'] ?>);
     // $(document).on("click",".ui-icon-closethick",function (e) {

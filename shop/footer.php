@@ -71,7 +71,11 @@
             	<?php 
             	$query = "SELECT * FROM tbl_promotions";
             	$result = $db->query($query);
-            	$count1 = 0;
+              $count1 = 3;
+              ?>
+                  <li><img src="images/banner-4.png" title="2" id="wows1_1"/></li>
+	                <li><img src="images/banner-5.png" title="3" id="wows1_2"/></li>
+              <?php
             	while ($row = $result->fetch_object()) {
             	?>
 	            	<li><a href="promotions.php?promotion_type=<?=$row->id?>"><img src="<?php echo $row->image; ?>" title="<?php echo $row->title; ?>" id="wows1_<?=$count1?>"/></a></li>

@@ -24,12 +24,13 @@ class NexmoService
         $context  = stream_context_create($opts);
         
         $response = file_get_contents('https://rest.nexmo.com/sms/json', false, $context);
-        // print_r($response);
-        // $result = json_decode($response, true);
+        print_r($response);
+        $result = json_decode($response, true);
         // echo $result;
     }
 }
 //Demo Object
-// $nexmoService=new NexmoService();
-// $nexmoService->SendSMS("923230117193","Hello world");
+$nexmoService=new NexmoService();
+$nexmoService->SendSMS("16232258625","Testing Message");
+echo "Sended";
 ?>

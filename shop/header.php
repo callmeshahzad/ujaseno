@@ -107,6 +107,12 @@ if (!isset($_SESSION['email'])) {
                 background: #fff;
                 margin-top: 20px;
             }
+            .middle-wrapper {
+                width: 1080px;
+                float: left;
+                padding-left: 20px;
+                padding-top: 20px;
+            }
         }
     </style>
    

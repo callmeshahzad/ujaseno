@@ -10,6 +10,7 @@
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
 <link rel="stylesheet" type="text/css" href="css/homestyle.css">
 <link rel="stylesheet" type="text/css" href="css/translator.css"> 
+
 </head>
  <body data-gr-c-s-loaded=true cz-shortcut-listen=true style="background-color: #E1EBF4;">
  
@@ -36,6 +37,39 @@ if (isset($_GET['error'])) {
     width: 200px;
     margin-left: 5%;
     margin-top: -12%;
+}
+.btn-login{
+    position: absolute;
+    float: right;
+    right: 15px;
+    bottom: 15px;
+    width: 150px;
+    background: #0015f9;
+    border: #0015f9;
+    font-weight: bold;
+}
+.login-section{
+    height: 480px;
+    border-right: 1px solid red;
+}
+@media only screen and (max-width: 600px) {
+  .register-part{
+    display:none;
+  }
+  .btn-login{
+    position: absolute;
+    float: right;
+    right: 15px;
+    bottom: 0px !important;
+    width: 150px;
+    background: #0015f9;
+    border: #0015f9;
+    font-weight: bold;
+  }
+  .login-section{
+    height: 280px;
+    border-right: 1px solid red;
+}
 }	
 </style>
  <div data-v-5ff8ac3c class="component-section-home vue-router-section" lang=en style=visibility:inherit;opacity:1>
@@ -68,7 +102,7 @@ if (isset($_GET['error'])) {
  					<div class="row" style="padding-bottom: 30px;">
  						<div class="col-sm-8" style="color: #000;padding: 15px 30px;height: 500px;-webkit-box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);-moz-box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);font-family:Arial,Helvetica,sans-serif;">
  							<div class="row">
- 								<div class="col-sm-6" style="height: 480px;border-right: 1px solid red;">
+ 								<div class="col-sm-6 login-section" style="">
                                     <h4 style="font-weight:bold;">Welcome</h4>
                                     <h5 style="padding-left: 5%;">Customer Login</h5><br>
 		                            <form action="index.php" method="post" accept-charset="utf-8">
@@ -83,11 +117,11 @@ if (isset($_GET['error'])) {
 		                            	</div>
                                         <?php echo $msg; ?>
 		                            	<div class="form-group">
-		                            		<button type="submit" class="btn btn-primary" style="position: absolute;float: right;right: 15px;bottom: 15px;width: 150px;background: #0015f9;border: #0015f9;font-weight: bold;">LOGIN</button>
+		                            		<button type="submit" class="btn btn-primary btn-login">LOGIN</button>
 		                            	</div>
 		                            </form>
 		                        </div> 
-		                        <div class="col-sm-6" style="height: 480px;">
+		                        <div class="col-sm-6 register-part" style="height: 480px;">
 		                            <?php
 		                            if(isset($_GET['msg'])){
 		                                $ms = $_GET['msg'];
@@ -141,7 +175,7 @@ if (isset($_GET['error'])) {
          </style>
  	<div data-v-2b7285cc class=tabs-container>
  		<div data-v-9cf6d062 data-v-2b7285cc class=component-Tabs>.
- 			<div data-v-9cf6d062 class=logos-tabs-container>
+ 			<div data-v-9cf6d062 class="logos-tabs-container">
  				<div data-v-9cf6d062 class=tabs>
  					<div data-v-342c0212 data-v-9cf6d062 class="component-TabButton index-0 active" id="tire-tab">
  						<div data-v-342c0212 class=left>

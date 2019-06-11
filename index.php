@@ -47,7 +47,8 @@ if (isset($_GET['error'])) {
     background: #0015f9;
     border: #0015f9;
     font-weight: bold;
-    background-color: #0015f9;
+    background-color: #0015f9 !important;
+    font-weight: bold !important;
 }
 .login-section{
     height: 480px;
@@ -67,6 +68,7 @@ if (isset($_GET['error'])) {
     border: #0015f9;
     font-weight: bold;
     background-color: #0015f9 !important;
+    font-weight: bold !important;
   }
   .login-section{
     height: 280px;

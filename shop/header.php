@@ -88,6 +88,26 @@ if (!isset($_SESSION['email'])) {
             margin-top: 79px;
             position: relative;
         }
+        @media only screen and (min-width: 1200px) {
+            .wrapper{
+                position: relative;
+                width: 1250px;
+                overflow: hidden;
+                margin: 0 auto;   
+            }
+            .header-fixed {
+                position: fixed;
+                z-index: 99;
+                background-color: #fff;
+                width: 1250px;
+            }
+            .right-nav {
+                width: 325px;
+                float: left;
+                background: #fff;
+                margin-top: 20px;
+            }
+        }
     </style>
    
     <link rel="icon" type="image/x-icon" href="/_ui/desktop/atdonline/images/favicon.ico" >

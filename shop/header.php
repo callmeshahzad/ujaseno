@@ -114,6 +114,32 @@ if (!isset($_SESSION['email'])) {
                 padding-top: 20px;
             }
         }
+        @media only screen and (min-width: 1300px) {
+            .wrapper{
+                position: relative;
+                width: 1150px;
+                overflow: hidden;
+                margin: 0 auto;   
+            }
+            .header-fixed {
+                position: fixed;
+                z-index: 99;
+                background-color: #fff;
+                width: 1150px;
+            }
+            .right-nav {
+                width: 325px;
+                float: left;
+                background: #fff;
+                margin-top: 20px;
+            }
+            .middle-wrapper {
+                width: 950px;
+                float: left;
+                padding-left: 20px;
+                padding-top: 20px;
+            }
+        }
     </style>
    
     <link rel="icon" type="image/x-icon" href="/_ui/desktop/atdonline/images/favicon.ico" >

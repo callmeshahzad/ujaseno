@@ -1,13 +1,18 @@
 <?php
 $msg = '';
-require_once'nexmo-service.php';
-$nexmoService=new NexmoService();
-// $nexmoService->SendSMS("923230117193","Hello world");
 
+
+require 'twilio-service/Twilio/autoload.php';
+use Twilio\Rest\Client;
 require 'admin/Mail/Mailer.php';
 // if (count($_POST) > 0) {
 // session_start();
 // if ($_POST["captcha_code"] == $_SESSION["captcha_code"]) {
+
+$sid = 'AC0ed8e4fa399ae6e009350bdf5f008553';
+$token = '72d3707f90924e61b4ded7aa3d939803';
+$client = new Client($sid, $token);
+
 if (count($_POST) > 6
     && isset($_POST['email'])
     && isset($_POST['businessname'])
@@ -61,6 +66,17 @@ if (count($_POST) > 6
     // $mailer->sendme("Dealer Application Request",$message);
     $mailer->send($_POST['email'] . ", Liz@wtdusaonline.com, waseem@wtdusaonline.com, wdtusaonline@gmail.com, callmeshahzad@gmail.com", "Dealer Application Request Received", $message);
     //  $mailer->send($_POST['email'] . ", qaxubu@getnada.com, bhatti9t7@gmail.com", "Dealer Application Request Received", $message);
+    
+    $client->messages->create(
+        // the number you'd like to send the message to
+        $_POST['phone'],
+        array(
+            // A Twilio phone number you purchased at twilio.com/console
+            'from' => '+12563776976',
+            // the body of the text message you'd like to send
+            'body' => $message
+        )
+    );
     $msg = "success";
     header("location:index.php?msg=success");
 
@@ -95,7 +111,20 @@ if (isset($_POST['phonecall'])&&isset($_POST['name'])) {
     $message .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($_POST['phonecall']) . "</td></tr>";
     $message .= "</table>";
     $message .= "</body></html>";
+
+    $message1 = "Name: " . $_POST['name'] . "\n";
+    $message1 = "Phone: " . $_POST['phonecall'] . "\n";
     $mailer->send($_POST['email'] . ", Liz@wtdusaonline.com, waseem@wtdusaonline.com, wdtusaonline@gmail.com, callmeshahzad@gmail.com", "Dealer Call Back Request Received", $message);
+    $client->messages->create(
+        // the number you'd like to send the message to
+        $_POST['phone'],
+        array(
+            // A Twilio phone number you purchased at twilio.com/console
+            'from' => '+12563776976',
+            // the body of the text message you'd like to send
+            'body' => $message1
+        )
+    );
     header("location:about.php");
 
 }
@@ -120,6 +149,19 @@ if (isset($_POST['message'])&&isset($_POST['email'])&&isset($_POST['name'])&&iss
     $message .= "<tr><td><strong></strong> </td><td>" . strip_tags($_POST['message']) . "</td></tr>";
     $message .= "</table>";
     $message .= "</body></html>";
+    
+    $message1 = "Name: " . $_POST['name'] . "\n";
+    $message1 = "Message: " . $_POST['message'] . "\n";
+    $client->messages->create(
+        // the number you'd like to send the message to
+        $_POST['phone'],
+        array(
+            // A Twilio phone number you purchased at twilio.com/console
+            'from' => '+12563776976',
+            // the body of the text message you'd like to send
+            'body' => $message1
+        )
+    );
     $mailer->send($_POST['email'] . ", Liz@wtdusaonline.com, waseem@wtdusaonline.com, wdtusaonline@gmail.com, callmeshahzad@gmail.com", "Message Request Received", $message);
     header("location:index.php?msg=success");
 }

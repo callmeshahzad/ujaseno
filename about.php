@@ -10,9 +10,10 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
 <link rel="stylesheet" type="text/css" href="css/about.css">
+<link rel="stylesheet" type="text/css" href="css/about1.css">
 <link rel="stylesheet" type="text/css" href="css/translator.css"> 
 </head>
- <body data-gr-c-s-loaded=true cz-shortcut-listen=true>
+ <body data-gr-c-s-loaded=true cz-shortcut-listen=true style="background-color:#E1EBF4">
  <div id=app class=english>
 <?php //include 'nav.php'; ?>
 <style type="text/css">
@@ -24,10 +25,13 @@
 		    width: 50px;
 		}
 	</style>
-<a href="index.php" class="btn btn-danger closebtn" style="width:auto;">
-    Back To Home
-    
+<a href="index.php" class="btn btn-danger closebtn" style="width:auto; margin-top: 20px;">
+    Back To Home    
 </a>
+
+<div class="gt-1">
+    <div id="google_translate_element" ></div>
+</div>
         <!--<img src="images/close.png" class="img-responsive" alt="">-->
 <style>
     .component-AboutHero[data-v-dc78402e] {
@@ -35,10 +39,14 @@
     }
 </style>
  	<div data-v-006917c1 class="component-About vue-router-section" lang=en style=visibility:inherit;opacity:1>
-        <div class="logo" style="position:absolute;top:0px;left:34%;width: 250px;"><a href="index.php"><img src="images/1.png" alt="WTD" class="img-responsive logoimg" style="position:absolute;top:0px;z-index: 9999;left: 100px;image-resolution: 300dpi;"></a></div>
-        <div data-v-006917c1><div data-v-dc78402e data-v-006917c1 class=component-AboutHero><div data-v-dc78402e class=bg-container style=left:-131px><div data-v-dc78402e class=bg-masker><div data-v-436329e0 data-v-dc78402e class=component-image-pre-loader style=width:100vw;height:100%;position:absolute;top:0;left:0><div data-v-b329ee4c data-v-436329e0 tabindex=-1 class=resize-observer><object style=display:block;position:absolute;top:0;left:0;height:100%;width:100%;overflow:hidden;pointer-events:none;z-index:-1 aria-hidden=true tabindex=-1 type=text/html data="data:text/html,<html>" sandbox></object></div> <div data-v-436329e0 class=pre-loader-overlay style=display:none></div> <img data-v-436329e0 src="images/background-tire.jpg" class="contain top-left" style="object-fit:contain;object-position:0 0;background-position:0 0"> </div></div> <svg data-v-dc78402e preserveAspectRatio="xMinYMid slice" viewBox="0 0 4011 1024" class=hero-mask><defs><path id=a d="M0 0h4011v1024H0z" class=path-1></path></defs><g fill=none fill-rule=evenodd><mask id=b fill=#fff><use xlink:href=#a></use></mask><g mask=url(#b)><g transform="translate(-3080 -2428)"><circle cx=2239.5 cy=2239.5 r=1739.5 stroke=#E1EBF4 stroke-width=2000 class=circle style=stroke-dasharray:1e-05px,10940.6px;stroke-dashoffset:-8197.95></circle><circle cx=2239.5 cy=2239.5 r=1739.5 stroke=#FFF stroke-width=2000 class="circle-white path" style=stroke-dasharray:1e-05px,10940.6px;stroke-dashoffset:-8197.95></circle><path fill=#E1EBF4 d="M3080 2428h4011v1024H3080V2428zm-840.5 2051c-601.597 0-1166.613-238.982-1583.566-655.934C238.982 3406.113 0 2841.097 0 2239.5S238.982 1072.887 655.934 655.934C1072.887 238.982 1637.903 0 2239.5 0s1166.613 238.982 1583.566 655.934C4240.018 1072.887 4479 1637.903 4479 2239.5s-238.982 1166.613-655.934 1583.566C3406.113 4240.018 2841.097 4479 2239.5 4479zm0-1000c333.654 0 645.183-131.766 876.459-363.041C3347.234 2884.683 3479 2573.154 3479 2239.5s-131.766-645.183-363.041-876.459C2884.683 1131.766 2573.154 1000 2239.5 1000s-645.183 131.766-876.459 363.041C1131.766 1594.317 1000 1905.846 1000 2239.5s131.766 645.183 363.041 876.459C1594.317 3347.234 1905.846 3479 2239.5 3479z" class=path-2></path></g></g></g></svg></div> <div data-v-dc78402e class=common-center-container><div data-v-dc78402e class=titles-container>
+	 <div class="logo" style="">
+            <a href="index.php">
+                <img src="images/1.png" alt="WTD" class="img-responsive logoimg" style="position:absolute;top:0px;z-index: 9999;">
+            </a>
+		</div>
+		<div data-v-006917c1><div data-v-dc78402e data-v-006917c1 class=component-AboutHero><div data-v-dc78402e class="bg-container bg-cn1" ><div data-v-dc78402e class=bg-masker><div data-v-436329e0 data-v-dc78402e class=component-image-pre-loader style=width:100vw;height:100%;position:absolute;top:0;left:0><div data-v-b329ee4c data-v-436329e0 tabindex=-1 class=resize-observer><object style=display:block;position:absolute;top:0;left:0;height:100%;width:100%;overflow:hidden;pointer-events:none;z-index:-1 aria-hidden=true tabindex=-1 type=text/html data="data:text/html,<html>" sandbox></object></div> <div data-v-436329e0 class=pre-loader-overlay style=display:none></div> <img data-v-436329e0 src="images/background-tire.jpg" class="contain top-left" style="object-fit:contain;object-position:0 0;background-position:0 0"> </div></div> <svg data-v-dc78402e preserveAspectRatio="xMinYMid slice" viewBox="0 0 4011 1024" class=hero-mask><defs><path id=a d="M0 0h4011v1024H0z" class=path-1></path></defs><g fill=none fill-rule=evenodd><mask id=b fill=#fff><use xlink:href=#a></use></mask><g mask=url(#b)><g transform="translate(-3080 -2428)"><circle cx=2239.5 cy=2239.5 r=1739.5 stroke=#E1EBF4 stroke-width=2000 class=circle style=stroke-dasharray:1e-05px,10940.6px;stroke-dashoffset:-8197.95></circle><circle cx=2239.5 cy=2239.5 r=1739.5 stroke=#FFF stroke-width=2000 class="circle-white path" style=stroke-dasharray:1e-05px,10940.6px;stroke-dashoffset:-8197.95></circle><path fill=#E1EBF4 d="M3080 2428h4011v1024H3080V2428zm-840.5 2051c-601.597 0-1166.613-238.982-1583.566-655.934C238.982 3406.113 0 2841.097 0 2239.5S238.982 1072.887 655.934 655.934C1072.887 238.982 1637.903 0 2239.5 0s1166.613 238.982 1583.566 655.934C4240.018 1072.887 4479 1637.903 4479 2239.5s-238.982 1166.613-655.934 1583.566C3406.113 4240.018 2841.097 4479 2239.5 4479zm0-1000c333.654 0 645.183-131.766 876.459-363.041C3347.234 2884.683 3479 2573.154 3479 2239.5s-131.766-645.183-363.041-876.459C2884.683 1131.766 2573.154 1000 2239.5 1000s-645.183 131.766-876.459 363.041C1131.766 1594.317 1000 1905.846 1000 2239.5s131.766 645.183 363.041 876.459C1594.317 3347.234 1905.846 3479 2239.5 3479z" class=path-2></path></g></g></g></svg></div> <div data-v-dc78402e class=common-center-container><div data-v-dc78402e class=titles-container>
  		<div data-v-dc78402e class=line-one>
-		 <div class=line style=display:block;text-align:right;position:relative;transform:matrix(1,0,0,1,0,0)> <!--Arizona--></div>
+		<div class=line style=display:block;text-align:right;position:relative;transform:matrix(1,0,0,1,0,0)> <!--Arizona--></div>
 		</div> 
 		<div data-v-dc78402e class=line-two>
 			<div class=line style=display:block;text-align:right;position:relative>
@@ -218,7 +226,7 @@
                             <input type=tel id=Phone name="phonecall" class="form-control">
 		 				</div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary" style="float: right;right: 15px;bottom: 15px;width: 150px;background: red;border: red; font-weight:bold">SUBMIT</button>
+                            <button type="submit" class="btn btn-primary btn-block" style="background: red;    border: red;    font-weight: bold;" >SUBMIT</button>
                         </div>
 		 			</div> 
 		 		</form>

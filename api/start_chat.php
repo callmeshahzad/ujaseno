@@ -6,7 +6,11 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIO
 // $_POST['email'] = "mail@gmail.com";
 // $_POST['name'] = "test";
 // $_POST['text'] = "message kasjdfa";
-
+require '../twilio-service/Twilio/autoload.php';
+use Twilio\Rest\Client;
+$sid = 'AC0ed8e4fa399ae6e009350bdf5f008553';
+$token = '72d3707f90924e61b4ded7aa3d939803';
+$client = new Client($sid, $token);
 if (isset($_POST['email'])) {
 	$name 	= $_POST['name'];
 	$email 	= $_POST['email'];
@@ -28,7 +32,16 @@ if (isset($_POST['email'])) {
             // $data['from_user_id'] = $id;
             $data['response'] = "success";
             $data['user_id'] = $id;
-            
+            $client->messages->create(
+                // the number you'd like to send the message to
+                "+923230117193",
+                array(
+                    // A Twilio phone number you purchased at twilio.com/console
+                    'from' => '+12563776976',
+                    // the body of the text message you'd like to send
+                    'body' => $_POST['name']+" is trying to chat with WTD sales representative. Please follow the link to start the chat. http://wtdusaonline.net/admin/support.php"
+                )
+            );
             
             // $_SESSION['chating'] = "yes";
         }else{

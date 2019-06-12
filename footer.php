@@ -26,16 +26,9 @@
   .footer-style{
     padding-left: 30px;
   }
-  .gt-1 {
-    right: -25%;
-    position: relative;
-    z-index: 999;
-    height: 23px;
-    width: 100%;
-    margin-bottom: 8px;
-
-    }
+  
 }
+
 </style>
 <?php include "contact_form.php"; ?>
     <div class="row">

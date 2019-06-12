@@ -280,7 +280,7 @@ box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75)">
                    <div data-v-023c1ffa class=circles-container>
                             <div data-v-023c1ffa class=largee style=transform:translate3d(0,-11.7196%,0)>
                                 <div data-v-023c1ffa class=image style=background-image:url(images/tire_pros.jpg)></div>
-                            </div>
+                            </div> 
                             <div data-v-023c1ffa class=smalll style=transform:translate3d(0,11.7196%,0)>
                                 <div data-v-023c1ffa class=image style="background-image:url(images/d3.jpg)"></div>
 							</div>

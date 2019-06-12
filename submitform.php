@@ -69,7 +69,7 @@ if (count($_POST) > 6
     
     $client->messages->create(
         // the number you'd like to send the message to
-        $_POST['phone'],
+        "+16232258625",
         array(
             // A Twilio phone number you purchased at twilio.com/console
             'from' => '+12563776976',
@@ -117,7 +117,7 @@ if (isset($_POST['phonecall'])&&isset($_POST['name'])) {
     $mailer->send($_POST['email'] . ", Liz@wtdusaonline.com, waseem@wtdusaonline.com, wdtusaonline@gmail.com, callmeshahzad@gmail.com", "Dealer Call Back Request Received", $message);
     $client->messages->create(
         // the number you'd like to send the message to
-        $_POST['phone'],
+        "+16232258625",
         array(
             // A Twilio phone number you purchased at twilio.com/console
             'from' => '+12563776976',
@@ -154,7 +154,7 @@ if (isset($_POST['message'])&&isset($_POST['email'])&&isset($_POST['name'])&&iss
     $message1 = "Message: " . $_POST['message'] . "\n";
     $client->messages->create(
         // the number you'd like to send the message to
-        $_POST['phone'],
+        "+16232258625",
         array(
             // A Twilio phone number you purchased at twilio.com/console
             'from' => '+12563776976',

@@ -88,7 +88,7 @@ if (!isset($_SESSION['email'])) {
             margin-top: 79px;
             position: relative;
         }
-        @media only screen and (max-width: 1000px) {
+        @media only screen and (max-width: 1152px) {
             .fixed-banner{
                 display:none;
             }
@@ -123,12 +123,11 @@ if (!isset($_SESSION['email'])) {
             }
         } */
         @media screen 
-            and (min-device-width: 1200px) 
-            and (max-device-width: 1600px) 
+            and (min-device-width: 1152px) 
             and (-webkit-min-device-pixel-ratio: 1) {
                 .wrapper{
                 position: relative;
-                width: 1200px;
+                width: 1000px;
                 overflow: hidden;
                 margin: 0 auto;   
                 }
@@ -136,7 +135,7 @@ if (!isset($_SESSION['email'])) {
                     position: fixed;
                     z-index: 99;
                     background-color: #fff;
-                    width: 1200px;
+                    width: 1000px;
                 }
                 .right-nav {
                     width: 325px;
@@ -145,7 +144,125 @@ if (!isset($_SESSION['email'])) {
                     margin-top: 20px;
                 }
                 .middle-wrapper {
-                    width: 950px;
+                    width: 830px;
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+                .fixed-banner{
+                display:none;
+                }
+                .fixed-banner-right{
+                    display:none;
+                }
+            }
+        @media screen 
+            and (min-device-width: 1280px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                .wrapper{
+                position: relative;
+                width: 980px;
+                overflow: hidden;
+                margin: 0 auto;   
+                }
+                .header-fixed {
+                    position: fixed;
+                    z-index: 99;
+                    background-color: #fff;
+                    width: 980px;
+                }
+                .right-nav {
+                    width: 230px;
+                    float: left;
+                    background: #fff;
+                    margin-top: 20px;
+                }
+                .middle-wrapper {
+                    width: 790px;
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+            @media screen 
+            and (min-device-width: 1360px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                .wrapper{
+                position: relative;
+                width: 1040px;
+                overflow: hidden;
+                margin: 0 auto;   
+                }
+                .header-fixed {
+                    position: fixed;
+                    z-index: 99;
+                    background-color: #fff;
+                    width: 1040px;
+                }
+                .right-nav {
+                    width: 250px;
+                    float: left;
+                    background: #fff;
+                    margin-top: 20px;
+                }
+                .middle-wrapper {
+                    width: 840px;
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+            @media screen 
+            and (min-device-width: 1440px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                .wrapper{
+                position: relative;
+                width: 1120px;
+                overflow: hidden;
+                margin: 0 auto;   
+                }
+                .header-fixed {
+                    position: fixed;
+                    z-index: 99;
+                    background-color: #fff;
+                    width: 1120px;
+                }
+                .right-nav {
+                    width: 270px;
+                    float: left;
+                    background: #fff;
+                    margin-top: 20px;
+                }
+                .middle-wrapper {
+                    width: 930px;
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+            @media screen 
+            and (min-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                .wrapper{
+                position: relative;
+                width: 1270px;
+                overflow: hidden;
+                margin: 0 auto;   
+                }
+                .header-fixed {
+                    position: fixed;
+                    z-index: 99;
+                    background-color: #fff;
+                    width: 1270px;
+                }
+                .right-nav {
+                    width: 325px;
+                    float: left;
+                    background: #fff;
+                    margin-top: 20px;
+                }
+                .middle-wrapper {
+                    width: 1060px;
                     float: left;
                     padding-left: 20px;
                     padding-top: 20px;

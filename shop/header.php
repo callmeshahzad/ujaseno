@@ -149,12 +149,12 @@ if (!isset($_SESSION['email'])) {
                     padding-left: 20px;
                     padding-top: 20px;
                 }
-                .fixed-banner{
+                /* .fixed-banner{
                 display:none;
                 }
                 .fixed-banner-right{
                     display:none;
-                }
+                } */
             }
         @media screen 
             and (min-device-width: 1280px) 

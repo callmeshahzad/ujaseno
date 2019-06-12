@@ -32,16 +32,16 @@ if (isset($_POST['email'])) {
             // $data['from_user_id'] = $id;
             $data['response'] = "success";
             $data['user_id'] = $id;
-            // $client->messages->create(
-            //     // the number you'd like to send the message to
-            //     "+923230117193",
-            //     array(
-            //         // A Twilio phone number you purchased at twilio.com/console
-            //         'from' => '+12563776976',
-            //         // the body of the text message you'd like to send
-            //         'body' => $_POST['name']+" is trying to chat with WTD sales representative. Please follow the link to start the chat. http://wtdusaonline.net/admin/support.php"
-            //     )
-            // );
+            $client->messages->create(
+                // the number you'd like to send the message to
+                "+923230117193",
+                array(
+                    // A Twilio phone number you purchased at twilio.com/console
+                    'from' => '+12563776976',
+                    // the body of the text message you'd like to send
+                    'body' => $_POST['name']+" is trying to chat with WTD sales representative. Please follow the link to start the chat. http://wtdusaonline.net/admin/support.php"
+                )
+            );
             
             // $_SESSION['chating'] = "yes";
         }else{

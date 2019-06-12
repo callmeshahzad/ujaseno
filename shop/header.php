@@ -88,7 +88,7 @@ if (!isset($_SESSION['email'])) {
             margin-top: 79px;
             position: relative;
         }
-        @media only screen and (min-width: 1200px) {
+        /* @media only screen and (min-width: 1200px) {
             .wrapper{
                 position: relative;
                 width: 1450px;
@@ -113,8 +113,65 @@ if (!isset($_SESSION['email'])) {
                 padding-left: 20px;
                 padding-top: 20px;
             }
-        }
-        @media only screen and (min-width: 1300px) {
+        } */
+        @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                .wrapper{
+                position: relative;
+                width: 1200px;
+                overflow: hidden;
+                margin: 0 auto;   
+                }
+                .header-fixed {
+                    position: fixed;
+                    z-index: 99;
+                    background-color: #fff;
+                    width: 1200px;
+                }
+                .right-nav {
+                    width: 325px;
+                    float: left;
+                    background: #fff;
+                    margin-top: 20px;
+                }
+                .middle-wrapper {
+                    width: 950px;
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+            @media screen 
+            and (min-device-width: 1605px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                .wrapper{
+                position: relative;
+                width: 1450px;
+                overflow: hidden;
+                margin: 0 auto;   
+                }
+                .header-fixed {
+                    position: fixed;
+                    z-index: 99;
+                    background-color: #fff;
+                    width: 1450px;
+                }
+                .right-nav {
+                    width: 330px;
+                    float: left;
+                    background: #fff;
+                    margin-top: 20px;
+                }
+                .middle-wrapper {
+                    width: 1100px;
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+        /* @media only screen and (min-width: 1300px) {
             .wrapper{
                 position: relative;
                 width: 1200px;
@@ -139,7 +196,7 @@ if (!isset($_SESSION['email'])) {
                 padding-left: 20px;
                 padding-top: 20px;
             }
-        }
+        } */
     </style>
    
     <link rel="icon" type="image/x-icon" href="/_ui/desktop/atdonline/images/favicon.ico" >

@@ -88,6 +88,14 @@ if (!isset($_SESSION['email'])) {
             margin-top: 79px;
             position: relative;
         }
+        @media only screen and (max-width: 1000px) {
+            .fixed-banner{
+                display:none;
+            }
+            .fixed-banner-right{
+                display:none;
+            }
+        }
         /* @media only screen and (min-width: 1200px) {
             .wrapper{
                 position: relative;

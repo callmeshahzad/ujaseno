@@ -8,7 +8,7 @@
             wrapFn: dw_Tooltip.wrapImageToWidth
         }
     </script>
-<div class="content-wrapper full-left"> 
+<div class="content-wrapper full-left top-header-margin"> 
     <?php include 'leftnav.php'; ?>
  
  <div class="middle-wrapper" style="padding-left:12px; padding-top:0px;"> 

@@ -123,7 +123,8 @@ if (!isset($_SESSION['email'])) {
             }
         } */
         @media screen 
-            and (min-device-width: 1152px) 
+            and (min-device-width: 1152px)
+            and (max-device-width: 1152px) 
             and (-webkit-min-device-pixel-ratio: 1) {
                 .wrapper{
                 position: relative;
@@ -157,7 +158,8 @@ if (!isset($_SESSION['email'])) {
                 } */
             }
         @media screen 
-            and (min-device-width: 1280px) 
+            and (min-device-width: 1280px)
+            and (max-device-width: 1280px) 
             and (-webkit-min-device-pixel-ratio: 1) {
                 .wrapper{
                 position: relative;
@@ -185,7 +187,8 @@ if (!isset($_SESSION['email'])) {
                 }
             }
             @media screen 
-            and (min-device-width: 1360px) 
+            and (min-device-width: 1360px)
+            and (max-device-width: 1360px) 
             and (-webkit-min-device-pixel-ratio: 1) {
                 .wrapper{
                 position: relative;
@@ -213,7 +216,8 @@ if (!isset($_SESSION['email'])) {
                 }
             }
             @media screen 
-            and (min-device-width: 1440px) 
+            and (min-device-width: 1440px)
+            and (max-device-width: 1440px) 
             and (-webkit-min-device-pixel-ratio: 1) {
                 .wrapper{
                 position: relative;
@@ -241,7 +245,8 @@ if (!isset($_SESSION['email'])) {
                 }
             }
             @media screen 
-            and (min-device-width: 1600px) 
+            and (min-device-width: 1600px)
+            and (max-device-width: 1600px) 
             and (-webkit-min-device-pixel-ratio: 1) {
                 .wrapper{
                 position: relative;

@@ -91,7 +91,7 @@ if (!isset($_SESSION['email'])) {
         @media only screen and (min-width: 1200px) {
             .wrapper{
                 position: relative;
-                width: 1350px;
+                width: 1450px;
                 overflow: hidden;
                 margin: 0 auto;   
             }
@@ -99,7 +99,7 @@ if (!isset($_SESSION['email'])) {
                 position: fixed;
                 z-index: 99;
                 background-color: #fff;
-                width: 1350px;
+                width: 1450px;
             }
             .right-nav {
                 width: 330px;

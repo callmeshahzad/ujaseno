@@ -274,7 +274,36 @@ if (!isset($_SESSION['email'])) {
                 }
             }
             @media screen 
-            and (min-device-width: 1605px) 
+            and (min-device-width: 1680px)
+            and (max-device-width: 1680px) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                .wrapper{
+                position: relative;
+                width: 1350px;
+                overflow: hidden;
+                margin: 0 auto;   
+                }
+                .header-fixed {
+                    position: fixed;
+                    z-index: 99;
+                    background-color: #fff;
+                    width: 1350px;
+                }
+                .right-nav {
+                    width: 335px;
+                    float: left;
+                    background: #fff;
+                    margin-top: 20px;
+                }
+                .middle-wrapper {
+                    width: 1150px;
+                    float: left;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+            @media screen 
+            and (min-device-width: 1685px) 
             and (-webkit-min-device-pixel-ratio: 1) {
                 .wrapper{
                 position: relative;

@@ -9,6 +9,7 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel=icon type=image/png sizes=32x32 href="images/1.png">
 <link rel="stylesheet" type="text/css" href="css/homestyle.css">
+<link rel="stylesheet" type="text/css" href="css/homestyles1.css">
 <link rel="stylesheet" type="text/css" href="css/translator.css"> 
 
 </head>
@@ -99,12 +100,12 @@ if (isset($_GET['error'])) {
  					</g>
  				</svg>
  			</div> 
- 			<div class="logo"><a><img src="images/1.png" alt="WTD" class="img-responsive logoimg"></a></div>
+ 			<div class="logo lsec"><a><img src="images/1.png" alt="WTD" class="img-responsive logoimg"></a></div>
  			<div data-v-b6d53204 class=common-center-container style="padding-top:0px !important;">
 
  				<div data-v-b6d53204 class=heading>
- 					<div class="row" style="padding-bottom: 30px;">
- 						<div class="col-sm-8" style="color: #000;padding: 15px 30px;height: 500px;-webkit-box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);-moz-box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);font-family:Arial,Helvetica,sans-serif;">
+ 					<div class="row" >
+ 						<div class="col-sm-8" style="color: #000;padding: 15px 30px;-webkit-box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);-moz-box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);box-shadow: 10px 10px 14px 0px rgba(0,0,0,1);font-family:Arial,Helvetica,sans-serif;">
  							<div class="row">
  								<div class="col-sm-6 login-section" style="">
                                     <h4 style="font-weight:bold;">Welcome</h4>
@@ -166,7 +167,7 @@ if (isset($_GET['error'])) {
 
 
 
- <div data-v-2b7285cc data-v-5ff8ac3c id=product-breadth class=component-ProductBreadth style="margin-top: -223px;">
+ <div data-v-2b7285cc data-v-5ff8ac3c id=product-breadth class=component-ProductBreadth>
     <svg data-v-2b7285cc xmlns=http://www.w3.org/2000/svg width=331 height=331 viewBox="0 0 331 331" class="donut-bottom" style="margin-top: -162px;">
     <path fill=#A5A5A5 fill-rule=evenodd d="M165.5 331C74.097 331 0 256.903 0 165.5S74.097 0 165.5 0 331 74.097 331 165.5 256.903 331 165.5 331zm1-78c47.773 0 86.5-38.727 86.5-86.5S214.273 80 166.5 80 80 118.727 80 166.5s38.727 86.5 86.5 86.5z"></path>
     </svg> 

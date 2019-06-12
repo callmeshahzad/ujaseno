@@ -1,0 +1,41 @@
+@media only screen and (min-width : 320px) and (max-width:414px) {
+ 
+    .component-ProductBreadth{
+        /* height: 595px; */
+        margin-top: 0px;
+    }
+    #tire-tab.component-TabButton.index-1.active.index-0{        
+        width: 68%;
+    }
+    #tire-tab{
+        width: 68%;
+    }
+    #wheel-tab{
+        width: 55%;
+    }
+    #wheel-tab.component-TabButton.index-1.active.index-0{        
+        width: 56%;
+    }
+    .component-LandingHero .bg-container{
+        display: none;
+    }
+    .lsec{
+        margin-top:0px !important;;
+    }
+    .component-LandingHero[data-v-b6d53204]{margin-top:20px}
+    
+}
+@media screen 
+and (min-device-width: 1200px) 
+and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+    .component-ProductBreadth{
+        margin-top: -223px; 
+    }
+    .tireTab{
+        width: 46%;
+    }
+    #wheel-tab{
+        width: 46%;
+    }
+}

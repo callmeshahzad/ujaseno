@@ -39,7 +39,7 @@ if (isset($_POST['email'])) {
                     // A Twilio phone number you purchased at twilio.com/console
                     'from' => '+12563776976',
                     // the body of the text message you'd like to send
-                    'body' => $_POST['name']+" is trying to chat with WTD sales representative. Please follow the link to start the chat. http://wtdusaonline.net/admin/support.php"
+                    'body' => $_POST['name']." is trying to chat with WTD sales representative. Please follow the link to start the chat. http://wtdusaonline.net/admin/support.php"
                 )
             );
             

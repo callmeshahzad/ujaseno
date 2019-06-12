@@ -137,9 +137,11 @@ if (isset($_POST['email'])) {
                         </div>
                         </div>
                         <div data-v-c0b305c2 class=blue>
-                            <div class=line style=display:block;text-align:right;position:relative;transform:matrix(1,0,0,1,0,0)>Work With Us
+                            <div class=line style=display:block;text-align:right;position:relative;transform:matrix(1,0,0,1,0,0)>Work With 
                             <br class="bR"/>
-                            Stay Ahead Of The Curve </div>
+                                Us Stay Ahead 
+                                <br class="bR"/>
+                                Of The Curve </div>
                         </div>
                     </div>
                     <h3 data-v-c0b305c2 class=subheading>

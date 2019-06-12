@@ -260,10 +260,18 @@ box-shadow: 3px 3px 5px 5px rgba(0,0,0,0.75)">
             </div>
            <div class="container career-container">
                <div class="row"> 
+               <style>
+                .paragraf-font-size {
+                    font-size: 15px;
+                    text-align: justify;
+                    text-justify: inter-word;
+                    font-weight: 100;
+                }
+               </style>
                    <div class="col-sm-6">
                        <h4 style="color: #000;">HOW WE ROLL OUR CAREER</h4>
                        <h2 style="color:#0015F9">OUR CULTURE VALUES</h2>
-                       <p style="color: #000;">Culture of any of organization is very much important so WTD provides a culture
+                       <p style="color: #000;" class="paragraf-font-size">Culture of any organization is very much important so WTD provides a culture
                                     where you feel easy and you can do your best work rather you are fresh from your
                                     school or you are an experienced so we welcome to be the part of WTD with great
                                     experience that will be a challenge for you wo work as leading which you can do

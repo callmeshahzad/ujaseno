@@ -184,8 +184,8 @@ if ($result->num_rows > 0) {
 
                         </div>
                         <div data-v-191b6ba8 class=alerts-wrapper>
-                            <div data-v-191b6ba8 class=alerts-container style=background-image:url(img/back.png)>
-                                <div data-v-191b6ba8 class=alerts-text>job alerts</div>
+                            <div data-v-191b6ba8 class=alerts-container style=background-image:url(images/1.jpg)>
+                                <div data-v-191b6ba8 class=alerts-text style="color:#0015f9;font-weight:bold;">job alerts</div>
                                 <div data-v-36eb5109 data-v-191b6ba8 class="component-Button webkit-font">
                                     <a data-v-36eb5109 href=#form-section class="button-container 1">
                                         <div data-v-36eb5109 class=label>Subscribe</div>

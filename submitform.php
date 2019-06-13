@@ -95,7 +95,7 @@ if (count($_POST) > 6
 if (isset($_POST['phonecall'])&&isset($_POST['name'])) {
     $name = $_POST['name'];
     $phone = $_POST['phonecall'];
-
+    $mailer = new Mailer();
     $subject = 'Dealer Call Back Request';
 
     // $headers = "From: " . $tooo . "\r\n";
@@ -134,6 +134,7 @@ if (isset($_POST['message'])&&isset($_POST['email'])&&isset($_POST['name'])&&iss
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $msgg = $_POST['message'];
+    $mailer = new Mailer();
     //$subject = 'Dealer Application Request';
 
     // $headers = "From: " . $email . "\r\n";
@@ -166,3 +167,4 @@ if (isset($_POST['message'])&&isset($_POST['email'])&&isset($_POST['name'])&&iss
     header("location:index.php?msg=success");
 }
 // }
+?>

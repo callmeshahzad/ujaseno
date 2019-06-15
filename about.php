@@ -107,6 +107,14 @@
 							<li>Professionalism</li>
 							<li>Strategic Partnership</li>
 							<li>Positive Energy </li>
+							<li>Respect  </li>
+							<li>Commitment  </li>
+							<li>Safety </li>
+							<li>Care </li>
+							<li>Support </li>
+							<li>Reasonable manner </li>
+							<li>Responsibility </li>
+							<li>Loyalty </li>
 						</ul>
 					 </div>
  	 	</div>

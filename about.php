@@ -92,18 +92,18 @@
  	 </div>
  	 <div class="row">
  	 	<div class="col-md-6">
- 	 		<img src="https://www.formula1.com/content/fom-website/en/championship/inside-f1/understanding-f1-racing/Tyres/_jcr_content/image.img.640.medium.jpg/1515584780384.jpg" style="width:100%">
+ 	 		<img src="images/new.jpg" style="width:100%">
  	 	</div>
  	 	<div class="col-md-6">
- 	 		<h1 style="color:#0015f9">Our mission</h1>
- 	 		<p class="valuess">Our main goal is to procure our Customer's unwaveringness by conveying deals and administration encounters with high caliber, phenomenal worth, uprightness and energy. We work as a group, work morally, and center on gathering and endeavoring to surpass the desires for our Customers.</p>
+ 	 		<h1 style="color:#0015f9">Our Vision</h1>
+ 	 		<p class="valuess">To provide equal growth opportunities for our customers as we truly believed in business partnership for mutual growth.</p>
 		 			<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 		 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p> -->
-					 <div class="valuess">
+					 <!-- <div class="valuess">
 					 <h3>Values</h3>
 						<ul>
 							<li>Innovation</li>
@@ -113,22 +113,28 @@
 							<li>Professionalism</li>
 							<li>Strategic Partnership</li>
 							<li>Positive Energy </li>
-							<li>Respect  </li>
-							<li>Commitment  </li>
-							<li>Safety </li>
-							<li>Care </li>
-							<li>Support </li>
-							<li>Reasonable manner </li>
-							<li>Responsibility </li>
-							<li>Loyalty </li>
+							
 						</ul>
-					 </div>
+					 </div> -->
  	 	</div>
  	 </div>
  	 <div class="row" align="center" >
  	 	<div class="col-md-12">
- 	 		<h1>Vision</h1>
- 	 		<p class="valuess">A dream proclamation is a composed image of as well as can be expected be as an association. It depicts an association in its optimal state and is future-arranged. We tune in to our Customers and colleagues. We pose inquiries (not accept) trying to comprehend explicit needs, wants, and desires. We look to comprehend before we try to be comprehended.</p>
+ 	 		<h1 style="color:#0015f9">Mission</h1>
+ 	 		<p class="valuess">To empower our team and customers to achieve more professional values, innovation, trust, reliability and true business partnership for their growth and bright future.</p>
+			    <div class="valuess">
+					<h1 style="color:#0015f9">Values</h1>
+					<ul>
+						<li>Innovation</li>
+						<li>Team Work</li>
+						<li>Trust</li>
+						<li>Transparency</li>
+						<li>Professionalism</li>
+						<li>Strategic Partnership</li>
+						<li>Positive Energy </li>
+						
+					</ul>
+				</div>
  	 	</div>
  	 </div>
  	 <div data-v-64871ac2 class=icons-subheading>

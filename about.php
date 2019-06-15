@@ -24,6 +24,10 @@
 		    z-index: 9999;
 		    width: 50px;
 		}
+		.valuess{
+			float:left;
+			text-align:justify;
+		}
 	</style>
 <a href="index.php" class="btn btn-danger closebtn" style="width:auto; margin-top: 20px;">
     Back To Home    
@@ -70,19 +74,10 @@
  	 	<div class="col-md-6">
  	 			<h3 data-v-44c19e12 class=heading style="color:#0015f9">COMPANY HISTORY</h3> 
 		 		<div data-v-44c19e12 class=subheading style="color:black;text-align:justify;" >
-		 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-		 			<!-- <p>We've always prided ourselves on delivering excellence and being at the forefront of innovation. Today, we not only continue to grow our unmatched distribution network but also our digital ecosystem and data capabilities. All so we may connect you and our customers to the road ahead.</p> -->
+		 			<p>Wholesale Tire Distributor (WTD) structured truly by the GOD. WTD invented out with true and sincere efforts and intentions. This company truly works under the religious policies. Mostly companies make profit for their own growth, but WTD is the first True Business Partner, who help to the customers and selling all the product with very low profit margin so that its customer can also make good enough money for their growth. </p>
+
+		 			<p>WTD started by Muhammad Waseem Aslam in 2017. He has impressive educational background. His qualification included MBA (leadership), MBA (Marketing), MIS (Business Analyst), MCS (Database Management) along with his high-profile working experience with word wide companies like Amazon (USA), Changhong (China), Dawlance (Pakistan) with top management positions. This is the turning point of company’s success that his strong educational background with comprehensive management experience taking WTD in different level. Mr. Waseem strongly believe in team work and he build very strong team which is working as back bone of the company.</p>
+		 			<p>WTD success stories start with Great Customer Service, Quality brands and very affordable prices. These three main factors build the strong structure of the company and now WTD is the “Price Leader” with major market share. WTD made their first warehouse expansion in their first three months because of very impressive business support from the customers and made their second warehouse expansion in August 2019, that’s very fast growth in Tires & wheels Industry.  WTD always work on values which are helping to the customers and adding these values every day to make the overall improvements so the its just the start and WTD must go long way.</p>
 		 		</div>
 		 	</div>
  	 	<div class="col-md-6">
@@ -91,33 +86,35 @@
  	 </div>
  	 <div class="row">
  	 	<div class="col-md-6">
- 	 		<img src="https://www.formula1.com/content/fom-website/en/championship/inside-f1/understanding-f1-racing/Tyres/_jcr_content/image.img.640.medium.jpg/1515584780384.jpg" style="width:67%">
+ 	 		<img src="https://www.formula1.com/content/fom-website/en/championship/inside-f1/understanding-f1-racing/Tyres/_jcr_content/image.img.640.medium.jpg/1515584780384.jpg" style="width:100%">
  	 	</div>
  	 	<div class="col-md-6">
  	 		<h1 style="color:#0015f9">Our mission</h1>
- 	 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+ 	 		<p class="valuess">Our main goal is to procure our Customer's unwaveringness by conveying deals and administration encounters with high caliber, phenomenal worth, uprightness and energy. We work as a group, work morally, and center on gathering and endeavoring to surpass the desires for our Customers.</p>
+		 			<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 		 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+		 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p> -->
+					 <div class="valuess">
+					 <h3>Values</h3>
+						<ul>
+							<li>Innovation</li>
+							<li>Team Work</li>
+							<li>Trust</li>
+							<li>Transparency</li>
+							<li>Professionalism</li>
+							<li>Strategic Partnership</li>
+							<li>Positive Energy </li>
+						</ul>
+					 </div>
  	 	</div>
  	 </div>
  	 <div class="row" align="center" >
  	 	<div class="col-md-12">
- 	 		<h1>Purpose</h1>
- 	 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		 			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+ 	 		<h1>Vision</h1>
+ 	 		<p class="valuess">A dream proclamation is a composed image of as well as can be expected be as an association. It depicts an association in its optimal state and is future-arranged. We tune in to our Customers and colleagues. We pose inquiries (not accept) trying to comprehend explicit needs, wants, and desires. We look to comprehend before we try to be comprehended.</p>
  	 	</div>
  	 </div>
  	 <div data-v-64871ac2 class=icons-subheading>
